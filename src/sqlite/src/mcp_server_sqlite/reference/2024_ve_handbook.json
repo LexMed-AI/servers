@@ -1,0 +1,796 @@
+{
+    "handbook_title": "Vocational Expert Handbook",
+    "version_date": "Implied 2024 (from user request context, not explicit in text)",
+    "sections": [
+      {
+        "title": "In General: Disability Overview, Vocational Experts, and the Social Security Appeals Process",
+        "content": [
+          {
+            "heading": "Social Security’s Disability Programs",
+            "points": [
+              "SSA administers several programs paying disability benefits.",
+              "Title II (Social Security Act): Benefits for individuals insured through Social Security taxes (FICA/SECA). Includes disabled workers, disabled adult children (DAC) of insured workers, and disabled widows/widowers.",
+              "Title XVI (Supplemental Security Income - SSI): Payments for individuals age 65+, blind, or disabled with limited income/resources. Funded by general tax revenues, not Social Security taxes."
+            ]
+          },
+          {
+            "heading": "Where VEs Fit In",
+            "points": [
+              "VEs provide evidence at hearings before an Administrative Law Judge (ALJ).",
+              "Hearings are part of the administrative review process for individuals seeking review of a prior determination.",
+              "VE selection is rotational based on availability (HALLEX I-2-5-52)."
+            ]
+          },
+          {
+            "heading": "SSA Administrative Review Process Levels",
+            "points": [
+              "Initial determination",
+              "Reconsideration",
+              "ALJ hearing",
+              "Appeals Council review",
+              "Federal district court appeal possible after exhausting administrative review."
+            ]
+          },
+          {
+            "heading": "Disability Determination Services (DDS)",
+            "points": [
+              "State agencies making initial and reconsideration decisions for SSA.",
+              "Fully funded by SSA, use SSA rules.",
+              "Obtain medical, vocational evidence (including arranging Consultative Examinations - CEs).",
+              "Decisions generally made by a team (medical/psychological consultant + disability examiner).",
+              "Usually do not meet claimants; decisions based on case file evidence.",
+              "Most qualifying individuals are found disabled at DDS levels."
+            ]
+          },
+          {
+            "heading": "Appeals to ALJ Hearing Level",
+            "points": [
+              "Individuals denied or dissatisfied (e.g., partially favorable onset date) can appeal to the ALJ hearing level.",
+              "This is the level where VEs provide evidence."
+            ]
+          },
+          {
+            "heading": "Continuing Disability Reviews (CDRs)",
+            "points": [
+              "SSA periodically reviews if beneficiaries remain disabled.",
+              "Individuals dissatisfied with CDR determinations can appeal, including to an ALJ hearing where VEs may testify.",
+              "CDR process differs from initial claims (details later)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "About the Vocational Expert (VE)",
+        "content": [
+          {
+            "heading": "Definition and Role",
+            "points": [
+              "Vocational professionals providing impartial expert opinion evidence on claimant's vocational abilities.",
+              "Evidence considered by ALJ in disability decisions."
+            ]
+          },
+          {
+            "heading": "Testimony Methods",
+            "points": [
+              "Usually telephone.",
+              "May include video teleconferencing (VTC) or in-person.",
+              "Sometimes written responses to interrogatories."
+            ]
+          },
+          {
+            "heading": "Expectations",
+            "points": [
+              "Be prepared to cite, explain, and furnish any sources relied upon during testimony."
+            ]
+          },
+          {
+            "heading": "Reference",
+            "points": [
+              "HALLEX I-2-5-48"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "About the Administrative Law Judge (ALJ)",
+        "content": [
+          {
+            "heading": "Definition and Role",
+            "points": [
+              "Official presiding at SSA administrative hearings.",
+              "Duties include administering oaths, examining witnesses, receiving evidence, making findings of fact, deciding disability.",
+              "ALJs are SSA employees holding hearings on behalf of the Commissioner."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Definition of 'Disability' for Social Security Programs",
+        "content": [
+          {
+            "heading": "Applicable Definitions",
+            "points": [
+              "Two main definitions in the Act.",
+              "One for Title II claims and Title XVI adult claims (age 18+).",
+              "Separate definition for Title XVI child claims (under 18) - VEs not involved, not discussed further."
+            ]
+          },
+          {
+            "heading": "General Definition (Title II & Title XVI Adult)",
+            "points": [
+              "\"[The] inability to engage in any substantial gainful activity by reason of any medically determinable physical or mental impairment which can be expected to result in death or which has lasted or can be expected to last for a continuous period of not less than 12 months.\"",
+              "References: Sections 223(d)(1)(A) and 1614(a)(3)(A) of the Act."
+            ]
+          },
+          {
+            "heading": "Statutory Blindness Definition (Title II & Title XVI)",
+            "points": [
+              "\"[C]entral visual acuity of 20/200 or less in the better eye with the use of a correcting lens. An eye which is accompanied by a limitation in the fields of vision such that the widest diameter of the visual field subtends an angle no greater than 20 degrees shall be considered . . . as having a central visual acuity of 20/200 or less.\"",
+              "References: Sections 216(i)(1) and 1614 (a)(2) of the Act."
+            ]
+          },
+          {
+            "heading": "Work Adjustment Requirement",
+            "points": [
+              "Impairments must be severe enough to prevent *both* previous work *and* any other kind of substantial gainful work existing in the national economy, considering age, education, and work experience."
+            ]
+          },
+          {
+            "heading": "Rules and Regulations",
+            "points": [
+              "SSA has detailed regulations interpreting the Act (details later)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What Happens at the ALJ Hearing?",
+        "content": [
+          {
+            "heading": "Hearing Overview",
+            "points": [
+              "Most cases involve a hearing where claimant and others testify.",
+              "Generally the first time claimant meets the decision-maker.",
+              "Claimant may request decision on the record (without hearing). VE may provide evidence in either scenario (testimony or interrogatories)."
+            ]
+          },
+          {
+            "heading": "Evidence",
+            "points": [
+              "ALJ has DDS file information.",
+              "Claimant usually submits additional evidence.",
+              "ALJ receives testimony from claimant, VE, other witnesses."
+            ]
+          },
+          {
+            "heading": "Hearing Format",
+            "points": [
+              "More informal than court proceedings.",
+              "ALJ swears in all witnesses (claimant, VE, others).",
+              "Claimants often represented, but not required.",
+              "Non-adversarial (no SSA representative arguing against claim).",
+              "ALJ is impartial, follows rules."
+            ]
+          },
+          {
+            "heading": "VE Participation at Hearing",
+            "points": [
+              "ALJ asks preliminary questions to establish VE's independence, impartiality, qualifications.",
+              "VE provides written résumé/CV (entered into record).",
+              "ALJ asks if VE familiar with SSA rules.",
+              "Claimant/representative may object to VE testifying.",
+              "Testimony usually via telephone; VTC, online video, or in-person also possible.",
+              "VE answers questions from ALJ and claimant/representative.",
+              "VE may be present throughout or called in at specific time (ALJ may summarize prior testimony if needed)."
+            ]
+          },
+          {
+            "heading": "Questioning and Control",
+            "points": [
+              "ALJ questions claimant, VE, other witnesses.",
+              "Claimant/representative can question VE/other witnesses and make arguments.",
+              "ALJ controls propriety of questions (can limit repetitive, cumulative, harassing questions)."
+            ]
+          },
+          {
+            "heading": "Recording and Decision",
+            "points": [
+              "Audio recording made of the hearing.",
+              "ALJ usually considers all evidence post-hearing and issues written decision.",
+              "Post-hearing actions possible if new information arises (VE interrogatories, supplemental hearing)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Appeals Council (AC) Process",
+        "content": [
+          {
+            "points": [
+              "Last level of appeal *within* SSA.",
+              "Headquarters in Baltimore, MD and office in Washington, DC.",
+              "Claimant dissatisfied with ALJ decision requests AC review.",
+              "AC Actions: Grant, Deny, or Dismiss request.",
+              "If denied: ALJ decision becomes final SSA decision.",
+              "If granted: AC may issue its own decision (reversing, modifying, affirming ALJ - becomes final SSA decision) or, more commonly, remand (return) case to ALJ for further action (e.g., new hearing).",
+              "VE may testify at ALJ hearing resulting from AC remand."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Federal Court Appeals",
+        "content": [
+          {
+            "points": [
+              "Claimant dissatisfied with final SSA decision (after AC action) may file civil action in federal district court.",
+              "District Court Actions: Affirm, modify, reverse SSA decision, or remand case to SSA.",
+              "Remand may result in new ALJ hearing where VE may testify.",
+              "Further appeals possible to U.S. Court of Appeals (Circuit Court) and Supreme Court (rare); remand to SSA possible at each level."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Role of the VE",
+        "content": [
+          {
+            "heading": "Responsibilities of the VE",
+            "points": [
+              "ALJs use VEs when determining ability to do past relevant work (PRW) or other work (Ref: 20 CFR 404.1560(b)(2), 404.1566(e), 416.960(b)(2), 416.966(e)).",
+              "Provide factual and expert opinion evidence based on knowledge of:",
+              "  - Skill level, physical/mental demands of occupations.",
+              "  - Characteristics of work settings.",
+              "  - Existence and incidence (numbers) of jobs within occupations.",
+              "  - Transferable skills analysis and SSA requirements.",
+              "Ideal VE qualifications include:",
+              "  - Up-to-date knowledge/experience with industrial/occupational trends, local labor markets.",
+              "  - Understanding of SSA disability determination (esp. steps 4 & 5).",
+              "  - Involvement/knowledge of vocational counseling and job placement for adults with disabilities.",
+              "  - Knowledge/experience using SSA-noticed vocational sources (DOT/SCO, Census Bureau reports, OOH, state employment agency analyses - Ref: 20 CFR 404.1566(d), 416.966(d))."
+            ]
+          },
+          {
+            "heading": "At the Hearing",
+            "points": [
+              "Provide evidence by answering questions (ALJ, claimant/representative).",
+              "Questions typically framed using hypothetical findings (age, education, work experience, functional limitations).",
+              "May answer decisive questions (e.g., ability to do PRW given hypothetical RFC).",
+              "Prohibition: NEVER comment on medical matters (diagnosis, limitations from evidence) or whether claimant is disabled.",
+              "Clarification: Inform ALJ if questions unclear or more information needed. ALJ decides relevance/elicitation.",
+              "Weight of Testimony: ALJ considers VE testimony with all other evidence; not sole basis for decision. May help ALJ identify need for more evidence."
+            ]
+          },
+          {
+            "heading": "Conduct of the VE",
+            "points": [
+              "Testimony is sworn; conduct as if in court.",
+              "Provide complete answers; use lay terms when possible; do not volunteer information.",
+              "Maintain impartiality: Avoid substantive pre/post-hearing contact with ALJ. Avoid contact with claimant/representative.",
+              "Disqualification: Must disqualify self if cannot be impartial, have prior case knowledge, or prior claimant contact (exception: testifying in prior case for same claimant)."
+            ]
+          },
+          {
+            "heading": "Pre-Hearing Preparation",
+            "points": [
+              "ALJ generally provides relevant case file portions (via ERE or CD).",
+              "Purpose: Familiarize with vocational evidence, prepare for questions (e.g., PRW requirements).",
+              "Requesting Information: If more info needed, submit written list of questions to ALJ.",
+              "Period Under Consideration: Usually alleged onset date (AOD) through ALJ decision date. May differ (e.g., date last insured - DLI). ALJ advises."
+            ]
+          },
+          {
+            "heading": "Protecting Personally Identifiable Information (PII)",
+            "points": [
+              "SSA Definition: Info distinguishing/tracing identity, alone or combined (name, SSN, birth date/place, etc.).",
+              "Mandate: SSA must safeguard PII and report breaches (Ref: Sec 1106 of Act, 5 U.S.C. 552a).",
+              "VE Access: Use Electronic Records Express (ERE) generally. CD for exceptions identified by SSA.",
+              "VE Responsibility: Protect provided claimant info (ERE/CD) against loss, theft, inadvertent disclosure. Failure impacts contract.",
+              "Procedures:",
+              "  - Ensure employees/associates aware of procedures.",
+              "  - Notify SSA contact immediately if expected info not received.",
+              "  - Secure PII (locked container/briefcase). Do not leave in car overnight.",
+              "  - Prevent others viewing file contents.",
+              "  - Return PII appropriately or destroy upon SSA approval (shred, pulverize, burn).",
+              "Breach Reporting:",
+              "  - *Immediately* notify primary/alternate SSA contact.",
+              "  - Provide: Your contact info, incident description (time, location), safeguards used, external contacts (if any), other pertinent info.",
+              "  - If contacts unreachable: Call NNSC (1-877-697-4889), provide info, get CAPRS number.",
+              "  - Limit disclosure of incident details.",
+              "  - Reporting delay may affect contract."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Determining Disability",
+        "content": [
+          {
+            "heading": "Overview",
+            "points": [
+              "VEs testify in most disability cases (Title II insured worker, Title XVI adult, concurrent claims).",
+              "Less often in other cases (DAC, widow(er)s, blindness).",
+              "Not involved in Title XVI childhood disability cases."
+            ]
+          },
+          {
+            "heading": "Detailed Definitions of Disability Recap",
+            "points": [
+              "Adult Definition: Inability to engage in SGA due to MDI lasting/expected 12+ months or death.",
+              "Duration Requirement: 12+ continuous months.",
+              "Blindness Definition: Separate statutory definition (applies Titles II & XVI).",
+              "Work Adjustment Component: Impairment(s) must prevent PRW *and* other SGA work existing significantly nationally, considering age, education, work experience.",
+              "Irrelevant Factors for Work Adjustment: Local job existence, specific vacancy, hiring likelihood. Focus is *ability to do* work."
+            ]
+          },
+          {
+            "heading": "Determining Initial Disability: The Sequential Evaluation Process (Adults)",
+            "points": [
+              "5-step process used for Title II and Adult Title XVI initial claims.",
+              "Different processes for CDRs and Age-18 Redeterminations.",
+              "Process Overview: Follow steps in order. Stop if decision made. Proceed if not. ALJ usually decides post-hearing but gathers info for all steps during hearing.",
+              "STEP 1: Substantial Gainful Activity (SGA)?",
+              "  - Definition: Significant physical/mental work activity, usually for pay/profit.",
+              "  - Excludes: Self-care, household tasks, hobbies, therapy, school, social programs.",
+              "  - Measurement: Usually gross monthly earnings above threshold (amount updated annually). Self-employed: significant services, comparable work, or worth SGA amount.",
+              "  - Outcome: If doing SGA, found 'not disabled'. If not, proceed.",
+              "STEP 2: Severe Medically Determinable Impairment (MDI)?",
+              "  - Requirement: MDI shown by objective medical evidence (clinical/lab techniques).",
+              "  - 'Severe': Significantly limits ability to do basic work activities (physical: walk, stand, lift, etc.; mental: understand instructions, use judgment, respond to supervision, etc.).",
+              "  - Duration Requirement: Must meet 12-month duration.",
+              "  - VE Role: Not expected to testify at this step.",
+              "  - Outcome: If no severe MDI meeting duration, found 'not disabled'. If severe MDI exists, proceed.",
+              "STEP 3: Meets or Medically Equals Listing?",
+              "  - Requirement: MDI(s) meets/equals criteria in Listing of Impairments (20 CFR Part 404, Subpart P, Appendix 1) and meets duration.",
+              "  - Listings Standard: Impairments severe enough to prevent 'any gainful activity' (stricter than 'substantial') regardless of vocational factors.",
+              "  - VE Role: Not involved in Listing analysis.",
+              "  - Outcome: If meets/equals Listing, found 'disabled'. If not, proceed to RFC assessment.",
+              "Residual Functional Capacity (RFC) Assessment:",
+              "  - Timing: Assessed before Step 4 if not SGA, severe MDI exists, but doesn't meet/equal Listing.",
+              "  - Definition: Most claimant can do in work setting on sustained basis despite limitations from impairment(s) + symptoms (pain, fatigue, etc.).",
+              "  - Scope: Considers limitations from *all* MDIs (severe and non-severe).",
+              "  - VE Role: VE does *not* opine on RFC. ALJ poses hypotheticals based on potential RFCs.",
+              "  - Key Policies: Assumes 'regular and continuing basis' (full-time work). Considers *only* limitations from MDIs (not age, sex, body habitus, conditioning, language - but obesity can be MDI).",
+              "  - Evaluation Factors: Physical (exertional, postural, manipulative, sensory, communication) and Mental abilities.",
+              "  - Exertional Categories: Uses DOT strength ratings (Sedentary, Light, Medium, Heavy, Very Heavy). Non-strength = nonexertional.",
+              "  - Reference: SSR 96-8p, SSR 19-2p.",
+              "STEP 4: Can Do Past Relevant Work (PRW)?",
+              "  - Assessment: Compare RFC with PRW requirements (as actually performed or generally performed nationally).",
+              "  - PRW Definition: Work at SGA level, within relevant timeframe (usually last 5 years), lasted long enough to learn (SVP-based, >30 days). Foreign work considered as actually performed (SSR 82-40). PRW doesn't need to exist significantly.",
+              "  - VE Role: Provide info on learning time, demands (actual/general). Cite sources.",
+              "  - Outcome: If can do PRW, found 'not disabled'. If cannot or no PRW, proceed.",
+              "  - Reference: SSR 24-2p.",
+              "STEP 5: Can Do Other Work?",
+              "  - Assessment: Can claimant adjust to other work existing significantly nationally, considering RFC, age, education, work experience?",
+              "  - Tool: Uses Medical-Vocational Guidelines (Grid Rules - 20 CFR Part 404, Subpart P, Appendix 2).",
+              "  - Grid Rules Function: Provide matrix directing disabled/not disabled if facts match exactly. Used as framework if facts don't match.",
+              "  - VE Role: Often testifies in framework cases. Cite sources.",
+              "  - Outcome: If can adjust, 'not disabled'. If cannot, 'disabled'. Decision made here.",
+              "  - Reference: SSR 24-1p.",
+              "Drug Addiction/Alcoholism (DAA) Materiality:",
+              "  - Rule: Claimant not disabled if DAA is material contributing factor.",
+              "  - Process: If found disabled and has DAA, ALJ must re-evaluate sequence assuming substance use stopped.",
+              "  - VE Role: May involve additional hypotheticals based on assumed abstinence RFC."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Determining Continuing Disability",
+        "content": [
+          {
+            "heading": "Overview",
+            "points": [
+              "ALJs adjudicate appeals of determinations that disability has ended.",
+              "Two types: Continuing Disability Reviews (CDRs) and Age-18 Redeterminations."
+            ]
+          },
+          {
+            "heading": "Continuing Disability Reviews (CDRs)",
+            "points": [
+              "Periodic reviews for adult/child beneficiaries.",
+              "DDS determines cessation; ALJ reviews appeal.",
+              "Uses different sequential evaluation based on Medical Improvement Review Standard (MIRS).",
+              "Key Question: Has medical improvement occurred since last favorable decision (Comparison Point Decision - CPD)?",
+              "Medical Improvement: Decrease in severity of CPD impairments (based on signs, symptoms, labs).",
+              "Related to Ability to Work: Medical improvement must meet this standard for adults.",
+              "Outcome: Even with MIRAW, disability continues if individual still meets basic definition considering all current impairments.",
+              "VE Role: Similar testimony as initial claims, but special PRW rule applies.",
+              "Special PRW Rule for CDRs: Work performed during current entitlement period is NOT PRW for determining if claimant can do past or other work in the CDR.",
+              "References: 20 CFR 404.1594, 416.994, 416.994a."
+            ]
+          },
+          {
+            "heading": "Age-18 Redeterminations",
+            "points": [
+              "Required for Title XVI child beneficiaries upon reaching age 18.",
+              "Uses *adult initial claim* sequential evaluation process (Steps 2-5; Step 1 SGA not used).",
+              "MIRS does *not* apply.",
+              "VE Role: Testimony same as initial adult claims.",
+              "Reference: 20 CFR 416.987."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "The Medical-Vocational Guidelines (Grid Rules)",
+        "content": [
+          {
+            "heading": "Introduction",
+            "points": [
+              "Located in 20 CFR Part 404, Subpart P, Appendix 2.",
+              "Address SSA's burden of production at Step 5 regarding existence of other work.",
+              "Take administrative notice of approximate numbers of unskilled jobs: ~200 Sedentary, ~1400 Light (~1600 S/L total), ~900 Medium (~2500 S/L/M total).",
+              "Provide narrative guidelines and 3 Tables (Table 1: Sedentary, Table 2: Light, Table 3: Medium) based on RFC, Age, Education, Work Experience.",
+              "If facts match a rule exactly, it directs Disabled/Not Disabled conclusion.",
+              "If facts do *not* match (e.g., claimant cannot do full range of work in a table due to limitations), grids used as framework.",
+              "VE testimony often required in framework cases.",
+              "VE testimony *must* be consistent with grid rules and SSA definitions."
+            ]
+          },
+          {
+            "heading": "Grid Table Example (Table 2 Excerpt)",
+            "points": [
+              "Illustrates how age, education, and skills transferability impact outcomes for Light RFC.",
+              "Example: 54-yr-old HS grad capable of full range of light work = Not Disabled. Same person at 55 = Disabled, unless skills transferable."
+            ]
+          },
+          {
+            "heading": "Framework Cases",
+            "points": [
+              "Occur when claimant's RFC doesn't permit full range of work at an exertional level (e.g., between Sedentary/Light) or nonexertional limitations significantly erode occupational base.",
+              "ALJ cannot use grid rule to direct decision.",
+              "VE Role: Testify on existence/numbers of jobs claimant *can* do given specific limitations and vocational factors. Testimony helps ALJ determine if significant number of jobs exist.",
+              "VE testimony especially helpful with nonexertional limitations (e.g., mental limitations affecting job types).",
+              "Occupational Base: Term for number of jobs individual can perform (Refs: SSR 83-10, SSR 85-15).",
+              "Requirement: VE must cite, explain, furnish sources.",
+              "Consistency: VE testimony cannot contradict grid rules where they apply (example provided)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vocational Factors (Step 5)",
+        "content": [
+          {
+            "heading": "Overview",
+            "points": [
+              "Considered at Step 5 with RFC: Age, Education, Work Experience."
+            ]
+          },
+          {
+            "heading": "Age",
+            "points": [
+              "Chronological age. Advancing age limits adjustment.",
+              "Categories: Younger Person (<50; special rule 45-49/illiterate), Person Closely Approaching Advanced Age (50-54), Person of Advanced Age (55+; special rule >=60).",
+              "Borderline Age: Considered if within few days/months of higher category that would result in disabled finding.",
+              "Reference: 20 CFR 404.1563, 416.963."
+            ]
+          },
+          {
+            "heading": "Education",
+            "points": [
+              "Formal schooling/training contributing to vocational abilities (reasoning, communication, arithmetic).",
+              "Lack of formal schooling doesn't preclude abilities.",
+              "Time since education, use of education considered.",
+              "Language of schooling irrelevant.",
+              "Level can be adjusted (unusual).",
+              "Categories:",
+              "  - Illiteracy: Unable to read/write *any* language (SSR 20-01p). Little/no formal schooling.",
+              "  - Marginal Education: Skills for simple, unskilled jobs (usually <=6th grade).",
+              "  - Limited Education: Skills insufficient for most complex semi/skilled jobs (usually 7th-11th grade).",
+              "  - High School Education and Above: Skills for semi-skilled through skilled work (usually >=12th grade).",
+              "Reference: 20 CFR 404.1564, 416.964, SSR 20-01p."
+            ]
+          },
+          {
+            "heading": "Work Experience",
+            "points": [
+              "Generally means Past Relevant Work (PRW).",
+              "VE Role: Testify on PRW's exertional level, physical/mental demands, skill level, transferable skills (if skilled/semiskilled).",
+              "Basis: Claimant description, DOT, VE professional experience. Cite sources.",
+              "Reference: 20 CFR 404.1565, 416.965."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Exertional Categories",
+        "content": [
+          {
+            "heading": "SSA Definitions",
+            "points": [
+              "Uses DOT terms: Sedentary, Light, Medium, Heavy, Very Heavy.",
+              "VE testimony *must* use/be consistent with SSA definitions.",
+              "Summary follows (refer to policy docs for full detail)."
+            ]
+          },
+          {
+            "heading": "Definitions Summary",
+            "points": [
+              "Sedentary: Lift <=10lb occ; Sit ~6hr/day; Walk/stand ~2hr total; Often requires bilateral manual dexterity/vision.",
+              "Light: Lift <=20lb occ / <=10lb freq; Walk/stand ~6hr total; May sit with controls; Implies sedentary capacity unless other limits; Less fine dexterity than sedentary.",
+              "Medium: Lift <=50lb occ / <=25lb freq; Walk/stand ~6hr total; Grasp/hold/turn; Often frequent bending/stooping.",
+              "Heavy: Lift <=100lb occ / <=50lb freq.",
+              "Very Heavy: Lift >100lb occ / >=50lb freq.",
+              "Frequency Definitions: 'Occasionally' = up to 1/3 workday (~2 hrs); 'Frequently' = 1/3 to 2/3 workday (~2-6 hrs).",
+              "References: 20 CFR 404.1567, 416.967; SSR 83-10."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Skill Levels and SVP",
+        "content": [
+          {
+            "heading": "SSA Classification",
+            "points": [
+              "Work classified as Skilled, Semiskilled, Unskilled.",
+              "Skill: Knowledge requiring significant judgment beyond simple duties; practical application; gives advantage. Acquired through work above unskilled level.",
+              "Skills vs. Traits: Skills are learned capacities; traits are inherent qualities (e.g., coordination). VE must distinguish.",
+              "VE Role: Classify claimant's PRW and hypothetical jobs using SSA skill levels based on DOT's Specific Vocational Preparation (SVP).",
+              "SVP Correlation: Unskilled = SVP 1-2; Semiskilled = SVP 3-4; Skilled = SVP 5-9."
+            ]
+          },
+          {
+            "heading": "Definitions",
+            "points": [
+              "Unskilled: Little/no judgment; simple duties; learn <=30 days (e.g., handling, feeding, machine tending). No work skills gained.",
+              "Semiskilled: More complex than unskilled, simpler than skilled; more judgment/variables; learn >30 days (e.g., alertness to processes, inspecting, tending, guarding, repetitive coordination/dexterity).",
+              "Skilled: Complex/varied; more training/education; abstract thinking; judgment required (e.g., determining operations, layout, estimating, measurements, blueprints, complex dealing with people/data/ideas)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Transferability of Skills",
+        "content": [
+          {
+            "heading": "Overview",
+            "points": [
+              "Relevant when claimant has skilled/semiskilled PRW they can no longer perform.",
+              "Can be decisive in some grid rule scenarios.",
+              "Definition: Skills from PRW usable in other skilled/semiskilled work within RFC."
+            ]
+          },
+          {
+            "heading": "Factors Favoring Transferability",
+            "points": [
+              "Similarity of occupationally significant work activities.",
+              "Most probable when:",
+              "  - Same/lesser skill level required (skilled->semi/skilled; semi->semi).",
+              "  - Same/similar tools and machines used.",
+              "  - Same/similar materials, products, processes, services involved."
+            ]
+          },
+          {
+            "heading": "Other Considerations",
+            "points": [
+              "Greater skill degree usually aids transfer (unless niche skills).",
+              "Reduced RFC limits transferability.",
+              "Advancing Age decreases transferability (strict rules >=55, stricter >=60)."
+            ]
+          },
+          {
+            "heading": "VE Role",
+            "points": [
+              "Identify skilled/semiskilled PRW pre-hearing.",
+              "Describe skills involved.",
+              "Answer hypotheticals about skill transfer to specific RFCs.",
+              "Address age-specific transferability rules (>=55, >=60)."
+            ]
+          },
+          {
+            "heading": "References",
+            "points": [
+              "20 CFR 404.1568, 416.968; SSR 82-41."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Hypothetical Questions",
+        "content": [
+          {
+            "heading": "Purpose and Framing",
+            "points": [
+              "Used by ALJs to elicit VE opinions when RFC/findings not yet finalized.",
+              "Format: \"Assume individual with claimant's age/edu/work... If they can lift X, sit Y...\"",
+              "Multiple hypotheticals common (e.g., crediting claimant allegations vs. fewer limitations)."
+            ]
+          },
+          {
+            "heading": "Scope",
+            "points": [
+              "May address Step 4 (PRW) or Step 5 (Other Work).",
+              "ALJ specifies assumed facts."
+            ]
+          },
+          {
+            "heading": "VE Response Content (If Work Exists)",
+            "points": [
+              "Provide examples (>=3 best practice, common jobs preferred).",
+              "Explain why hypothetical person can perform cited occupations.",
+              "Cite DOT codes (if applicable).",
+              "Provide job numbers (national required; local optional/if asked).",
+              "Address consistency/conflicts with DOT (SSR 00-4p / EM-24027 rules).",
+              "Explain occupation selection rationale if citing less common jobs.",
+              "Testimony must be current, relevant, accurate, policy-compliant."
+            ]
+          },
+          {
+            "heading": "VE Prohibitions in Responses",
+            "points": [
+              "DO NOT opine on: Medical issues (diagnosis, prognosis, limitations), Significance of job numbers, Impact of language, Claimant's RFC, Whether claimant is disabled. ALJ decides these."
+            ]
+          },
+          {
+            "heading": "Claimant/Representative Questions",
+            "points": [
+              "VE answers questions about cited occupations, performance, job numbers basis, DOT codes, conflicts."
+            ]
+          },
+          {
+            "heading": "Clarification and Explanation",
+            "points": [
+              "Ask ALJ for clarification if hypothetical unclear.",
+              "Be prepared for complete explanations (experience, resources)."
+            ]
+          },
+          {
+            "heading": "Reference",
+            "points": [
+              "HALLEX I-2-6-74."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "SSR 00-4p: Your Testimony, the DOT, and SSA’s Rules",
+        "content": [
+          {
+            "heading": "Consistency Requirement (per SSR 00-4p)",
+            "points": [
+              "VE occupational evidence should generally be consistent with DOT.",
+              "ALJ *must* ask VE about any possible conflict/inconsistency between VE testimony and DOT.",
+              "If conflict exists, ALJ must elicit reasonable explanation from VE.",
+              "Neither DOT nor VE testimony automatically 'trumps'.",
+              "ALJ cannot rely on VE testimony over conflicting DOT info without a documented reasonable explanation from VE."
+            ]
+          },
+          {
+            "heading": "Common Reasons for Conflicts (SSR 00-4p Examples)",
+            "points": [
+              "Info not in DOT: VE uses other reliable sources (publications, employer info, experience). VE explains source reliability.",
+              "DOT lists max requirements: VE provides specifics about job performance range.",
+              "Apparent Conflicts needing explanation:",
+              "  - Limitation vs. Job Requirement: e.g., Occasional fingering limit vs. Typist (constant fingering).",
+              "  - Modern Performance vs. DOT: Occupation performed differently now (Ref EM-24027). VE explains differences/consistency with RFC.",
+              "  - GED Level vs. Instructions: GED Reasoning 3 vs. 'simple instructions' limit (provide GED 1/2 jobs if possible).",
+              "  - Reaching Limit vs. Job Reaching: Explain how specific limitation allows performance of job's reaching needs."
+            ]
+          },
+          {
+            "heading": "Consistency with SSA Policy is Paramount",
+            "points": [
+              "VE explanation cannot contradict SSA policies/definitions.",
+              "Example: Can classify exertional level differently based on reliable info, but cannot *redefine* SSA's exertional levels.",
+              "Example: Cannot testify unskilled work involves complex duties learned over months (contradicts 20 CFR 404.1568/416.968)."
+            ]
+          },
+          {
+            "note": "This section reflects SSR 00-4p as presented in the handbook. Users should be aware SSR 24-3p (summarized previously) modifies/supersedes parts of SSR 00-4p, particularly regarding the term 'conflict' and resolution requirements, while still requiring explanation for differences in SEE definitions and methodologies."
+          }
+        ]
+      },
+      {
+        "title": "Isolated Occupations and Heightened Evidentiary Requirements",
+        "content": [
+          {
+            "heading": "Isolated Occupations (EM-24026)",
+            "points": [
+              "Definition: Exist only in very limited numbers/locations (Ref: 20 CFR 404.1566, 416.966).",
+              "Rule: ALJs cannot deny benefits based solely on isolated jobs in framework cases.",
+              "VE Action: Familiarize with list in EM-24026."
+            ]
+          },
+          {
+            "heading": "Occupations Requiring Heightened Evidence (EM-24027)",
+            "points": [
+              "Context: Court concerns about whether performed as DOT describes.",
+              "Rule: ALJ cannot rely on listed occupations for framework denial *without additional VE evidence*.",
+              "Required VE Evidence: Supporting info that occupation as *currently performed* is consistent with RFC AND exists significantly nationally.",
+              "VE Action: Familiarize with list, provide necessary supporting info.",
+              "List Provided (in handbook): Addresser (209.587-010), Document Preparer (249.587-018), Cutter-and-Paster (249.587-014), Tube Operator (239.687-014), Silver Wrapper (318.687-018), Host/Hostess Dance Hall (349.667-010), Host/Hostess Head (349.667-014), Surveillance-System Monitor (379.367-010), Almond Blancher Hand (521.687-010), Nut Sorter (521-687-086), Magnetic-Tape Winder (726.685-010), Puller-Through (782.687-030), Microfilm Processor (976.385-010)."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interrogatories",
+        "content": [
+          {
+            "heading": "Definition and Process",
+            "points": [
+              "Written questions requesting VE responses.",
+              "May come from ALJ (pre/post-hearing) or hearing office staff (pre-assignment).",
+              "Claimant/rep may propose questions, but ALJ sends approved ones to VE.",
+              "VE receives questions (often questionnaire), possibly with relevant evidence/summary."
+            ]
+          },
+          {
+            "heading": "VE Responsibilities",
+            "points": [
+              "Respond in writing (on form or attached sheets).",
+              "Answer completely; explain/support responses with specific evidence references.",
+              "Request clarification *in writing* from ALJ/HOCALJ if needed.",
+              "Explain if unable to answer (conflict, incomplete evidence), suggest resolution if possible.",
+              "If responding to new evidence, state if it changes prior responses and why.",
+              "Submit responses *only* to ALJ/hearing office. NEVER directly to claimant/rep."
+            ]
+          },
+          {
+            "heading": "Claimant Rights",
+            "points": [
+              "ALJ shares VE responses with claimant/rep.",
+              "Claimant can request supplemental hearing or submit rebuttal evidence."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "List of References",
+        "content": [
+          {
+            "heading": "Accessing Resources",
+            "points": [
+              "Online: https://www.socialsecurity.gov/regulations/",
+              "Disability Resources: https://www.socialsecurity.gov/disability/",
+              "Regulations Part 404 (Title II): https://www.socialsecurity.gov/OP_Home/cfr20/404/404-0000.htm",
+              "Regulations Part 416 (Title XVI): https://www.socialsecurity.gov/OP_Home/cfr20/416/416-0000.htm",
+              "SSRs by Year: https://www.socialsecurity.gov/OP_Home/rulings/rulfind1.html",
+              "Grid Rules (App 2): https://www.ssa.gov/OP_Home/cfr20/404/404-app-p02.htm",
+              "Online Blue Book (Listings - preferred): Use main SSA site search."
+            ]
+          },
+          {
+            "heading": "Regulation Sections",
+            "list": [
+              "20 CFR 404.1520 / 416.920 (Evaluation of disability)",
+              "20 CFR 404.1545 / 416.945 (RFC)",
+              "20 CFR 404.1560 / 416.960 (Vocational background)",
+              "20 CFR 404.1563 / 416.963 (Age)",
+              "20 CFR 404.1564 / 416.964 (Education)",
+              "20 CFR 404.1565 / 416.965 (Work experience)",
+              "20 CFR 404.1566 / 416.966 (Work existing nationally)",
+              "20 CFR 404.1567 / 416.967 (Physical exertion)",
+              "20 CFR 404.1568 / 416.968 (Skill requirements)",
+              "20 CFR 404.1569 / 416.969 (Listing of grids)",
+              "20 CFR 404.1569a / 416.969a (Exertional/nonexertional limitations)"
+            ]
+          },
+          {
+            "heading": "Social Security Rulings (SSRs)",
+            "list": [
+              "SSR 82-40 (Foreign PRW)",
+              "SSR 82-41 (Skills Transferability)",
+              "SSR 83-5a (Grid Conclusiveness)",
+              "SSR 83-10 (Capability - Grid Rules)",
+              "SSR 83-11 (Capability - Grids Met)",
+              "SSR 83-12 (Capability - Framework, Exertional Range)",
+              "SSR 83-14 (Capability - Framework, Combo Exertional/Nonexertional)",
+              "SSR 85-15 (Capability - Framework, Solely Nonexertional - replaced SSR 83-13)",
+              "SSR 96-8p (RFC Assessment)",
+              "SSR 96-9p (Capability - Less than Full Sedentary)",
+              "SSR 00-4p (VE/VS Evidence)",
+              "SSR 03-3p (Evaluation Aged 65+)",
+              "SSR 11-2p (Evaluation Young Adults)",
+              "SSR 20-01p (Education Category)",
+              "SSR 24-1p (Medical-Vocational Profiles)",
+              "SSR 24-2p (Evaluating PRW)"
+            ]
+          }
+        ]
+      }
+    ]
+  }

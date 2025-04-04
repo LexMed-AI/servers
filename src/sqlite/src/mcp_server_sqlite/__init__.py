@@ -1,18 +1,22 @@
-from . import server
-import asyncio
 import argparse
+import asyncio
+import logging
+from pathlib import Path
 
+from .server import main
 
-def main():
-    """Main entry point for the package."""
-    parser = argparse.ArgumentParser(description='SQLite MCP Server')
-    parser.add_argument('--db-path', 
-                       default="./sqlite_mcp_server.db",
-                       help='Path to SQLite database file')
-    
-    args = parser.parse_args()
-    asyncio.run(server.main(args.db_path))
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="SQLite MCP Server")
+    parser.add_argument("--db-path", type=str, required=True, help="Path to SQLite database")
+    return parser.parse_args()
 
+def run():
+    logging.basicConfig(level=logging.INFO)
+    args = parse_args()
+    asyncio.run(main(args.db_path))
+
+if __name__ == "__main__":
+    run()
 
 # Optionally expose other important items at package level
-__all__ = ["main", "server"]
+__all__ = ["main"]

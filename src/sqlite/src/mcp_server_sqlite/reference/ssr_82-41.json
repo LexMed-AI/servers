@@ -1,0 +1,112 @@
+{
+    "id": "SSR 82-41",
+    "title": "TITLES II AND XVI: WORK SKILLS AND THEIR TRANSFERABILITY AS INTENDED BY THE EXPANDED VOCATIONAL FACTORS REGULATIONS EFFECTIVE FEBRUARY 26, 1979",
+    "type": "Policy Statement",
+    "effective_date": "1979-02-26",
+    "citations": [
+      "Sections 223(d)(2)(A) and 1614(a)(3)(B) of the Social Security Act",
+      "Regulations No. 4, sections 404.1520(f), 404.1545, 404.1561, 404.1563, 404.1565, 404.1566 and 404.1568",
+      "Regulations No. 16, sections 416.920(f), 416.945, 416.961, 416.963, 416.965, 416.966 and 416.968",
+      "Appendix 2, Subpart P of Regulations No. 4, sections 200.00(b), 201.00(e), 201.00(f), 202.00(e) and 202.00(f)"
+    ],
+    "purpose": "To further explain the concepts of 'skills' and 'transferability of skills' and to clarify how these concepts are used in disability evaluation, particularly in relation to the vocational factors regulations effective Feb 26, 1979.",
+    "pertinent_history": {
+      "disability_definition_context": "Disability requires inability to do previous work and inability to adjust to other substantial gainful work (considering age, education, work experience) due to a medically determinable impairment.",
+      "skills_transferability_relevance": "Relates to 'work experience' and the ability to adjust to different occupations; primarily considered at the last step (Step 5) of sequential evaluation.",
+      "regulatory_background": "February 1979 regulations consolidated policies for considering vocational factors and introduced the binding Medical-Vocational Guidelines (Appendix 2).",
+      "need_for_clarification": "Misinterpretations/misapplications regarding skill levels and transferability arose. Need to clarify definitions (especially semiskilled vs. unskilled), skill acquisition, transferability criteria, and necessary supporting evidence."
+    },
+    "policy_statement": {
+      "when_transferability_is_issue": {
+        "conditions": [
+          "Individual's severe impairment(s) does not meet or equal a Listing (Appendix 1).",
+          "Impairment(s) prevents performance of Past Relevant Work (PRW).",
+          "PRW has been determined to be skilled or semiskilled."
+        ],
+        "note_on_outcome": "Transferability is often decisive only in specific cases within the Medical-Vocational Guidelines framework, as a finding of 'not disabled' may still result from the ability to perform unskilled work even if skills are non-transferable."
+      },
+      "definitions_and_concepts": {
+        "skill_definition": {
+          "core": "Knowledge of a work activity requiring significant judgment beyond simple duties.",
+          "acquisition": "Acquired through performance of an occupation above the unskilled level (requiring > 30 days to learn).",
+          "nature": "Practical and familiar knowledge of principles/processes of an art, science, or trade, plus the ability to apply them.",
+          "examples": ["Making precise measurements", "Reading blueprints", "Setting up/operating complex machinery"],
+          "advantage": "Provides a special advantage over unskilled workers in the labor market.",
+          "unskilled_work_note": "Skills are NOT gained from performing unskilled jobs.",
+          "limited_transferability_note": "No special advantage exists if skills cannot be used significantly in other jobs (qualifies only for unskilled). Appendix 2 rules align with this.",
+          "education_note": "Acquired work skills may not align with formal educational level."
+        },
+        "transferability_definition": {
+          "core": "Applying work skills demonstrated in vocationally relevant past jobs to meet the requirements of other skilled or semiskilled jobs.",
+          "distinction_from_education": "Distinct from using skills recently learned in school for direct entry into skilled work (ref: Appendix 2, sec 201.00(g))."
+        }
+      },
+      "skill_level_determination": {
+        "unskilled": {
+          "criteria": "Jobs learnable in 30 days or less; least complex.",
+          "identification": "Majority identified in DOT. Use occupational references or Vocational Specialist (VS) assistance if not self-evident.",
+          "examples": ["Restaurant dishwasher", "Sparkplug assembler", "School-crossing guard", "Carpenter's helper", "Baker's helper (laborer)"]
+        },
+        "semiskilled": {
+          "complexity": "More complex than unskilled, distinctly simpler than skilled; contain more variables, require more judgment.",
+          "learning_time": "Requires > 30 days to learn.",
+          "evaluation_focus": "Must evaluate actual job complexities (dealing with data, people, things) and judgment required, as some semiskilled jobs may have work content little more than unskilled.",
+          "worker_traits_vs_skills": "Descriptive terms in regulations (alertness, coordination, dexterity) relate to worker *traits* (aptitudes/abilities) used *in connection with* work activities. The *skill* is the acquired capacity to perform the work activity with facility, not the trait itself. (e.g., Alertness for watching machines; Dexterity for repetitive tasks).",
+          "lower_level_semiskilled": {
+             "characteristics": "Minimal skill level, next to unskilled.",
+             "examples": ["Chauffeur", "Some sewing-machine operators", "Room service waiter"],
+             "transferability": "Transferability not usually found from this simple type of work. Adjudicator can often determine little vocational advantage without VS assistance."
+          },
+          "higher_level_semiskilled": {
+             "characteristics": "Slightly more complex.",
+             "examples": [
+                  "Nurse aide (Incidental skilled tasks like taking vitals usually insufficient for transferability, but depends on specific duties performed).",
+                  "General office clerk (Skills like typing, filing, operating office machines often readily transferable to other sedentary semiskilled clerical jobs like typist, clerk-typist, insurance auditing control clerk)."
+              ]
+          }
+        },
+        "skilled": {
+          "complexity": "More complex and varied than unskilled/semiskilled.",
+          "requirements": "Often requires more training time and higher education. May involve abstract thinking (chemist), special talents (musician), practical/technical knowledge (mechanic), or high-level decision-making/interpersonal skills (executive).",
+          "lower_level_skilled": {
+              "examples": ["Bulldozer operator", "Firebrick layer", "Hosiery knitting machine operator"],
+              "assessment": "Occupational references or VS should be consulted if skills/transferability are at issue."
+          },
+          "upper_level_skilled": {
+              "examples": ["Architect", "Aircraft stress analysis", "Air-conditioning mechanic", "Professional/Executive/Managerial"],
+              "transferability": "Greater potential for transferability (to same or lower skill levels). VS consultation may be necessary."
+          }
+        }
+      },
+      "documentation_and_determination": {
+        "job_information_source": "Claimant is the best source for PRW description (what was done, how, exertion, skills). Employer/coworker/family may supplement. Job title/skeleton description insufficient.",
+        "skill_determination_responsibility": "Adjudicator or ALJ determines skills, skill levels, and potential transferability, using VS or occupational references as needed.",
+        "determining_prw_skill_level": "Often apparent by comparing duties to regulatory definitions. Use references/VS if needed. Job titles alone are not determinative."
+      },
+      "application_of_transferability": {
+        "general_determination_factors": "Transferability is most probable/meaningful when target jobs require: (1) Same/lesser skill level; (2) Same/similar tools/machines; AND (3) Same/similar raw materials/products/processes/services. Complete similarity is not required.",
+        "factors_affecting_transferability": ["Degree of skill similarity (ranging from close to remote)", "Reduced RFC (limits available jobs)", "Advancing age (decreases adjustment potential)"],
+        "impact_of_medical_factors": "All functional limitations (exertional, nonexertional) in the RFC must be considered. If limitations prevent the *use* of acquired skills in other work settings, skills are not transferable. Examples provided: watchmaker w/ tremor, painter w/ allergy, craftsman w/ lost coordination, operator w/ jolting intolerance, executive w/ brain damage.",
+        "special_provisions_by_age_rfc": {
+           "rule_1": "Age 55+ & limited to Sedentary RFC: Transferability requires 'very little, if any, vocational adjustment' (tools, processes, settings, industry). Minimal job orientation needed. Closely related duties required.",
+           "rule_2": "Age 60+ & limited to Light RFC: Same as Rule 1 ('very little, if any, vocational adjustment').",
+           "adjustment_consideration": "Individuals with these adverse profiles cannot be expected to make substantial vocational adjustments.",
+           "specific_vs_universal_skills": "Skills unique to a specific work process/industry (e.g., construction carpenter) often require more than minimal adjustment and are less likely transferable under these special provisions than universally applicable skills (clerical, professional, administrative, managerial).",
+           "isolated_vocational_settings": "Skills acquired in isolated settings (mining, agriculture, fishing) are considered not readily usable elsewhere and generally not transferable. Examples: placer miner, beekeeper, spear fisherman. VS may be needed for less obvious cases."
+        },
+        "hypothetical_case_example": "Detailed analysis of a construction carpenter (medium, skilled PRW) with cardiovascular impairment. Illustrates how transferability to light semiskilled jobs (cabinet assembler, hand shaper, etc.) might be found for age 57, but likely NOT found if age 60+ (due to 'very little adjustment' rule), and likely NOT found if limited to sedentary work at any age.",
+        "required_findings_in_decision": {
+           "requirement": "When transferability is decided, findings of fact must be included in the written determination/decision, supported by documentation.",
+           "if_transferable_finding": "MUST identify the acquired work skills, cite specific skilled/semiskilled occupations skills transfer to, AND include evidence these jobs exist in significant numbers (VE/VS statement or listed publications).",
+           "rationale": "Clearly establish basis for determination for claimant and reviewing bodies (including Federal courts)."
+        }
+      }
+    },
+    "cross_references": {
+      "poms_part_4_di": [
+        "DI 2093", "DI 2105.D", "DI 2380.E", "DI 2382", "DI 2384",
+        "DI 2387.B.4", "DI 2387.B.5", "DI 2388.B", "DI 2388.C",
+        "DI 2389", "DI 2390", "DI 2863", "DI 3027.C.2"
+      ]
+    }
+  }
