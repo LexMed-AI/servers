@@ -1,5 +1,5 @@
 from typing import Dict, List, Optional, Union, Any
-from config import (
+from .config import (
     svp_map,
     worker_functions_map,
     ged_map,

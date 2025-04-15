@@ -9,11 +9,86 @@ as input and return derived values or formatted strings/dictionaries.
 """
 
 from datetime import date, datetime
-from typing import Dict, Any, Optional, Union, List # Added Optional, Union, List, Dict
+import json
+import os
+import logging # Added logging
+from pathlib import Path # Added pathlib
+from typing import Dict, Any, Optional, Union, List, Tuple
+import re
 
 # Import necessary data structures from config.py
 # Assuming config.py is in the same directory (adjust path if needed)
 from . import config
+
+logger = logging.getLogger(__name__) # Added logger
+
+# --- Data Loading ---
+
+# Load obsolete/outdated job data at module startup
+_OBSOLETE_OUTDATED_DATA: Dict[str, Dict[str, Any]] = {}
+
+def _load_obsolete_outdated_data():
+    """Loads the obsolete/outdated job data from the JSON file."""
+    global _OBSOLETE_OUTDATED_DATA
+    json_file_path = Path(__file__).parent / 'reference' / 'obsolete_out_dated.json'
+    if not json_file_path.is_file():
+        logger.error(f"Obsolete/outdated data file not found at {json_file_path}")
+        _OBSOLETE_OUTDATED_DATA = {} # Ensure it's an empty dict if file missing
+        return
+
+    try:
+        with open(json_file_path, 'r', encoding='utf-8') as f: # Specify encoding
+            data_list = json.load(f)
+            # Convert list of dicts to a dict keyed by DOT code for faster lookup
+            _OBSOLETE_OUTDATED_DATA = {
+                item['DOT Code']: item for item in data_list if 'DOT Code' in item
+            }
+        logger.info(f"Successfully loaded {len(_OBSOLETE_OUTDATED_DATA)} obsolete/outdated job entries.")
+    except json.JSONDecodeError as e:
+        logger.error(f"Error decoding JSON from {json_file_path}: {e}", exc_info=True)
+        _OBSOLETE_OUTDATED_DATA = {}
+    except Exception as e: # Catch other potential errors during file reading
+        logger.error(f"Error loading obsolete/outdated data from {json_file_path}: {e}", exc_info=True)
+        _OBSOLETE_OUTDATED_DATA = {}
+
+# Call the loading function when the module is imported
+_load_obsolete_outdated_data()
+
+# Load TSA analysis data
+def load_tsa_analysis() -> Dict[str, Any]:
+    """
+    Load TSA analysis data from JSON file.
+    
+    Returns:
+        Dictionary containing TSA analysis steps and requirements.
+    """
+    try:
+        tsa_file_path = os.path.join(os.path.dirname(__file__), 'reference', 'tsa_anylsis.json')
+        with open(tsa_file_path, 'r') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        logger.error(f"Error loading TSA analysis data: {e}", exc_info=True) # Use logger
+        return {"steps": []}  # Return empty steps if file not found or invalid
+
+# Load TSA data at module level
+TSA_DATA = load_tsa_analysis()
+
+# --- DOT Code/Ncode Conversion Utilities ---
+def dot_to_ncode(dot_code: str) -> str:
+    """
+    Convert a human-readable DOT code (e.g., '211.462-010') to a 9-digit Ncode (e.g., '211462010').
+    """
+    if not dot_code:
+        return ""
+    return re.sub(r'[^0-9]', '', dot_code)
+
+def ncode_to_dot(ncode: str) -> str:
+    """
+    Convert a 9-digit Ncode (e.g., '211462010') to a human-readable DOT code (e.g., '211.462-010').
+    """
+    if not ncode or len(ncode) != 9 or not ncode.isdigit():
+        return ncode or ""
+    return f"{ncode[:3]}.{ncode[3:6]}-{ncode[6:]}"
 
 # --- Functions ---
 
@@ -39,6 +114,7 @@ def determine_applicable_ssr(hearing_date_str: str) -> Optional[str]:
             return '24-3p'
     except (ValueError, TypeError):
         # Handle invalid date format or None input
+        logger.warning(f"Invalid hearing date format '{hearing_date_str}' received.", exc_info=False) # Log warning
         return None
 
 # If using Enums in config.py, the return type hint would change, e.g. -> Optional[SkillLevel]
@@ -80,41 +156,60 @@ def get_frequency_details(freq_num: Optional[int]) -> Optional[Dict[str, Any]]:
 
 def check_job_obsolescence(dot_code: Optional[str]) -> Dict[str, Any]:
     """
-    Check if a job is potentially obsolete based on pre-defined indicators.
+    Check if a job is obsolete or outdated based on loaded SSA EM data.
 
     Args:
         dot_code: DOT code string to analyze, or None.
 
     Returns:
-        Dictionary with obsolescence analysis results.
+        Dictionary with obsolescence analysis results based on EM-24026/EM-24027.
     """
     if not dot_code:
         return {
-            'is_potentially_obsolete': False,
-            'message': 'No DOT code provided for analysis'
+            'dot_code': None,
+            'status': 'Not Applicable',
+            'message': 'No DOT code provided for analysis.',
+            'is_potentially_obsolete': False, # Explicitly false
+            'source_em': None,
+            'comment': None
         }
 
-    # Use .get() for safer lookup in the indicators dictionary
-    obsolescence_info = config.job_obsolescence_indicators.get(dot_code)
+    # Look up the DOT code in the loaded data
+    obsolescence_info = _OBSOLETE_OUTDATED_DATA.get(dot_code)
 
     if obsolescence_info:
-        risk_level = obsolescence_info.get('risk_level', 'Unknown')
-        return {
-            'dot_code': dot_code, # Include dot_code in result for clarity
-            'is_potentially_obsolete': risk_level in ['High', 'Medium'],
-            'risk_level': risk_level,
-            'factors': obsolescence_info.get('factors', []),
-            'em_references': obsolescence_info.get('em_references', []),
-            'modern_equivalents': obsolescence_info.get('modern_equivalents', [])
-        }
-    else:
-        # Basic obsolescence check for DOT codes not specifically listed
+        source_em = obsolescence_info.get("EM", "Unknown EM")
+        comment = obsolescence_info.get("Comment", "No specific comment provided.")
+        status = "Unknown Status"
+        is_obsolete = True # Assume obsolete/outdated if found
+
+        if source_em == "EM-24026":
+            status = "Obsolete (Do Not Cite per EM-24026)"
+        elif source_em == "EM-24027":
+            status = "Outdated (Requires VE/VS Confirmation per EM-24027)"
+        else:
+            # Handle unexpected EM values if necessary
+             logger.warning(f"DOT code {dot_code} found with unexpected EM value: {source_em}")
+             status = f"Flagged (Source: {source_em})"
+
+
         return {
             'dot_code': dot_code,
-            'is_potentially_obsolete': False, # Default assumption if not listed
-            'message': 'DOT code not in known obsolescence risk list. Consider potential obsolescence as DOT was last fully updated in 1991.',
-            'risk_level': 'Undetermined',
-            'factors': ['Not specifically listed in obsolescence indicators'],
+            'status': status,
+            'message': f"Job is listed under {source_em}.",
+            'is_potentially_obsolete': is_obsolete,
+            'source_em': source_em,
+            'comment': comment
+        }
+    else:
+        # Not found in the obsolete/outdated list
+        return {
+            'dot_code': dot_code,
+            'status': 'Not Listed as Obsolete/Outdated',
+            'message': 'This DOT code was not found in the SSA EM-24026 or EM-24027 lists. Standard obsolescence considerations may still apply (DOT last updated 1991).',
+            'is_potentially_obsolete': False,
+            'source_em': None,
+            'comment': None
         }
 
 def get_dot_to_soc_mapping(dot_code: Optional[str]) -> Optional[Dict[str, Any]]:
@@ -154,6 +249,287 @@ def format_physical_demand(demand_name: str, value: Optional[int]) -> Optional[D
         'frequency': freq_details, # Use the detailed frequency dict
         'description': description
     }
+
+def analyze_tsa_requirements(prw_description: str, dot_code: str, rfc: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Analyze TSA requirements based on PRW description and DOT code.
+
+    Args:
+        prw_description: Description of past relevant work
+        dot_code: DOT code for the occupation
+        rfc: Dictionary containing RFC limitations
+
+    Returns:
+        Dictionary with TSA analysis results including completed steps and findings
+    """
+    results = {
+        'completed_steps': [],
+        'findings': {},
+        'potential_skills': [],
+        'transferable_occupations': []
+    }
+    
+    # Step 1: Review Job Description
+    job_review = analyze_job_description(prw_description)
+    results['completed_steps'].append({
+        'step': 1,
+        'title': 'Job Description Review',
+        'findings': job_review
+    })
+    
+    # Step 2: DOT Code Validation
+    dot_validation = validate_dot_code(dot_code)
+    results['completed_steps'].append({
+        'step': 2,
+        'title': 'DOT Code Validation',
+        'findings': dot_validation
+    })
+    
+    # Add potential skills from job description analysis
+    results['potential_skills'] = job_review.get('identified_skills', [])
+    
+    return results
+
+def analyze_job_description(description: str) -> Dict[str, Any]:
+    """
+    Analyze job description for potential skills and work activities.
+
+    Args:
+        description: Detailed job description from claimant
+
+    Returns:
+        Dictionary containing analysis results including identified skills
+    """
+    # Initialize results
+    results = {
+        'identified_skills': [],
+        'tools_and_equipment': [],
+        'work_processes': [],
+        'analysis_complete': True
+    }
+    
+    # Basic validation
+    if not description or len(description.strip()) < 10:
+        results['analysis_complete'] = False
+        results['error'] = 'Job description too brief for meaningful analysis'
+        return results
+    
+    # TODO: Implement more sophisticated skill extraction logic
+    # This is a placeholder for more complex analysis
+    
+    return results
+
+def validate_dot_code(dot_code: str) -> Dict[str, Any]:
+    """
+    Validate DOT code format (XXX.XXX-XXX).
+    Note: This only checks format, not existence in the database.
+
+    Args:
+        dot_code: DOT code string to validate.
+
+    Returns:
+        Dictionary containing validation results.
+    """
+    # Placeholder - Basic format check is ok, but needs DB lookup for existence
+    logger.warning("validate_dot_code placeholder only checks format, not existence.")
+    results = {
+        'is_valid_format': False,
+        'occupation_details': None, # Keep this key, but it won't be populated here
+        'validation_messages': []
+    }
+    if not dot_code:
+        results['validation_messages'].append('No DOT code provided')
+        return results
+    # Check DOT code format (XXX.XXX-XXX)
+    if isinstance(dot_code, str) and len(dot_code) == 11 and dot_code[3] == '.' and dot_code[7] == '-':
+        results['is_valid_format'] = True
+        # Remove message about existence check, as it's documented in the docstring
+        # results['validation_messages'].append('Format valid. Existence not checked.')
+    else:
+        results['validation_messages'].append('Invalid DOT code format (Expected XXX.XXX-XXX)')
+    return results
+
+def get_tsa_step_requirements(step_number: int) -> Dict[str, Any]:
+    """
+    Get requirements and guidance for a specific TSA step.
+
+    Args:
+        step_number: The TSA step number (1-8)
+
+    Returns:
+        Dictionary containing step requirements and guidance
+    """
+    if not TSA_DATA or 'steps' not in TSA_DATA:
+        return {'error': 'TSA data not available'}
+        
+    step = next((s for s in TSA_DATA['steps'] if s['step'] == step_number), None)
+    if not step:
+        return {'error': f'Step {step_number} not found'}
+        
+    return step
+
+def evaluate_skill_transferability(source_occupation: Dict[str, Any], 
+                                target_occupation: Dict[str, Any],
+                                rfc: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Evaluate skill transferability between source and target occupations.
+
+    Args:
+        source_occupation: Dictionary containing source occupation details
+        target_occupation: Dictionary containing target occupation details
+        rfc: Dictionary containing RFC limitations
+
+    Returns:
+        Dictionary containing transferability analysis results
+    """
+    results = {
+        'is_transferable': False,
+        'matching_skills': [],
+        'skill_gaps': [],
+        'physical_demands_compatible': False,
+        'environmental_conditions_compatible': False,
+        'analysis_details': {}
+    }
+    
+    # Compare SVP levels
+    source_svp = source_occupation.get('svp', 0)
+    target_svp = target_occupation.get('svp', 0)
+    results['svp_analysis'] = {
+        'source_svp': source_svp,
+        'target_svp': target_svp,
+        'is_compatible': target_svp <= source_svp
+    }
+    
+    # Compare physical demands
+    results['physical_demands_compatible'] = compare_physical_demands(
+        source_occupation.get('physical_demands', {}),
+        target_occupation.get('physical_demands', {}),
+        rfc
+    )
+    
+    # Overall transferability determination
+    results['is_transferable'] = (
+        results['svp_analysis']['is_compatible'] and
+        results['physical_demands_compatible'] and
+        len(results['matching_skills']) > 0
+    )
+    
+    return results
+
+def compare_physical_demands(source_demands: Dict[str, Any],
+                           target_demands: Dict[str, Any],
+                           rfc: Dict[str, Any]) -> bool:
+    """
+    Compare physical demands between occupations considering RFC limitations.
+
+    Args:
+        source_demands: Physical demands of source occupation
+        target_demands: Physical demands of target occupation
+        rfc: RFC limitations
+
+    Returns:
+        Boolean indicating if physical demands are compatible
+    """
+    # Check if target demands are within RFC limitations
+    for demand, level in target_demands.items():
+        if demand in rfc:
+            rfc_limit = rfc[demand]
+            if not is_demand_within_limits(level, rfc_limit):
+                return False
+    
+    return True
+
+def is_demand_within_limits(demand_level: str, rfc_limit: str) -> bool:
+    """
+    Check if a physical demand level is within RFC limits.
+
+    Args:
+        demand_level: Physical demand level from occupation
+        rfc_limit: RFC limitation level
+
+    Returns:
+        Boolean indicating if demand is within limits
+    """
+    # Define demand level hierarchy (from lowest to highest)
+    demand_hierarchy = {
+        'sedentary': 1,
+        'light': 2,
+        'medium': 3,
+        'heavy': 4,
+        'very heavy': 5
+    }
+    
+    try:
+        demand_value = demand_hierarchy[demand_level.lower()]
+        limit_value = demand_hierarchy[rfc_limit.lower()]
+        return demand_value <= limit_value
+    except KeyError:
+        # If levels aren't in our hierarchy, return False to be safe
+        return False
+
+def find_related_occupations(dot_code: str, 
+                           skills: List[str],
+                           rfc: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Find occupations related to the given DOT code and compatible with skills/RFC.
+
+    Args:
+        dot_code: DOT code of the source occupation
+        skills: List of identified skills
+        rfc: Dictionary containing RFC limitations
+
+    Returns:
+        List of dictionaries containing related occupation details
+    """
+    results = []
+    
+    # TODO: Implement occupation search logic
+    # This would typically involve:
+    # 1. Finding occupations with similar first 3 DOT digits
+    # 2. Checking occupations with similar worker functions
+    # 3. Filtering based on RFC compatibility
+    # 4. Ranking by skill match
+    
+    return results
+
+def document_tsa_decision(analysis_results: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Generate documentation for TSA decision.
+
+    Args:
+        analysis_results: Dictionary containing all TSA analysis results
+
+    Returns:
+        Dictionary containing formatted documentation and citations
+    """
+    documentation = {
+        'summary': '',
+        'steps_completed': [],
+        'occupations_cited': [],
+        'skill_transfer_analysis': '',
+        'conclusion': ''
+    }
+    
+    # Format step completion information
+    for step in analysis_results.get('completed_steps', []):
+        documentation['steps_completed'].append({
+            'step_number': step['step'],
+            'title': step['title'],
+            'findings': step['findings']
+        })
+    
+    # Add transferable occupations
+    documentation['occupations_cited'] = [
+        {
+            'dot_code': occ.get('dot_code'),
+            'title': occ.get('title'),
+            'skill_match': occ.get('matching_skills', []),
+            'justification': occ.get('transfer_justification', '')
+        }
+        for occ in analysis_results.get('transferable_occupations', [])
+    ]
+    
+    return documentation
 
 # --- Functions below this line were incorrectly placed here and should be in ve_logic.py ---
 # def analyze_transferable_skills_compatibility(...)

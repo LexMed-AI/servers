@@ -1,8 +1,8 @@
 import sys
 from typing import Dict, Any, Optional, Tuple
 from pathlib import Path
-from ve_logic import generate_formatted_job_report
-from db_handler import DatabaseHandler
+from .ve_logic import generate_formatted_job_report
+from .db_handler import DatabaseHandler
 
 def convert_dot_code(code: str) -> str:
     """

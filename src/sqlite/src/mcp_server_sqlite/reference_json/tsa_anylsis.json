@@ -1,0 +1,93 @@
+{
+  "title": "Steps In The TSA",
+  "description": "Steps to complete the Transferable Skills Analysis (TSA)",
+  "steps": [
+    {
+      "step": 1,
+      "title": "Review Job Description",
+      "description": "Review the claimant's job description beyond just the title",
+      "tasks": [
+        "Note processes, tools, machines, and materials used",
+        "Identify products or services resulting from claimant's efforts",
+        "Identify potentially transferable skills"
+      ],
+      "reference": {
+        "ruling": "Social Security Ruling 82-41",
+        "quote": "The claimant is in the best position to describe just what he or she did in PRW, how it was done, what exertion was involved, what skilled or semiskilled work activities were involved, etc. Neither an occupational title by itself nor a skeleton description is sufficient."
+      },
+      "key_action": "Use claimant's own job description to determine acquired skills"
+    },
+    {
+      "step": 2,
+      "title": "Identify PRW in DOT",
+      "description": "Identify the claimant's Past Relevant Work (PRW) in the Dictionary of Occupational Titles",
+      "purpose": "Make judgment about level of skills gained",
+      "note": "If job description is inadequate at Step 4, the TSA will be wrong"
+    },
+    {
+      "step": 3,
+      "title": "Review Vocational Factors",
+      "description": "Review factors to determine search scope",
+      "factors": [
+        "Skill level of past work",
+        "Applicability of skill",
+        "RFC (Residual Functional Capacity)",
+        "Age"
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Search Related Occupations",
+      "description": "Search for occupations related to claimant's PRW",
+      "search_criteria": [
+        "Guide for Occupational Exploration (GOE) code",
+        "Materials, Products, Subject Matter, and Services (MPSMS) code",
+        "Work Field (WF) code",
+        "Occupation group (first three digits of DOT code)",
+        "Industry designation"
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Create Occupation List",
+      "description": "Make list of possible occupations",
+      "exclusions": [
+        "Unskilled occupations",
+        "Occupations with SVP higher than claimant's PRW",
+        "Occupations outside claimant's RFC"
+      ]
+    },
+    {
+      "step": 6,
+      "title": "Compare Duties",
+      "description": "Compare DOT description of duties with PRW duties",
+      "scope": "Include composite jobs described by claimant"
+    },
+    {
+      "step": 7,
+      "title": "Evaluate Skill Transfer",
+      "description": "Consider all relevant vocational sources",
+      "purpose": "Judge whether PRW skills are useable in other work within claimant's RFC or MRFC"
+    },
+    {
+      "step": 8,
+      "title": "Document Decision",
+      "description": "Support your decision with proper documentation",
+      "requirements": {
+        "if_not_transferable": "Briefly describe extent of search",
+        "if_transferable": [
+          "Identify transferable skills",
+          "List occupations to which skills are transferable"
+        ]
+      },
+      "documentation_rule": {
+        "general_requirement": "Must cite at least three occupations when documenting capacity for other types of work",
+        "exception": "May cite fewer if occupation(s) provide significant number of jobs in national economy",
+        "evidence_types": [
+          "VS statements based on expert personal knowledge",
+          "Information from publications listed in regulations sections 404.1566(d) and 416.966(d)"
+        ]
+      }
+    }
+  ]
+}

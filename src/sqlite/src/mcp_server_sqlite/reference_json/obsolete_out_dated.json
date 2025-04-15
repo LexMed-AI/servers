@@ -1,0 +1,1145 @@
+[
+  {
+    "EM": "EM-24026",
+    "DOT Code": "013.061-010",
+    "DOT Occupational Title": "AGRICULTURAL ENGINEER",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "013.061-014",
+    "DOT Occupational Title": "AGRICULTURAL-RESEARCH ENGINEER",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "013.061-018",
+    "DOT Occupational Title": "DESIGN-ENGINEER, AGRICULTURAL EQUIPMENT",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "013.061-022",
+    "DOT Occupational Title": "TEST ENGINEER, AGRICULTURAL EQUIPMENT",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "021.067-010",
+    "DOT Occupational Title": "ASTRONOMER",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "029.067-010",
+    "DOT Occupational Title": "GEOGRAPHER",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "029.067-014",
+    "DOT Occupational Title": "GEOGRAPHER, PHYSICAL",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "045.061-014",
+    "DOT Occupational Title": "PSYCHOLOGIST, ENGINEERING",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Sedentary",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "045.107-030",
+    "DOT Occupational Title": "PSYCHOLOGIST, INDUSTRIAL-ORGANIZATIONAL",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "052.067-014",
+    "DOT Occupational Title": "DIRECTOR, STATE-HISTORICAL SOCIETY",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Sedentary",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "052.067-018",
+    "DOT Occupational Title": "GENEALOGIST",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Sedentary",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "052.067-022",
+    "DOT Occupational Title": "HISTORIAN",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Sedentary",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "052.067-026",
+    "DOT Occupational Title": "HISTORIAN, DRAMATIC ARTS",
+    "DOT Industry Designation(s)": "professional and kindred occupations",
+    "Strength": "Sedentary",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "052.167-010",
+    "DOT Occupational Title": "DIRECTOR, RESEARCH",
+    "DOT Industry Designation(s)": "motion picture; radio and television broadcasting",
+    "Strength": "Sedentary",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "072.101-018",
+    "DOT Occupational Title": "ORAL AND MAXILLOFACIAL SURGEON",
+    "DOT Industry Designation(s)": "medical services",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "072.101-034",
+    "DOT Occupational Title": "PROSTHODONTIST",
+    "DOT Industry Designation(s)": "medical services",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.162-022",
+    "DOT Occupational Title": "AIRLINE-RADIO OPERATOR, CHIEF",
+    "DOT Industry Designation(s)": "air transportation; business services",
+    "Strength": "Sedentary",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.262-010",
+    "DOT Occupational Title": "AIRLINE-RADIO OPERATOR",
+    "DOT Industry Designation(s)": "air transportation; business services",
+    "Strength": "Sedentary",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.262-014",
+    "DOT Occupational Title": "DISPATCHER",
+    "DOT Industry Designation(s)": "government services",
+    "Strength": "Sedentary",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.262-022",
+    "DOT Occupational Title": "RADIO OFFICER",
+    "DOT Industry Designation(s)": "water transportation",
+    "Strength": "Sedentary",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.262-026",
+    "DOT Occupational Title": "RADIO STATION OPERATOR",
+    "DOT Industry Designation(s)": "aircraft manufacturing",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.262-030",
+    "DOT Occupational Title": "RADIOTELEGRAPH OPERATOR",
+    "DOT Industry Designation(s)": "telephone and telegraph",
+    "Strength": "Sedentary",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.262-034",
+    "DOT Occupational Title": "RADIOTELEPHONE OPERATOR",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.362-010",
+    "DOT Occupational Title": "PHOTORADIO OPERATOR",
+    "DOT Industry Designation(s)": "printing and publishing; telephone and telegraph",
+    "Strength": "Sedentary",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.362-014",
+    "DOT Occupational Title": "RADIO-INTELLIGENCE OPERATOR",
+    "DOT Industry Designation(s)": "government services",
+    "Strength": "Sedentary",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "193.382-010",
+    "DOT Occupational Title": "ELECTRONIC INTELLIGENCE OPERATIONS SPECIALIST",
+    "DOT Industry Designation(s)": "military services",
+    "Strength": "Sedentary",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "203.562-010",
+    "DOT Occupational Title": "WIRE-TRANSFER CLERK",
+    "DOT Industry Designation(s)": "financial institutions",
+    "Strength": "Sedentary",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "235.462-010",
+    "DOT Occupational Title": "CENTRAL-OFFICE OPERATOR",
+    "DOT Industry Designation(s)": "telephone and telegraph",
+    "Strength": "Light",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "235.562-010",
+    "DOT Occupational Title": "CLERK, ROUTE",
+    "DOT Industry Designation(s)": "telephone and telegraph",
+    "Strength": "Sedentary",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "235.662-018",
+    "DOT Occupational Title": "DIRECTORY-ASSISTANCE OPERATOR",
+    "DOT Industry Designation(s)": "telephone and telegraph",
+    "Strength": "Sedentary",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "236.562-010",
+    "DOT Occupational Title": "TELEGRAPHER",
+    "DOT Industry Designation(s)": "railroad transportation",
+    "Strength": "Sedentary",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "236.562-014",
+    "DOT Occupational Title": "TELEGRAPHER AGENT",
+    "DOT Industry Designation(s)": "railroad transportation",
+    "Strength": "Sedentary",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "237.367-034",
+    "DOT Occupational Title": "PAY-STATION ATTENDANT",
+    "DOT Industry Designation(s)": "telephone and telegraph",
+    "Strength": "Light",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "239.382-010",
+    "DOT Occupational Title": "WIRE-PHOTO OPERATOR, NEWS",
+    "DOT Industry Designation(s)": "printing and publishing",
+    "Strength": "Sedentary",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "297.667-014",
+    "DOT Occupational Title": "MODEL",
+    "DOT Industry Designation(s)": "garment; retail trade; wholesale trade",
+    "Strength": "Light",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "299.647-010",
+    "DOT Occupational Title": "IMPERSONATOR, CHARACTER",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Light",
+    "SVP": 2,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "305.281-010",
+    "DOT Occupational Title": "COOK",
+    "DOT Industry Designation(s)": "domestic service",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "338.371-010",
+    "DOT Occupational Title": "EMBALMER APPRENTICE",
+    "DOT Industry Designation(s)": "personal service",
+    "Strength": "Heavy",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "338.371-014",
+    "DOT Occupational Title": "EMBALMER",
+    "DOT Industry Designation(s)": "personal service",
+    "Strength": "Heavy",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "379.384-010",
+    "DOT Occupational Title": "SCUBA DIVER",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Heavy",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "410.161-010",
+    "DOT Occupational Title": "ANIMAL BREEDER",
+    "DOT Industry Designation(s)": "agriculture and agricultural service",
+    "Strength": "Medium",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "410.161-014",
+    "DOT Occupational Title": "FUR FARMER",
+    "DOT Industry Designation(s)": "agriculture and agricultural service",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "410.161-018",
+    "DOT Occupational Title": "LIVESTOCK RANCHER",
+    "DOT Industry Designation(s)": "agriculture and agricultural service",
+    "Strength": "Heavy",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "410.161-022",
+    "DOT Occupational Title": "HOG-CONFINEMENT-SYSTEM MANAGER",
+    "DOT Industry Designation(s)": "agriculture and agricultural service",
+    "Strength": "Medium",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "411.161-010",
+    "DOT Occupational Title": "CANARY BREEDER",
+    "DOT Industry Designation(s)": "agriculture and agricultural service",
+    "Strength": "Light",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "411.161-014",
+    "DOT Occupational Title": "POULTRY BREEDER",
+    "DOT Industry Designation(s)": "agriculture and agricultural service",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "413.161-014",
+    "DOT Occupational Title": "REPTILE FARMER",
+    "DOT Industry Designation(s)": "agriculture and agricultural service",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "452.167-010",
+    "DOT Occupational Title": "FIRE WARDEN",
+    "DOT Industry Designation(s)": "forestry",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "452.367-010",
+    "DOT Occupational Title": "FIRE LOOKOUT",
+    "DOT Industry Designation(s)": "forestry",
+    "Strength": "Light",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "452.367-014",
+    "DOT Occupational Title": "FIRE RANGER",
+    "DOT Industry Designation(s)": "forestry",
+    "Strength": "Medium",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "455.367-010",
+    "DOT Occupational Title": "LOG GRADER",
+    "DOT Industry Designation(s)": "logging; sawmill and planing mill",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "455.487-010",
+    "DOT Occupational Title": "LOG SCALER",
+    "DOT Industry Designation(s)": "logging; millwork, veneer, plywood, and structural wood members; paper and pulp; sawmill and planing mill",
+    "Strength": "Light",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "519.684-010",
+    "DOT Occupational Title": "LADLE LINER",
+    "DOT Industry Designation(s)": "foundry; smelting and refining",
+    "Strength": "Medium",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "519.684-022",
+    "DOT Occupational Title": "STOPPER MAKER",
+    "DOT Industry Designation(s)": "blast furnace, steel work, and rolling and finishing mill",
+    "Strength": "Heavy",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "579.664-010",
+    "DOT Occupational Title": "CLAY-STRUCTURE BUILDER AND SERVICER",
+    "DOT Industry Designation(s)": "glass manufacturing",
+    "Strength": "Medium",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "661.281-010",
+    "DOT Occupational Title": "LOFT WORKER",
+    "DOT Industry Designation(s)": "ship and boat manufacturing and repairing",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "661.281-018",
+    "DOT Occupational Title": "PATTERNMAKER APPRENTICE, WOOD",
+    "DOT Industry Designation(s)": "foundry",
+    "Strength": "Medium",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "661.281-022",
+    "DOT Occupational Title": "PATTERNMAKER, WOOD",
+    "DOT Industry Designation(s)": "foundry",
+    "Strength": "Medium",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "661.380-010",
+    "DOT Occupational Title": "MODEL MAKER, WOOD",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Medium",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "690.682-078",
+    "DOT Occupational Title": "STITCHER, SPECIAL MACHINE",
+    "DOT Industry Designation(s)": "boot and shoe",
+    "Strength": "Light",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "690.682-082",
+    "DOT Occupational Title": "STITCHER, STANDARD MACHINE",
+    "DOT Industry Designation(s)": "boot and shoe",
+    "Strength": "Light",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "690.685-494",
+    "DOT Occupational Title": "STITCHER, TAPE-CONTROLLED MACHINE",
+    "DOT Industry Designation(s)": "boot and shoe",
+    "Strength": "Light",
+    "SVP": 2,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "693.261-018",
+    "DOT Occupational Title": "MODEL MAKER",
+    "DOT Industry Designation(s)": "aircraft-aerospace manufacturing",
+    "Strength": "Medium",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "714.281-010",
+    "DOT Occupational Title": "AIRCRAFT-PHOTOGRAPHIC-EQUIPMENT MECHANIC",
+    "DOT Industry Designation(s)": "photographic apparatus and materials",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "714.281-014",
+    "DOT Occupational Title": "CAMERA REPAIRER",
+    "DOT Industry Designation(s)": "photographic apparatus and materials",
+    "Strength": "Sedentary",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "714.281-018",
+    "DOT Occupational Title": "MACHINIST, MOTION-PICTURE EQUIPMENT",
+    "DOT Industry Designation(s)": "motion picture; photographic apparatus and materials",
+    "Strength": "Medium",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "714.281-022",
+    "DOT Occupational Title": "PHOTOGRAPHIC EQUIPMENT TECHNICIAN",
+    "DOT Industry Designation(s)": "photographic apparatus and materials",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "714.281-026",
+    "DOT Occupational Title": "PHOTOGRAPHIC-EQUIPMENT-MAINTENANCE TECHNICIAN",
+    "DOT Industry Designation(s)": "photographic apparatus and materials",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "714.281-030",
+    "DOT Occupational Title": "SERVICE TECHNICIAN, COMPUTERIZED-PHOTOFINISHING EQUIPMENT",
+    "DOT Industry Designation(s)": "photofinishing",
+    "Strength": "Medium",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.281-010",
+    "DOT Occupational Title": "WATCH REPAIRER",
+    "DOT Industry Designation(s)": "clocks watches, and allied products",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.281-014",
+    "DOT Occupational Title": "WATCH REPAIRER APPRENTICE",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-010",
+    "DOT Occupational Title": "ASSEMBLER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-014",
+    "DOT Occupational Title": "ASSEMBLER, WATCH TRAIN",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Sedentary",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-018",
+    "DOT Occupational Title": "BANKING PIN ADJUSTER",
+    "DOT Industry Designation(s)": "clocks watches, and allied products",
+    "Strength": "Sedentary",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-022",
+    "DOT Occupational Title": "BARREL ASSEMBLER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Sedentary",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-026",
+    "DOT Occupational Title": "BARREL-BRIDGE ASSEMBLER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Sedentary",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-030",
+    "DOT Occupational Title": "BARREL-ENDSHAKE ADJUSTER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Sedentary",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-038",
+    "DOT Occupational Title": "CHRONOMETER ASSEMBLER AND ADJUSTER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-042",
+    "DOT Occupational Title": "CHRONOMETER-BALANCE-AND-HAIRSPRING ASSEMBLER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-054",
+    "DOT Occupational Title": "HAIRSPRING ASSEMBLER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-062",
+    "DOT Occupational Title": "HAIRSPRING VIBRATOR",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-082",
+    "DOT Occupational Title": "PALLET-STONE INSERTER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-086",
+    "DOT Occupational Title": "PALLET-STONE POSITIONER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Sedentary",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.381-094",
+    "DOT Occupational Title": "WATCH ASSEMBLER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.584-014",
+    "DOT Occupational Title": "REPAIRER, AUTO CLOCKS",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "715.681-010",
+    "DOT Occupational Title": "TIMING ADJUSTER",
+    "DOT Industry Designation(s)": "clocks, watches, and allied products",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "761.381-014",
+    "DOT Occupational Title": "JIG BUILDER",
+    "DOT Industry Designation(s)": "wooden container",
+    "Strength": "Medium",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "788.684-114",
+    "DOT Occupational Title": "THREAD LASTER",
+    "DOT Industry Designation(s)": "boot and shoe",
+    "Strength": "Light",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "826.261-010",
+    "DOT Occupational Title": "FIELD-SERVICE ENGINEER",
+    "DOT Industry Designation(s)": "photographic apparatus and materials",
+    "Strength": "Light",
+    "SVP": 8,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "841.381-010",
+    "DOT Occupational Title": "PAPERHANGER",
+    "DOT Industry Designation(s)": "construction",
+    "Strength": "Medium",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "841.684-010",
+    "DOT Occupational Title": "BILLPOSTER",
+    "DOT Industry Designation(s)": "business services",
+    "Strength": "Light",
+    "SVP": 2,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "849.484-010",
+    "DOT Occupational Title": "BOILER RELINER, PLASTIC BLOCK",
+    "DOT Industry Designation(s)": "foundry",
+    "Strength": "Medium",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "850.663-010",
+    "DOT Occupational Title": "DREDGE OPERATOR",
+    "DOT Industry Designation(s)": "construction; coal, metal, and nonmetal mining and quarrying",
+    "Strength": "Medium",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "861.381-046",
+    "DOT Occupational Title": "TERRAZZO WORKER",
+    "DOT Industry Designation(s)": "construction",
+    "Strength": "Medium",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "861.381-050",
+    "DOT Occupational Title": "TERRAZZO-WORKER APPRENTICE",
+    "DOT Industry Designation(s)": "construction",
+    "Strength": "Medium",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "861.664-014",
+    "DOT Occupational Title": "TERRAZZO FINISHER",
+    "DOT Industry Designation(s)": "construction",
+    "Strength": "Very Heavy",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "899.261-010",
+    "DOT Occupational Title": "DIVER",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Heavy",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "899.684-010",
+    "DOT Occupational Title": "BONDACTOR-MACHINE OPERATOR",
+    "DOT Industry Designation(s)": "foundry",
+    "Strength": "Medium",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "910.362-010",
+    "DOT Occupational Title": "TOWER OPERATOR",
+    "DOT Industry Designation(s)": "railroad transportation",
+    "Strength": "Light",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "910.363-018",
+    "DOT Occupational Title": "YARD ENGINEER",
+    "DOT Industry Designation(s)": "railroad transportation",
+    "Strength": "Light",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "910.382-010",
+    "DOT Occupational Title": "CAR-RETARDER OPERATOR",
+    "DOT Industry Designation(s)": "railroad transportation",
+    "Strength": "Sedentary",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "910.583-010",
+    "DOT Occupational Title": "LABORER, CAR BARN",
+    "DOT Industry Designation(s)": "railroad transportation",
+    "Strength": "Light",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "910.683-010",
+    "DOT Occupational Title": "HOSTLER",
+    "DOT Industry Designation(s)": "railroad transportation",
+    "Strength": "Light",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "910.683-022",
+    "DOT Occupational Title": "TRANSFER-TABLE OPERATOR",
+    "DOT Industry Designation(s)": "railroad equipment building and repairing; railroad transportation",
+    "Strength": "Medium",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "911.663-010",
+    "DOT Occupational Title": "MOTORBOAT OPERATOR",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Medium",
+    "SVP": 5,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "919.663-014",
+    "DOT Occupational Title": "DINKEY OPERATOR",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Light",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "919.683-010",
+    "DOT Occupational Title": "DOCK HAND",
+    "DOT Industry Designation(s)": "air transportation",
+    "Strength": "Heavy",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "919.683-026",
+    "DOT Occupational Title": "TRACKMOBILE OPERATOR",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Medium",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "930.683-026",
+    "DOT Occupational Title": "ROOF BOLTER",
+    "DOT Industry Designation(s)": "coal, metal, and nonmetal mining and quarrying",
+    "Strength": "Medium",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "952.362-022",
+    "DOT Occupational Title": "POWER-REACTOR OPERATOR",
+    "DOT Industry Designation(s)": "utilities",
+    "Strength": "Medium",
+    "SVP": 7,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "960.362-010",
+    "DOT Occupational Title": "MOTION-PICTURE PROJECTIONIST",
+    "DOT Industry Designation(s)": "amusement and recreation; motion picture",
+    "Strength": "Light",
+    "SVP": 6,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "960.382-010",
+    "DOT Occupational Title": "AUDIOVISUAL TECHNICIAN",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Medium",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "961.367-010",
+    "DOT Occupational Title": "MODEL, PHOTOGRAPHERS'",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Light",
+    "SVP": 4,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24026",
+    "DOT Code": "961.667-010",
+    "DOT Occupational Title": "MODEL, ARTISTS'",
+    "DOT Industry Designation(s)": "any industry",
+    "Strength": "Light",
+    "SVP": 3,
+    "Comment": "Adjudicators may not cite work in these occupations to support a \"not disabled\" determination or decision that uses the medical-vocational guidelines."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "209.587-010",
+    "DOT Occupational Title": "Addresser",
+    "DOT Industry Designation(s)": "clerical",
+    "Strength": "Sedentary",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "249.587-018",
+    "DOT Occupational Title": "Document Preparer, Microfilming",
+    "DOT Industry Designation(s)": "business services",
+    "Strength": "Sedentary",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "249.587-014",
+    "DOT Occupational Title": "Cutter-and-Paster, Press Clippings",
+    "DOT Industry Designation(s)": "business services",
+    "Strength": "Sedentary",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "239.687-014",
+    "DOT Occupational Title": "Tube Operator",
+    "DOT Industry Designation(s)": "clerical",
+    "Strength": "Sedentary",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "318.687-018",
+    "DOT Occupational Title": "Silver Wrapper",
+    "DOT Industry Designation(s)": "hotel and restaurant",
+    "Strength": "Light",
+    "SVP": 1,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "349.667-010",
+    "DOT Occupational Title": "Host/Hostess, Dance Hall",
+    "DOT Industry Designation(s)": "amusement and recreation",
+    "Strength": "Light",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "349.667-014",
+    "DOT Occupational Title": "Host/Hostess, Head",
+    "DOT Industry Designation(s)": "amusement and recreation",
+    "Strength": "Light",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "379.367-010",
+    "DOT Occupational Title": "Surveillance-System Monitor",
+    "DOT Industry Designation(s)": "government services",
+    "Strength": "Sedentary",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "521.687-010",
+    "DOT Occupational Title": "Almond Blancher, Hand",
+    "DOT Industry Designation(s)": "canning and preserving",
+    "Strength": "Sedentary",
+    "SVP": 1,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "521-687-086",
+    "DOT Occupational Title": "Nut Sorter",
+    "DOT Industry Designation(s)": "canning and preserving",
+    "Strength": "Light",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "726.685-010",
+    "DOT Occupational Title": "Magnetic-Tape Winder",
+    "DOT Industry Designation(s)": "recording",
+    "Strength": "Light",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "782.687-030",
+    "DOT Occupational Title": "Puller-Through",
+    "DOT Industry Designation(s)": "glove and mitten",
+    "Strength": "Sedentary",
+    "SVP": 1,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  },
+  {
+    "EM": "EM-24027",
+    "DOT Code": "976.385-010",
+    "DOT Occupational Title": "Microfilm Processor",
+    "DOT Industry Designation(s)": "business services",
+    "Strength": "Light",
+    "SVP": 2,
+    "Comment": "Requires additional evidence from a Vocational Specialist (VS) or Vocational Expert (VE) supporting the adjudicator's conclusion that, as the occupation is currently performed, its requirements are consistent with the individual's RFC, and it exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant."
+  }
+]

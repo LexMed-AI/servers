@@ -1,0 +1,26 @@
+{
+  "name": "@modelcontextprotocol/server-bls-analyzer",
+  "version": "0.6.2",
+  "description": "BLS data analyzer server for Model Context Protocol",
+  "license": "MIT",
+  "author": "Anthropic, PBC (https://anthropic.com)",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^0.6.2",
+    "puppeteer": "^21.5.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2"
+  }
+} 

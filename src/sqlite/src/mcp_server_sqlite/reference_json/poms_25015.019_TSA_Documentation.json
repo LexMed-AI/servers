@@ -1,0 +1,515 @@
+
+[
+  {
+    "section": "A",
+    "example_number": 1,
+    "conclusion": "Skills are not transferable",
+    "claimant_profile": {
+      "age_category": "Closely approaching advanced age",
+      "age_specific": 52,
+      "education": "High school",
+      "rfc": "Sedentary"
+    },
+    "prw": {
+      "title": "Structural-Steel Worker",
+      "dot_code": "801.361-014",
+      "skill_level": "Skilled",
+      "svp": 7
+    },
+    "skills": [
+      "Reading blueprints related to structural forms",
+      "Using tools (spud wrenches, hammers, impact drivers, air compressors, cranes) to position and connect structural steel",
+      "Lead worker duties: checking timesheets, requesting materials via order list, supervising on-the-job performance"
+    ],
+    "skill_limitations": [
+      "Not involved in hiring/firing",
+      "Did not use computers"
+    ],
+    "transferability_likelihood": {
+      "assessment": "Unlikely",
+      "reasoning": "PRW was highly skilled heavy work; skills unlikely to transfer to sedentary work."
+    },
+    "searches_performed": [
+      "WF 102",
+      "MPSMS 360"
+    ],
+    "search_rationale": "Since skills are unlikely to transfer, a more extensive search is not necessary.",
+    "analysis": "Search revealed sedentary occupations, but products, raw materials, and processes were too dissimilar (e.g., Boot and Shoe, Instruments, Protective Devices). Occupations like Pipestem Repairer or Repairer, Art Objects also had dissimilar products/processes. Lead worker tasks were administrative/clerical but not the type that typically provide transferable skills.",
+    "finding": "Skills not transferable.",
+    "applicable_rule": "201.14",
+    "final_conclusion": "Disabled",
+    "cited_occupations_if_transferable": null
+  },
+  {
+    "section": "A",
+    "example_number": 2,
+    "conclusion": "Skills are not transferable",
+    "claimant_profile": {
+      "age_category": "Closely approaching advanced age",
+      "age_specific": 53,
+      "education": "High school",
+      "rfc": "Sedentary"
+    },
+    "prw": {
+      "title": "Cook, Fast Food",
+      "dot_code": "313.374-010",
+      "skill_level": "Skilled",
+      "svp": 5
+    },
+    "skills": [
+      "Cutting and chopping vegetables",
+      "Slicing meats and rolls",
+      "Making sandwiches",
+      "Deep frying foods",
+      "Cleaning and sanitizing work area"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Unlikely",
+      "reasoning": "Skills from medium exertion food preparation work do not apply to sedentary work processes."
+    },
+    "searches_performed": [
+      "WF 146",
+      "MPSMS 903"
+    ],
+    "search_rationale": null,
+    "analysis": "WF 146 yielded no occupations. MPSMS 903 identified Diet Clerk (medical services), which involves selecting food for patients, not using the claimant's food preparation skills.",
+    "finding": "Skills not transferable.",
+    "applicable_rule": "201.14",
+    "final_conclusion": "Disabled",
+    "cited_occupations_if_transferable": null
+  },
+  {
+    "section": "A",
+    "example_number": 3,
+    "conclusion": "Skills are not transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 57,
+      "education": "More than high school",
+      "rfc": "Sedentary"
+    },
+    "prw": {
+      "title": "General Duty Nurse",
+      "dot_code": "075.364-010",
+      "skill_level": "Skilled",
+      "svp": 7
+    },
+    "skills": [
+      "Taking vital signs (BP, pulse, temp, pulse ox)",
+      "Charting complaints and vitals",
+      "Hanging/checking IV medication",
+      "Dispensing other medications",
+      "Caring for patients"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Unlikely",
+      "reasoning": "Requires very little, if any, adjustment due to age/RFC. PRW was medium exertion, and claimant lacked extensive administrative duties needed for sedentary work transfer."
+    },
+    "searches_performed": [
+      "WF 294",
+      "MPSMS 924"
+    ],
+    "search_rationale": null,
+    "analysis": "WF 294 yielded 8 occupations, 3 in Medical Services. Optometric assistant (different setting). Cardiac monitor tech & Holter scanning tech (technical focus, not patient care/charting/meds). MPSMS 924 yielded 2 administrative occupations (nursing registrar, medical file reviewer) in office settings, not hospital.",
+    "finding": "Skills not transferable.",
+    "applicable_rule": "201.06",
+    "final_conclusion": "Disabled",
+    "cited_occupations_if_transferable": null
+  },
+  {
+    "section": "A",
+    "example_number": 4,
+    "conclusion": "Skills are not transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 57,
+      "education": "High school",
+      "rfc": "Light",
+      "environmental_limitations": ["Avoid concentrated exposure to dust, fumes, poor ventilation, heights, machinery"]
+    },
+    "prw": {
+      "title": "Bulldozer Operator I",
+      "dot_code": "850.683-010",
+      "skill_level": "Skilled",
+      "svp": 5
+    },
+    "skills": [
+      "Driving and operating bulldozer",
+      "Operating level controls to estimate cut depth",
+      "Reading grade stakes to set blade level"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Unlikely",
+      "reasoning": "Skills require exposure to environmental factors (fumes, dust, machinery) prohibited by RFC."
+    },
+    "searches_performed": [
+      "WF 007",
+      "WF 011",
+      "MPSMS 340",
+      "MPSMS 350",
+      "MPSMS 360"
+    ],
+    "search_rationale": null,
+    "analysis": "Searches only listed occupations requiring exposure to concentrated fumes, dust, and dangerous machinery, which claimant must avoid.",
+    "finding": "Skills not transferable.",
+    "applicable_rule": "202.06",
+    "final_conclusion": "Disabled",
+    "cited_occupations_if_transferable": null
+  },
+  {
+    "section": "A",
+    "example_number": 5,
+    "conclusion": "Skills are not transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 59,
+      "education": "High school",
+      "rfc": "Sedentary"
+    },
+    "prw": {
+      "title": "Electrician",
+      "dot_code": "824.261-010",
+      "skill_level": "Skilled",
+      "svp": 7
+    },
+    "skills": [
+      "Reading blueprints",
+      "Writing up equipment orders",
+      "Using tools (ohmmeters, pliers, drills) to place wiring",
+      "Delegating duties, lead worker",
+      "Wiring new construction",
+      "Knowledge of inspection standards"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Unlikely",
+      "reasoning": "Requires very little, if any, adjustment due to age/RFC. PRW was medium exertion and lacked extensive administrative skills needed for sedentary work transfer."
+    },
+    "searches_performed": [
+      "WF 111",
+      "MPSMS 580"
+    ],
+    "search_rationale": null,
+    "analysis": "WF 111 yielded no occupations in construction. MPSMS 580 yielded Supervisor of Vendor Parts (any industry), which reviews vendor parts and does not use electrician skills.",
+    "finding": "Skills not transferable.",
+    "applicable_rule": "201.06",
+    "final_conclusion": "Disabled",
+    "cited_occupations_if_transferable": null
+  },
+  {
+    "section": "A",
+    "example_number": 6,
+    "conclusion": "Skills are not transferable",
+    "claimant_profile": {
+      "age_category": "Closely approaching retirement age",
+      "age_specific": 60,
+      "education": "Limited",
+      "rfc": "Light"
+    },
+    "prw": {
+      "title": "Composite Job (Retail Manager/Stock Clerk)",
+      "dot_code": "Composite (e.g., 185.167-046 / 299.367-014)",
+      "skill_level": "Skilled (analyzed as)",
+      "svp": 5
+    },
+    "skills": [
+      "Communicating needs to sales associates",
+      "Cleaning areas",
+      "Stocking shelves",
+      "Bringing supplies to floors",
+      "Using scanners for stocking"
+    ],
+    "skill_limitations": [
+      "No traditional supervisory duties (hiring/firing, reviews, timesheets, personnel actions)",
+      "Did not gain clerical or management skills"
+    ],
+    "transferability_likelihood": {
+      "assessment": "Unlikely",
+      "reasoning": "Requires very little, if any, adjustment due to age/RFC. Lacked traditional supervisory/clerical/management skills. Job was essentially manager/helper/stocker."
+    },
+    "searches_performed": [
+      "WF 292",
+      "WF 221",
+      "MPSMS 881"
+    ],
+    "search_rationale": null,
+    "analysis": "Searches yielded several light occupations (SVP <= 5), but they all involved sales skills, which claimant did not gain. Claimant did not gain sales skills allowing transfer to other light work.",
+    "finding": "Skills not transferable.",
+    "applicable_rule": "202.02",
+    "final_conclusion": "Disabled",
+    "cited_occupations_if_transferable": null
+  },
+  {
+    "section": "B",
+    "example_number": 1,
+    "conclusion": "Skills are transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 58,
+      "education": "More than high school",
+      "rfc": "Light",
+      "manipulative_limitations": ["Handling limited to frequent"]
+    },
+    "prw": {
+      "title": "General Duty Nurse",
+      "dot_code": "075.364-010",
+      "skill_level": "Skilled",
+      "svp": 7
+    },
+    "skills": [
+      "Starting IVs",
+      "Checking on patients",
+      "Taking vital signs",
+      "Charting to computer",
+      "Getting patient histories",
+      "Ensuring test orders sent/received"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Highly likely",
+      "reasoning": "Claimant has skilled work and does not yet meet the age (60) for the 'very little, if any' adjustment standard for light RFC."
+    },
+    "searches_performed": [
+      "WF 294",
+      "MPSMS 924"
+    ],
+    "search_rationale": null,
+    "analysis": "Searches revealed numerous light occupations within RFC. Cited occupations are light, require no more than frequent handling, are skilled/semiskilled (SVP 3-7), and use claimant's nursing skills.",
+    "finding": "Skills transferable.",
+    "applicable_rule": "202.07",
+    "final_conclusion": "Not disabled",
+    "cited_occupations_if_transferable": [
+      {"title": "Nurse, Staff, Occupational Health Nursing", "dot_code": "075.374-022"},
+      {"title": "Nurse, School", "dot_code": "075.124-010"},
+      {"title": "Nurse, Office", "dot_code": "075.374-014"}
+    ]
+  },
+  {
+    "section": "B",
+    "example_number": 2,
+    "conclusion": "Skills are transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 56,
+      "education": "High school",
+      "rfc": "Light"
+    },
+    "prw": {
+      "title": "Carpenter",
+      "dot_code": "860.381-022",
+      "skill_level": "Skilled",
+      "svp": 7
+    },
+    "skills": [
+      "Interpreting blueprints and building plans",
+      "Using measuring instruments (calipers, protractor, compass)",
+      "Using equipment (saws, power tools)",
+      "Knowledge of building codes, construction standards, woodworking principles"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Likely",
+      "reasoning": "Claimant has highly skilled work, light RFC, and does not meet the 'very little, if any' adjustment standard age."
+    },
+    "searches_performed": [
+      "WF 102",
+      "MPSMS 360",
+      "MPSMS 450"
+    ],
+    "search_rationale": null,
+    "analysis": "WF search yielded few construction occupations; light ones required supervisory skills claimant lacked. MPSMS search yielded three light occupations using claimant's woodworking skills.",
+    "finding": "Skills transferable.",
+    "applicable_rule": "202.07",
+    "final_conclusion": "Not disabled",
+    "cited_occupations_if_transferable": [
+      {"title": "Grader", "dot_code": "669.687-030"},
+      {"title": "Band-Scroll-Saw Operator", "dot_code": "667.682-010"},
+      {"title": "Chucking-and-Sawing-Machine Operator", "dot_code": "669.682-026"}
+    ]
+  },
+  {
+    "section": "B",
+    "example_number": 3,
+    "conclusion": "Skills are transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 57,
+      "education": "High school",
+      "rfc": "Light"
+    },
+    "prw": {
+      "title": "Composite Job (Sales Rep/Dept Mgr/Wholesaler)",
+      "dot_code": "Composite (e.g., 279.357-014 / 299.137-010 / 185.157-018)",
+      "skill_level": "Skilled",
+      "svp": 7
+    },
+    "skills": [
+      "Management of staff (wholesale warehouse)",
+      "Suggesting purchases for inventory",
+      "Supervising warehouse staff (purchase orders, shipping)",
+      "Acting as sales representative to retail businesses",
+      "Meeting with buyers",
+      "Providing samples and demonstrations",
+      "Hiring and firing warehouse staff",
+      "Ensuring accurate inventories"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Highly likely",
+      "reasoning": "Claimant has numerous skills transferable across industries. Does not meet 'very little, if any' adjustment standard age. High skill level."
+    },
+    "searches_performed": [
+      "WF 292",
+      "WF 221"
+    ],
+    "search_rationale": "No search of MPSMS codes necessary because three occupations identified in WF search.",
+    "analysis": "Searches yielded light work (SVP 3-7) utilizing claimant's skills. High-level transferable skills and light RFC support transferability.",
+    "finding": "Skills transferable.",
+    "applicable_rule": "202.07",
+    "final_conclusion": "Not disabled",
+    "cited_occupations_if_transferable": [
+      {"title": "Sales Representative, Recreation and Sporting Goods", "dot_code": "277.357-026"},
+      {"title": "Manager, Retail Store", "dot_code": "185.167-046"},
+      {"title": "Stock Supervisor", "dot_code": "222.137-034"}
+    ]
+  },
+  {
+    "section": "B",
+    "example_number": 4,
+    "conclusion": "Skills are transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 59.17, 
+      "education": "High school",
+      "rfc": "Light"
+    },
+    "prw": {
+      "title": "Deputy Sheriff",
+      "dot_code": "377.263-010",
+      "skill_level": "Skilled",
+      "svp": 5
+    },
+    "skills": [
+      "Patrolling designated areas",
+      "Enforcing laws",
+      "Completing reports",
+      "Responding to emergency calls",
+      "Directing traffic",
+      "Making arrests",
+      "Writing tickets"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Likely",
+      "reasoning": "Claimant has skilled work, light RFC, and does not yet meet the 'very little, if any' adjustment standard age (60)."
+    },
+    "searches_performed": [
+      "WF 293",
+      "WF 271",
+      "MPSMS 951"
+    ],
+    "search_rationale": null,
+    "analysis": "Searches yielded several semiskilled light occupations utilizing claimant's patrolling and reporting skills.",
+    "finding": "Skills transferable.",
+    "applicable_rule": "202.07",
+    "final_conclusion": "Not disabled",
+    "cited_occupations_if_transferable": [
+      {"title": "Deputy Sheriff, Building Guard", "dot_code": "377.667-014"},
+      {"title": "Deputy Sheriff, Civil Division", "dot_code": "377.667-018"},
+      {"title": "Merchant Patroller", "dot_code": "372.667-038"}
+    ]
+  },
+  {
+    "section": "B",
+    "example_number": 5,
+    "conclusion": "Skills are transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 56,
+      "education": "High school",
+      "rfc": "Light"
+    },
+    "prw": {
+      "title": "Electrician",
+      "dot_code": "824.261-010",
+      "skill_level": "Skilled",
+      "svp": 7
+    },
+    "skills": [
+      "Wiring ductwork of machinery/equipment using conduit",
+      "Reading blueprints",
+      "Welding to fasten ductwork",
+      "Running wiring",
+      "Installing control panels",
+      "Testing connections with voltmeters",
+      "Installing electronic fixtures (hand/power tools)"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Highly likely",
+      "reasoning": "Claimant has highly skilled work and does not meet the 'very little, if any' adjustment standard age (60)."
+    },
+    "searches_performed": [
+      "WF 111",
+      "MPSMS 580"
+    ],
+    "search_rationale": null,
+    "analysis": "Searches yielded several semiskilled light occupations utilizing claimant's wiring and installing skills.",
+    "finding": "Skills transferable.",
+    "applicable_rule": "202.07",
+    "final_conclusion": "Not disabled",
+    "cited_occupations_if_transferable": [
+      {"title": "Electrician, Manufactured Buildings", "dot_code": "824.681-010"},
+      {"title": "Tester, Electrical Continuity", "dot_code": "729.684-058"},
+      {"title": "Wirer, Street Light", "dot_code": "821.684-018"}
+    ]
+  },
+  {
+    "section": "B",
+    "example_number": 6,
+    "conclusion": "Skills are transferable",
+    "claimant_profile": {
+      "age_category": "Advanced age",
+      "age_specific": 58,
+      "education": "High school",
+      "rfc": "Light"
+    },
+    "prw": {
+      "title": "Automobile Mechanic",
+      "dot_code": "620.261-010",
+      "skill_level": "Skilled",
+      "svp": 7
+    },
+    "skills": [
+      "Diagnosing damage/malfunction (cars/trucks)",
+      "Knowledge of repair requirements",
+      "Reading charts, technical manuals",
+      "Using computers",
+      "Using hand/power tools for repairs",
+      "Inspecting and testing repairs"
+    ],
+    "skill_limitations": null,
+    "transferability_likelihood": {
+      "assessment": "Highly likely",
+      "reasoning": "Claimant has highly skilled work and does not meet the 'very little, if any' adjustment standard age (60)."
+    },
+    "searches_performed": [
+      "WF 111",
+      "WF 121",
+      "MPSMS 591"
+    ],
+    "search_rationale": null,
+    "analysis": "Searches yielded several semiskilled light occupations utilizing claimant's auto repair and inspecting skills.",
+    "finding": "Skills transferable.",
+    "applicable_rule": "202.07",
+    "final_conclusion": "Not disabled",
+    "cited_occupations_if_transferable": [
+      {"title": "Final Inspector", "dot_code": "806.687-018"},
+      {"title": "New-Car Inspector", "dot_code": "919.363-010"},
+      {"title": "Tune-up Mechanic", "dot_code": "620.281-066"}
+    ]
+  }
+]

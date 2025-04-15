@@ -1,0 +1,153 @@
+{
+    "id": "SSR_24-3p_Summary_Guidance",
+    "type": "Summary / Training Material",
+    "title": "Summary and Guidance for SSR 24-3p: Use of Occupational Information and Vocational Specialist and Vocational Expert Evidence",
+    "source_document_id": "SSR 24-3p",
+    "effective_date": "2025-01-06",
+    "key_terms": [
+      {
+        "term": "Vocational Evidence",
+        "definition": "Testimony or response to interrogatories provided by a vocational expert (VE) (at the hearing level) or a vocational specialist (VS) (at the state agency)."
+      },
+      {
+        "term": "Data Sources",
+        "definition": "Any reliable source of occupational information commonly used by vocational professionals and relevant under SSA rules. Some sources are administratively noticed (20 CFR 404.1566(d), 416.966(d))."
+      },
+      {
+        "term": "Vocational Classification Systems",
+        "definition": "A standardized description of jobs that are similar regarding work performed and worker skills."
+      },
+      {
+        "term": "Dictionary of Occupational Titles (DOT) Numbers",
+        "definition": "A classification system relying on DOT/SCO definitions."
+      },
+      {
+        "term": "Standard Occupational Classification (SOC) Codes",
+        "definition": "A classification system, often category-based. One SOC code may correspond to multiple DOT numbers. Used in sources like OEWS and ORS."
+      },
+      {
+        "term": "Exertion",
+        "definition": "Limitations affecting ability to meet strength demands (sitting, standing, walking, lifting, carrying, pushing, pulling). Defined in 20 CFR 404.1569a(b), 416.969a(b)."
+      },
+      {
+        "term": "Education",
+        "definition": "Categories: illiteracy, marginal, limited, high school and above. Defined in 20 CFR 404.1564, 416.964."
+      },
+      {
+        "term": "Skill Level",
+        "definition": "Unskilled, semi-skilled, skilled. Associated with Specific Vocational Preparation (SVP). Defined in 20 CFR 404.1568, 416.968; referenced in SSR 24-3p, POMS DI 25001.001."
+      },
+      {
+        "term": "Non-Exertional Limitation",
+        "definition": "Limitations affecting ability to meet job demands other than strength demands. Defined in 20 CFR 404.1569a(c), 416.969a(c)."
+      }
+    ],
+    "summary_of_general_changes": {
+      "what_has_not_changed": [
+        "Commissioner retains burden for providing evidence of other work at step five.",
+        "ALJs continue to use VEs for occupational information.",
+        "SSA continues to take administrative notice of the DOT as a reliable source corresponding to many SSA rules.",
+        "ALJs must still ensure VEs address EM-24027 REV requirements (jobs with potentially outdated processes/materials) if citing those specific DOT occupations."
+      ],
+      "what_is_new_ssr_24_3p": [
+        "VEs may explicitly consider *any* reliable source commonly used by vocational professionals relevant under SSA rules (not just DOT).",
+        "Avoid using the term 'conflict' regarding vocational data sources vs. VE evidence.",
+        "SSR 24-3p REMOVES the SSR 00-4p requirement for ALJs/VEs to identify and resolve conflicts between VE evidence and data sources (specifically DOT).",
+        "HOWEVER, differences between data sources OR between a data source and SSA's definitions of Skill, Exertion, and Education (SEE) MUST still be addressed and accounted for.",
+        "Establishes new expectations for VEs regarding source identification, methodology explanation, and addressing definitional differences (detailed below)."
+      ]
+    },
+    "comparison_ssr_00_4p_vs_ssr_24_3p": [
+      {
+        "policy_topic": "Data Sources",
+        "ssr_00_4p_approach": "Focuses on use of the Dictionary of Occupational Titles (DOT).",
+        "ssr_24_3p_approach": "VEs may consider any reliable source commonly used by vocational professionals relevant under agency rules (e.g., DOT, ORS, OEWS, etc.)."
+      },
+      {
+        "policy_topic": "Approach to Job Number Estimates",
+        "ssr_00_4p_approach": "Does not address this issue.",
+        "ssr_24_3p_approach": "VEs must explain their general approach to estimating job numbers."
+      },
+      {
+        "policy_topic": "Differences Between Classification Systems (for Job Numbers)",
+        "ssr_00_4p_approach": "Does not address this issue.",
+        "ssr_24_3p_approach": "VEs may cite sources with different classifications (e.g., DOT and SOC). They must explain how they accounted for this in job estimates."
+      },
+      {
+        "policy_topic": "Differences Between Agency Policy Definitions and Data Source Definitions (for any VE evidence)",
+        "ssr_00_4p_approach": "ALJs could not rely on VE evidence based on assumptions/definitions inconsistent with SSA regulatory policies/definitions.",
+        "ssr_24_3p_approach": "Focuses specifically on differences in Skill level, Exertion, and Education (SEE). VEs must explain how they accounted for differences in these three controlling areas."
+      }
+    ],
+    "new_policy_summary_table_ssr_24_3p": [
+      {
+        "issue_id": "A",
+        "requirement_summary": "VE must identify data source(s).",
+        "detailed_requirement": "VEs may use any reliable source relevant under agency rules and must identify the source(s) they rely upon.",
+        "example_explanation": "VE: 'I am basing my testimony on the DOT and the U.S. Bureau of Labor Statistics’ Occupational Employment and Wage Statistics (OEWS).'"
+      },
+      {
+        "issue_id": "B",
+        "requirement_summary": "VE must discuss general approach to estimating job numbers.",
+        "detailed_requirement": "VEs must explain their general approach. SSA does not dictate a specific method. Reasonable explanation of general estimates is acceptable.",
+        "example_explanation": "VE notes OEWS uses SOC codes. States used experience/education to determine prevalence of specific DOT jobs within the broader SOC group. (See Example One below for detail)."
+      },
+      {
+        "issue_id": "C",
+        "requirement_summary": "VE must explain how differences between non-corresponding data sources (e.g., DOT vs. SOC for job numbers) were accounted for.",
+        "detailed_requirement": "If using sources with different classifications for job estimates, VE must identify differences and explain how they were accounted for. (Often covered by explanation in B).",
+        "example_explanation": "VE explains source for occupation uses DOT, source for job numbers uses SOC. Explains how difference was accounted for. (See Example One below for detail)."
+      },
+      {
+        "issue_id": "D",
+        "requirement_summary": "VE must identify and explain how differences between data source(s) and agency policy definitions for Skill Level, Exertion, or Education (SEE) were accounted for.",
+        "detailed_requirement": "SEE definitions in SSA policy are controlling. If VE's source defines SEE differently, VE must identify the difference and explain whether/how it was accounted for in the evidence provided.",
+        "example_explanation": "VE relies on ORS (SOC-based) which defines light work differently than SSA. VE identifies this difference and explains how job numbers were adjusted to exclude jobs exceeding SSA's definition. (See Example Two below for detail)."
+      }
+    ],
+    "new_policy_summary_examples": {
+      "example_one_job_numbers_classifications": {
+        "issues_addressed": ["B (Job Number Approach)", "C (Classification Differences)"],
+        "scenario_summary": "VE uses BLS (OEWS) figures (SOC-based) for job numbers related to a DOT occupation (cleaner, housekeeping).",
+        "ve_explanation_summary": [
+          "Acknowledges BLS doesn't provide numbers for individual DOT jobs and often groups occupations.",
+          "Explains method: Look at composition of the SOC group (e.g., 9 occupations for cleaner).",
+          "Uses 20+ years of job placement experience/labor market knowledge to assess which occupations within the group are common vs. less common.",
+          "Determines the specific DOT job (cleaner) makes up a large portion of the SOC group (925,000 jobs total).",
+          "Provides a conservative estimate (e.g., 200,000) for the specific DOT job within that group that fits the hypothetical, based on experience, training, observation.",
+          "States this is the general analysis type used."
+        ]
+      },
+      "example_two_exertion_definition_difference": {
+        "issues_addressed": ["D (Exertion Definition Difference)"],
+        "scenario_summary": "ALJ hypothetical limits individual to Light work (lift/carry 20 lbs max). VE relies on ORS data.",
+        "problem": "ORS definition of light work includes carrying/lifting up to 25 lbs occasionally, exceeding SSA's 20 lb limit.",
+        "ve_explanation_requirement": "VE must identify the difference in definition and explain how they accounted for it.",
+        "ve_explanation_example": "VE excludes jobs from the ORS data that would require lifting/carrying more than 20 lbs occasionally to align with SSA's definition. VE should also provide basis for testimony (experience, observation, surveys, studies)."
+      }
+    },
+    "ssr_24_3p_flow_chart_description": [
+      {"step": 1, "question": "[A] Did VE identify data sources used?", "action_if_no": "Ask VE to identify sources.", "proceed_if_yes": "Go to Step 2."},
+      {"step": 2, "question": "[B] Did VE explain general approach for job number estimates?", "action_if_no": "Ask VE for general approach explanation.", "proceed_if_yes": "Go to Step 3."},
+      {"step": 3, "question": "[C] Did VE explain how differences between classification systems (e.g., DOT vs SOC) in data sources were accounted for in job estimates?", "action_if_no": "Ask VE to identify/explain accounting for classification differences.", "proceed_if_yes": "Go to Step 4."},
+      {"step": 4, "question": "[D] Did VE explain how differences between source definitions and SSA policy for Skill, Exertion, or Education (SEE) were accounted for?", "action_if_no": "Ask VE to identify/explain accounting for SEE definition differences.", "proceed_if_yes": "End of specific SSR 24-3p inquiry points."},
+      {"note": "ALJ must still evaluate overall sufficiency of VE evidence per HALLEX I-2-6-74."}
+    ],
+    "resources": {
+      "agency_policy": [
+        "SSR 24-3p",
+        "HALLEX I-2-6-74 – Testimony of a Vocational Expert",
+        "HALLEX I-2-5-48 – Vocational Experts – General"
+      ],
+      "regulations": [
+        "20 CFR 404.1568 / 416.968 – Skill Level Definitions",
+        "20 CFR 404.1567 / 416.967 – Exertion Definitions",
+        "20 CFR 404.1564 / 416.964 – Education Definition"
+      ],
+      "vocational_resources": [
+        "Occupational Information System (OIS) – SSA/DOL project",
+        "Occupational Requirements Survey (ORS)",
+        "ORS Strength Demands - U.S. Bureau of Labor Statistics"
+      ]
+    }
+  }

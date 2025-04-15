@@ -6,6 +6,9 @@ from contextlib import closing
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union, Callable # Added Callable
 
+# Import analysis utils for validation
+from . import analysis_utils
+
 # Get a logger for this module
 logger = logging.getLogger(__name__)
 
@@ -202,21 +205,45 @@ class DatabaseHandler:
          else:
               return self._get_job_by_code_impl(dot_code)
     def _get_job_by_code_impl(self, dot_code: str) -> Optional[Dict[str, Any]]:
-         """Implementation for get_job_by_code."""
+         """Implementation for get_job_by_code. Prioritizes formatted code match."""
          if not dot_code: return None
-         cleaned_numeric_code = self._clean_dot_code(dot_code)
-         standard_formatted_code = self._format_dot_code_standard(cleaned_numeric_code)
+         term = dot_code.strip()
+
+         # 1. Check if the search term is a valid DOT code format
+         validation_result = analysis_utils.validate_dot_code(term)
+         is_valid_dot_format = validation_result.get('is_valid_format', False)
+
          try:
+             # 2a. If valid format, try querying by the formatted string first
+             if is_valid_dot_format:
+                 logger.debug(f"get_job_by_code: Term '{term}' matches format. Querying by CAST TEXT.")
+                 results = self._execute_query("SELECT * FROM DOT WHERE CAST(Code AS TEXT) = ? LIMIT 1;", [term])
+                 if results:
+                     return results[0]
+                 else:
+                      logger.debug(f"get_job_by_code: No match found for formatted code '{term}'.")
+                      # Optionally fall through to Ncode check even if format matched but no record found?
+                      # For now, let's fall through.
+
+             # 2b. If not valid format OR formatted query failed, try cleaning to Ncode
+             cleaned_numeric_code = self._clean_dot_code(term)
              if cleaned_numeric_code:
                  try:
                      ncode_value = int(cleaned_numeric_code)
+                     logger.debug(f"get_job_by_code: Querying by Ncode {ncode_value}.")
                      results = self._execute_query("SELECT * FROM DOT WHERE Ncode = ? LIMIT 1;", [ncode_value])
-                     if results: return results[0]
-                 except ValueError: pass # Not purely numeric
-             if standard_formatted_code:
-                 results = self._execute_query("SELECT * FROM DOT WHERE CAST(Code AS TEXT) = ? LIMIT 1;", [standard_formatted_code])
-                 if results: return results[0]
+                     if results:
+                         return results[0]
+                     else:
+                         logger.debug(f"get_job_by_code: No match found for Ncode {ncode_value}.")
+                 except ValueError:
+                     logger.warning(f"get_job_by_code: Could not convert cleaned code '{cleaned_numeric_code}' to integer Ncode.")
+                     pass # Not purely numeric after cleaning
+
+             # If neither method found a result
+             logger.debug(f"get_job_by_code: No match found for input '{dot_code}' using any method.")
              return None
+
          except sqlite3.Error as e:
             logger.error(f"DB error in _get_job_by_code_impl for '{dot_code}': {e}")
             return None # Return None on DB error
@@ -228,39 +255,89 @@ class DatabaseHandler:
         else:
             return self._find_job_data_impl(search_term)
     def _find_job_data_impl(self, search_term: str) -> List[Dict[str, Any]]:
-        """Implementation for find_job_data multi-step search."""
+        """Implementation for find_job_data: Prioritize DOT format match.
+
+        Checks if search_term matches XXX.XXX-XXX format. If yes, searches
+        by that exact code first. Otherwise, performs a broader title search.
+        """
         term = search_term.strip()
         if not term: return []
-        
-        # Use a single query with proper indexing and scoring
-        query = """
+
+        # 1. Check if the search term is a valid DOT code format
+        validation_result = analysis_utils.validate_dot_code(term)
+        is_valid_dot_format = validation_result.get('is_valid_format', False)
+
+        if is_valid_dot_format:
+            logger.debug(f"Search term '{term}' matches DOT format. Querying by exact code.")
+            # 2a. Query specifically by the formatted DOT code
+            dot_query = """
+                SELECT
+                    Ncode AS dotCodeNumeric,
+                    CAST(Code AS TEXT) AS dotCodeFormatted,
+                    Title AS jobTitle,
+                    Definitions,
+                    SVPNum,
+                    StrengthNum,
+                    -- Add other frequently needed fields explicitly if desired
+                    *
+                FROM DOT
+                WHERE CAST(Code AS TEXT) = ?
+                LIMIT 1;
+            """
+            # Ensure all fields needed by generate_formatted_job_report are selected
+            # The '*' will select all, but explicit listing can be safer if schema changes.
+            results = self._execute_query(dot_query, [term])
+            if results: # Return immediately if exact DOT match found
+                logger.debug(f"Found exact match for DOT code '{term}'.")
+                return results
+            else:
+                 # Optional: Log if exact format matched but no DB entry found?
+                 logger.debug(f"Search term '{term}' matched DOT format, but no exact DB entry found. Falling back to title search.")
+                 # Fall through to title search if exact format yields no result
+
+        # 2b. If not a valid DOT format OR exact format search yielded no results, perform title search
+        logger.debug(f"Search term '{term}' does not match DOT format or no exact match found. Querying by title/Ncode.")
+        title_query = """
         WITH SearchResults AS (
-            SELECT *,
-            CASE
-                WHEN Ncode = CAST(REPLACE(REPLACE(?, '.', ''), '-', '') AS INTEGER) THEN 200
-                WHEN Title = ? COLLATE NOCASE THEN 100
-                WHEN CompleteTitle = ? COLLATE NOCASE THEN 90
-                WHEN Title LIKE ? COLLATE NOCASE THEN 70
-                WHEN CompleteTitle LIKE ? COLLATE NOCASE THEN 60
-                ELSE 0
-            END as relevance_score
+            SELECT
+                *,
+                CASE
+                    -- Prioritize Ncode match if term happens to be numeric, less likely but possible
+                    WHEN Ncode = CAST(REPLACE(REPLACE(?, '.', ''), '-', '') AS INTEGER) THEN 200
+                    WHEN Title = ? COLLATE NOCASE THEN 100
+                    WHEN CompleteTitle = ? COLLATE NOCASE THEN 90
+                    WHEN Title LIKE ? COLLATE NOCASE THEN 70
+                    WHEN CompleteTitle LIKE ? COLLATE NOCASE THEN 60
+                    ELSE 0
+                END as relevance_score
             FROM DOT
-            WHERE 
+            WHERE
                 Ncode = CAST(REPLACE(REPLACE(?, '.', ''), '-', '') AS INTEGER)
                 OR Title = ? COLLATE NOCASE
                 OR CompleteTitle = ? COLLATE NOCASE
                 OR Title LIKE ? COLLATE NOCASE
                 OR CompleteTitle LIKE ? COLLATE NOCASE
         )
-        SELECT * FROM SearchResults 
+        SELECT
+            Ncode AS dotCodeNumeric,
+            CAST(Code AS TEXT) AS dotCodeFormatted,
+            Title AS jobTitle,
+            Definitions,
+            SVPNum,
+            StrengthNum,
+            -- Explicitly list other fields needed by generate_formatted_job_report if not using '*' from CTE
+            *
+        FROM SearchResults
         WHERE relevance_score > 0
         ORDER BY relevance_score DESC
-        LIMIT 1
+        LIMIT 1;
         """
-        
+
         like_pattern = f"%{term}%"
-        params = [term] * 5 + [term] * 5  # For both the CASE and WHERE clauses
-        return self._execute_query(query, params)
+        # Prepare params: term repeated for Ncode (potential), exact titles, LIKE titles
+        params = [term] * 5 + [term] * 5
+        # Execute the broader title/Ncode search
+        return self._execute_query(title_query, params)
 
     def execute_select_query(self, query: str, params: Optional[List[Any]] = None) -> List[Dict[str, Any]]:
         """Executes provided SELECT query safely. (Profiled if DEBUG)"""
@@ -405,10 +482,19 @@ class DatabaseHandler:
         return self._execute_query(query, params)
 
     def batch_get_jobs_by_codes(self, dot_codes: List[str]) -> List[Dict[str, Any]]:
-        """Get multiple jobs by their DOT codes in a single query."""
+        """Get multiple jobs by their DOT codes (formatted XXX.XXX-XXX) in a single query."""
         if not dot_codes:
             return []
-        
-        placeholders = ','.join('?' * len(dot_codes))
-        query = f"SELECT * FROM DOT WHERE Code IN ({placeholders})"
-        return self._execute_query(query, dot_codes)
+
+        # Filter out any potentially invalid/empty codes before creating placeholders
+        valid_formatted_codes = [code for code in dot_codes if analysis_utils.validate_dot_code(code).get('is_valid_format')]
+
+        if not valid_formatted_codes:
+             logger.warning("batch_get_jobs_by_codes: No valid formatted DOT codes provided in the list.")
+             return []
+
+        placeholders = ','.join('?' * len(valid_formatted_codes))
+        # Correctly compare against the text representation of the Code column
+        query = f"SELECT * FROM DOT WHERE CAST(Code AS TEXT) IN ({placeholders})"
+        logger.debug(f"Executing batch_get_jobs_by_codes with {len(valid_formatted_codes)} codes.")
+        return self._execute_query(query, valid_formatted_codes)

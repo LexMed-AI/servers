@@ -1,0 +1,136 @@
+{
+    "id": "EM-21065 REV 2",
+    "type": "EM - Emergency Messages",
+    "title": "Guidelines for Using Occupational Information in Electronic Tools",
+    "effective_date": "2025-01-06",
+    "publication_info": "Revision effective concurrent with SSR 24-3p",
+    "retention_date": "2025-07-06",
+    "audience": [
+      "RO", "DDS", "ODD", "DPU", "DPB", "EST", "OQR",
+      "OHO", "OAO"
+    ],
+    "originating_office": "ORDP ODP",
+    "program": "Disability",
+    "revision_summary": {
+      "basis": "Updated to reflect SSR 24-3p.",
+      "changes": [
+        "Added guidance from SSR 24-3p requiring vocational explanation when VE/VS uses info differing from SSA regulatory terms/definitions.",
+        "Removed references and outdated guidance based on rescinded SSR 00-4p.",
+        "Edited the References section."
+      ]
+    },
+    "sections": {
+      "A_purpose": {
+        "summary": "Provides guidance for policy-compliant use of occupational information obtained from Digital Library electronic tools (developed by SkillTRAN based on DOT data)."
+      },
+      "B_background": {
+        "ssa_administrative_notice": "SSA takes administrative notice of reliable job information (e.g., DOT, SCO).",
+        "digital_library_tools_overview": "SSA Digital Library hosts searchable DOT databases developed by SkillTRAN (OccuBrowse, Job Browser Pro, OASYS) which adjudicators may use to assist at Step 4 and Step 5.",
+        "tool_descriptions": [
+          {
+            "name": "OccuBrowse",
+            "access": "SSA Digital Library",
+            "features": [
+              "Search via 'Browse' tab.",
+              "'Worker Trait Search' button for occupations within RFC/skill level.",
+              "Keyword search (job title, task description, both).",
+              "Search/browse by Industry, GOE, occupational group, etc.",
+              "DOT/SCO info available on 'Description,' 'Requirements,' 'Codes' tabs."
+            ]
+          },
+          {
+            "name": "Job Browser Pro",
+            "access": "SSA Digital Library",
+            "features": [
+              "Search by job title, DOT code, or keyword(s).",
+              "DOT/SCO info via 'Details' -> 'Quick View – Codes' button and 'Requirements' tab.",
+              "Various browse groups (GOE, occupational group, etc.)."
+            ]
+          },
+          {
+            "name": "OASYS",
+            "access": "SSA Digital Library",
+            "features": [
+              "Contains same functionality as OccuBrowse and Job Browser Pro.",
+              "Can perform a wide variety of searches."
+            ]
+          }
+        ],
+        "important_note_on_tool_usage": "These tools are useful references but DO NOT replace SSA policy or adjudicative judgment. OASYS suggestions (e.g., for TSA) may not fully conform to SSA policy; the adjudicator must make the final determination based on policy."
+      },
+      "C_policy_for_using_tools": {
+        "general_statement": "Tools contain useful DOT/SCO info but do not replace policy/judgment. They also contain information (1) different from SSA definitions and (2) not administratively noticed by SSA.",
+        "C_1_information_different_from_ssa_definitions": {
+          "controlling_policy": "SSA rules (regulatory terms, definitions) and guidance are controlling (Ref: SSR 24-3p).",
+          "ve_vs_responsibility": "Per SSR 24-3p, if a VE/VS uses a data source defining exertion, skill, or education differently than SSA, they MUST acknowledge the difference and explain whether/how it was accounted for.",
+          "information_generally_inconsistent_with_ssa_policy": [
+            {
+              "type": "Aptitudes and Work Situations (Temperaments)",
+              "reasoning": "These ratings reflect personal interests/abilities/characteristics, NOT functional requirements considered for SSA disability programs."
+            },
+            {
+              "type": "Occupational Information Network (O*NET) Information",
+              "reasoning": "O*NET physical exertion definitions are inconsistent with SSA regulations (20 CFR 404.1567, 416.967), e.g., grouping lifting with non-exertional activities. O*NET info is generally not usable in SSA adjudication."
+            }
+          ]
+        },
+        "C_2_information_not_administratively_noticed": {
+          "requirement": "Obtain VS or VE evidence before relying on the following content found within these tools:",
+          "types": [
+            {
+              "area": "Labor Market Information (Job Numbers)",
+              "details": "Federal agencies use SOC for LMI. VE approaches for estimating DOT job numbers from SOC data vary. SkillTRAN's proprietary algorithm for job numbers is NOT reviewed or endorsed by SSA."
+            },
+            {
+              "area": "Occupations Not Published in 1991 DOT/SCO",
+              "details": "SkillTRAN products include 21 additional + 2 revised occupations developed by DOL post-1991 DOT. Adjudicators must NOT take administrative notice of this non-DOT content added by SkillTRAN.",
+              "clarification": "A VS/VE *could* potentially provide evidence considering a non-DOT occupation, but administrative notice is limited to published DOT/SCO info.",
+              "list_reference_link": "https://skilltran.com/pubs/new21occs_1998.pdf",
+              "list_of_non_published_dot_occupations": [
+                {"unpublished_dot_code": "019.062-010", "title": "Geographic Information System Specialist"},
+                {"unpublished_dot_code": "029.261-030", "title": "Microscopist, Asbestos"},
+                {"unpublished_dot_code": "031.167-018", "title": "Telecommunications Specialist"},
+                {"unpublished_dot_code": "076.224-018", "title": "Movement Therapist"},
+                {"unpublished_dot_code": "078.367-014", "title": "Specimen Processor"},
+                {"unpublished_dot_code": "079.262-014", "title": "Medical Record Coder"},
+                {"unpublished_dot_code": "094.224-022", "title": "Employment Training Specialist"},
+                {"unpublished_dot_code": "162.117-034", "title": "Media Buyer"},
+                {"unpublished_dot_code": "164.117-022", "title": "Media Planner"},
+                {"unpublished_dot_code": "169.117-018", "title": "Provider Relations Representative"},
+                {"unpublished_dot_code": "169.117-022", "title": "Meeting Planner"},
+                {"unpublished_dot_code": "186.117-090", "title": "Compliance Officer"},
+                {"unpublished_dot_code": "195.107-050", "title": "Bereavement Counselor"},
+                {"unpublished_dot_code": "195.167-046", "title": "Health Services Coordinator"},
+                {"unpublished_dot_code": "195.167-050", "title": "Case Manager"},
+                {"unpublished_dot_code": "211.367-014", "title": "Automatic Teller Machine (ATM) Servicer"},
+                {"unpublished_dot_code": "319.557-010", "title": "Mini Bar Attendant"},
+                {"unpublished_dot_code": "359.567-014", "title": "Tanning Salon Attendant"},
+                {"unpublished_dot_code": "599.584-010", "title": "Reuse Technician"},
+                {"unpublished_dot_code": "849.464-010", "title": "Solar Film Installer (Automotive Svcs.)"},
+                {"unpublished_dot_code": "869.381-038", "title": "Overhead Door Installer"},
+                {"unpublished_dot_code": "079.262-010", "title": "Utilization-Review Coordinator*"},
+                {"unpublished_dot_code": "169.167-090", "title": "Quality Assurance Coordinator*"}
+              ]
+            }
+          ]
+        }
+      },
+      "D_questions_routing": {
+        "dds": "Direct program-related/technical questions to Regional Office (RO) support staff or Chief Administrative Law Judge.",
+        "oao": "Direct questions through management chain. Managers may direct further questions to the Executive Director’s Office."
+      }
+    },
+    "references": [
+      "20 CFR 404.1560", "20 CFR 404.1566", "20 CFR 404.1568",
+      "20 CFR 416.960", "20 CFR 416.966", "20 CFR 416.968",
+      "SSR 24-3p: Titles II and XVI: Use of Occupational Information...",
+      "SSR 82-41: Titles II and XVI: Work Skills and Their Transferability...",
+      "POMS DI 25003.001 Vocational Specialists",
+      "POMS DI 25025.030 Support for a Framework “Not Disabled” Determination",
+      "HALLEX I-2-5-48 Vocational Experts – General",
+      "HALLEX I-2-5-57 Obtaining Vocational Expert Testimony Through Interrogatories",
+      "HALLEX I-2-6-74 Testimony of a Vocational Expert",
+      "HALLEX I-2-8-20 Decision Writing Instructions",
+      "HALLEX I-3-7-13 Remand for Vocational Evidence"
+    ]
+  }

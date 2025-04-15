@@ -1,0 +1,90 @@
+[
+  {
+    "input": "Claimant's DLI is December 31, 2020. Adjudication date is July 1, 2024. The VE identifies a job held from 2017-2019 as PRW, stating it falls within the 5 years prior to the adjudication date.",
+    "output": "Tags: [VE PRW Timeframe Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "Adjudication date is August 15, 2024. The VE considers work the claimant performed ending August 10, 2019, as PRW, miscalculating the 5-year lookback period.",
+    "output": "Tags: [VE PRW Timeframe Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The ALJ instructs the VE: 'Please identify any past relevant work performed since the alleged onset date of January 2021.' This incorrectly uses the onset date instead of the adjudication date to define the start of the 5-year lookback.",
+    "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "Claimant worked a seasonal job as a cashier from November 15, 2022, to December 10, 2022 (26 calendar days). The VE includes this as PRW because it was SGA and within the 5-year period.",
+    "output": "Tags: [VE PRW Duration Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The VE testifies, 'Under the old rules, this job from 7 years ago would be PRW, but under the new 5-year rule in SSR 24-2p, it is not.' The VE correctly applies the new timeframe.",
+    "output": "Tags: [Correct PRW Timeframe Application, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The ALJ's decision states the relevant period for PRW is 'the five years preceding the hearing date,' using an incorrect end date per SSR 24-2p.",
+    "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "Claimant worked as a delivery driver for a gig company, completing multiple deliveries daily between March 1, 2023, and March 25, 2023. The VE excludes this work, stating each delivery was less than 30 days, ignoring the SSR 24-2p guidance on aggregating similar gig work.",
+    "output": "Tags: [VE PRW Duration Error, Misinterpretation of Policy, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The VE correctly identifies a job as being within the 5-year relevant period under SSR 24-2p but then misclassifies its exertional level as Light when the DOT and claimant description indicate Medium.",
+    "output": "Tags: [VE PRW Classification Error, PRW Policy, SSR 00-4p, SSR 24-2p]"
+  },
+  {
+    "input": "The ALJ asks the VE to consider a job performed 6 years ago, stating 'Let's just include it for completeness,' despite SSR 24-2p limiting PRW to the past 5 years.",
+    "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "Claimant's DLI is in the future (2026). Adjudication date is September 1, 2024. The VE correctly uses September 1, 2024, as the end date for the 5-year lookback period.",
+    "output": "Tags: [Correct PRW Timeframe Application, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The VE excludes a job performed from January 5, 2023, to February 3, 2023 (30 calendar days), incorrectly stating it was 'less than 30 days'.",
+    "output": "Tags: [VE PRW Duration Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The ALJ accepts the VE's testimony identifying PRW from 4 years ago but fails to ask about the specific duties performed, relying only on the job title provided by the claimant.",
+    "output": "Tags: [ALJ PRW Development Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "Claimant worked a job from May 1, 2021, to May 29, 2021. The ALJ correctly notes this cannot be PRW under SSR 24-2p because it started and stopped in fewer than 30 calendar days.",
+    "output": "Tags: [Correct PRW Duration Application, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The VE identifies a job within the 5-year period but assigns an SVP of 1 (less than 30 days learn time), contradicting the claimant's testimony of needing 2 months of training.",
+    "output": "Tags: [VE PRW Classification Error, PRW Policy, SSR 00-4p, SSR 24-2p]"
+  },
+  {
+    "input": "Claimant's DLI was June 30, 2019. Adjudication is July 2024. The VE correctly identifies the relevant 5-year period as ending June 30, 2019, and excludes work performed after that date.",
+    "output": "Tags: [Correct PRW Timeframe Application, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The VE identifies work performed 4 years ago as PRW but fails to distinguish between how the claimant actually performed it (with accommodations) and how it's generally performed per the DOT.",
+    "output": "Tags: [VE PRW Analysis Error, As Performed vs Generally Performed, PRW Policy, SSR 00-4p, SSR 24-2p]"
+  },
+  {
+    "input": "The ALJ's decision finds the claimant can perform PRW based on a job held 8 years ago, citing the VE's testimony which erroneously included work outside the 5-year period defined by SSR 24-2p.",
+    "output": "Tags: [ALJ PRW Timeframe Error, Report Writing Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "Claimant worked part-time (10 hrs/week) for 6 months in 2022, earning below SGA levels. The VE includes this as PRW because it was within the 5-year period and lasted long enough.",
+    "output": "Tags: [VE PRW SGA Error, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The VE correctly identifies the 5-year relevant period but fails to recognize that a job described by the claimant (clerk + inventory duties) was a composite job.",
+    "output": "Tags: [VE Composite Job Error, Composite Job Policy, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The ALJ correctly identifies the relevant 5-year period per SSR 24-2p but accepts the VE's classification of a job within that period which contradicts the claimant's testimony, without resolving the conflict.",
+    "output": "Tags: [ALJ PRW Analysis Error, Ignoring Claimant Testimony, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "Claimant worked a job requiring SVP 3 (1-3 months learn time) for exactly 30 calendar days in 2023. The VE correctly includes this as PRW under SSR 24-2p, as it met the 30-day minimum and duration needed to learn.",
+    "output": "Tags: [Correct PRW Application, PRW Policy, SSR 24-2p]"
+  },
+  {
+    "input": "The VE testifies that 'any work in the last 5 years counts' and includes a job the claimant attempted for only 2 weeks before quitting due to the impairment, failing to apply the 30-calendar-day rule.",
+    "output": "Tags: [VE PRW Duration Error, PRW Policy, SSR 24-2p]"
+  }
+]

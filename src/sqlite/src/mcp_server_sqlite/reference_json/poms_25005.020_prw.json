@@ -1,0 +1,165 @@
+{
+    "metadata": {
+      "effective_dates": "06/21/2024 - Present",
+      "TN": "TN 22 (07-24)",
+      "reference": "DI 25005.020 - Past Relevant Work (PRW) as the Claimant Performed It",
+      "batch_run": "01/03/2025",
+      "revision_date": "06/21/2024",
+      "link": "http://policy.ssa.gov/poms.nsf/lnx/0425005020"
+    },
+    "citations": {
+      "CFR": [
+        "20 CFR §§: 404.1560",
+        "404.1565",
+        "416.960",
+        "416.965"
+      ],
+      "SSR": [
+        "24-2p How We Evaluate Past Relevant Work",
+        "82-40 The Vocational Relevance of Past Work Performed in a Foreign Country"
+      ]
+    },
+    "sections": {
+      "A": {
+        "title": "Determining if the claimant can do PRW as they performed it",
+        "points": [
+          "Ensure detailed information to compare PRW with RFC function-by-function.",
+          "Obtain additional info if comparison isn't possible.",
+          "Clarify internal inconsistencies in descriptions.",
+          "Do not substitute DOT descriptions for actual work description.",
+          "Avoid using DOT to fill missing job details.",
+          "If PRW ability is material, DOT cannot replace claimant’s job description."
+        ],
+        "examples": [
+          "Claimant says no lifting, but duties suggest otherwise—adjudicator must clarify.",
+          "Missing reaching/handling details can’t be filled with DOT—must contact claimant."
+        ],
+        "audit_model": {
+          "id": "PRW_AS_PERFORMED",
+          "required_inputs": ["RFC", "Detailed PRW Description", "Function-by-Function Comparison"],
+          "evaluation_criteria": [
+            "Is the PRW description specific enough to compare with RFC?",
+            "Is there consistency in how the job is described?",
+            "Was the DOT improperly used to fill in missing info?"
+          ],
+          "red_flags": [
+            "No detail about physical demands of PRW",
+            "Inconsistent claimant statements",
+            "Missing function-by-function comparison",
+            "DOT data substituted for claimant-specific info"
+          ]
+        }
+      },
+      "B": {
+        "title": "Determining if work was a composite job",
+        "points": [
+          "Composite job = elements of 2+ DOT occupations.",
+          "Must explain why job is composite.",
+          "Claimant must be able to perform all parts of composite job.",
+          "Composite jobs are not evaluated 'as generally performed'.",
+          "Skills from composite jobs may transfer at step 5—see DI 25015.017."
+        ],
+        "audit_model": {
+          "id": "PRW_COMPOSITE_JOB",
+          "required_inputs": ["PRW Description", "DOT Comparisons"],
+          "evaluation_criteria": [
+            "Does PRW combine tasks from multiple DOT occupations?",
+            "Can the claimant perform all parts of the composite job?",
+            "Was the composite nature of the job explained?"
+          ],
+          "red_flags": [
+            "Composite status not addressed",
+            "Only partial composite job tasks addressed in RFC analysis"
+          ]
+        }
+      },
+      "C": {
+        "title": "Evaluating work performed in a foreign country",
+        "points": [
+          "Decide if work was performed long enough to learn.",
+          "If earnings < SGA, assess if it provided a local living wage.",
+          "Do not consider if job exists in U.S. economy or claimant literacy.",
+          "DOT cannot be used for foreign jobs' 'generally performed' evaluation.",
+          "Skills may still transfer at step 5—see DI 25015.017."
+        ],
+        "audit_model": {
+          "id": "PRW_FOREIGN_WORK",
+          "required_inputs": ["Job Location", "Local Wage Adequacy", "Skill Description"],
+          "evaluation_criteria": [
+            "Did claimant do work long enough to learn it?",
+            "Were wages sufficient for local economy?",
+            "Are transferable skills properly assessed?"
+          ],
+          "red_flags": [
+            "No analysis of local wage adequacy",
+            "DOT used to assess foreign job"
+          ]
+        }
+      },
+      "D": {
+        "title": "Evaluating work performed in the military",
+        "points": [
+          "Evaluate ability to perform military job as described.",
+          "DOT lacks military job data—evaluate based on claimant description.",
+          "If PRW can't be performed, go to step 5; skills may transfer—see DI 25015.017."
+        ],
+        "example": "Military clerk-typist job should not be evaluated using DOT 203.362-010.",
+        "audit_model": {
+          "id": "PRW_MILITARY",
+          "required_inputs": ["Military Job Title", "Claimant Job Description"],
+          "evaluation_criteria": [
+            "Is military PRW evaluated as described by claimant?",
+            "Is there a substitution of military PRW with DOT titles?"
+          ],
+          "red_flags": [
+            "DOT military equivalence assumed without justification"
+          ]
+        }
+      },
+      "E": {
+        "title": "Evaluation of part-time work, work with mandatory overtime, and alternative work schedules",
+        "points": [
+          "RFC generally assumes 8-hour day, 5-day week.",
+          "Consider specifics of part-time, overtime, alternative schedules.",
+          "If RFC allows PRW 'as generally performed', no need to assess actual job schedule.",
+          "If claimant can’t sustain 40-hour week and had part-time PRW, detailed comparison needed.",
+          "See DI 24510.057 for more on sustaining 40-hour week."
+        ],
+        "audit_model": {
+          "id": "PRW_SCHEDULES",
+          "required_inputs": ["RFC Duration/Endurance", "PRW Work Hours", "Schedule Type"],
+          "evaluation_criteria": [
+            "Does claimant RFC align with 8hr/5day expectation?",
+            "Is PRW evaluated if claimant can't sustain full-time work?"
+          ],
+          "red_flags": [
+            "RFC limits not addressed for part-time work",
+            "Incomplete comparison for alternative work schedules"
+          ]
+        }
+      },
+      "F": {
+        "title": "Evaluating work with accommodations provided by the employer",
+        "points": [
+          "If accommodations let claimant perform PRW, they can still be found capable.",
+          "Work may not be SGA due to special conditions—see DI 10505.025, .023, .010.",
+          "Don’t assume accommodations are available in national economy evaluation."
+        ],
+        "example": "Tollbooth collector allowed to sit due to back impairment. If consistent with RFC, find claimant capable.",
+        "audit_model": {
+          "id": "PRW_ACCOMMODATIONS",
+          "required_inputs": ["Employer Accommodation Info", "PRW Job Tasks", "Reason for Work Stoppage"],
+          "evaluation_criteria": [
+            "Did accommodations enable PRW performance?",
+            "Was subsidy/UWA/IRWE considered?",
+            "Was assumption made that accommodations are transferable?"
+          ],
+          "red_flags": [
+            "Accommodation not evaluated",
+            "Assumption that accommodations are universal",
+            "No assessment of SGA/subsidy status"
+          ]
+        }
+      }
+    }
+  }
