@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 # --- Load Grid Rules Data --- #
 GRID_RULES_DATA: Optional[Dict[str, Any]] = None
-GRID_RULES_PATH = Path(__file__).parent / "reference" / "medical_vocational_guidelines.json"
+GRID_RULES_PATH = Path(__file__).parent / "reference_json" / "medical_vocational_guidelines.json"
 
 try:
     with open(GRID_RULES_PATH, 'r') as f:
@@ -37,6 +37,22 @@ except json.JSONDecodeError:
 except Exception as e:
     logger.error(f"An unexpected error occurred loading {GRID_RULES_PATH}: {e}")
 # --- End Load Grid Rules Data --- #
+
+# --- Load SSR 82-41 Data --- #
+SSR_82_41_DATA: Optional[Dict[str, Any]] = None
+SSR_82_41_PATH = Path(__file__).parent / "reference_json" / "ssr_82-41.json"
+
+try:
+    with open(SSR_82_41_PATH, 'r') as f:
+        SSR_82_41_DATA = json.load(f)
+        logger.info(f"Successfully loaded SSR 82-41 data from {SSR_82_41_PATH}")
+except FileNotFoundError:
+    logger.error(f"SSR 82-41 JSON file not found at {SSR_82_41_PATH}. Detailed TSA rules may not be applied correctly.")
+except json.JSONDecodeError:
+    logger.error(f"Error decoding JSON from {SSR_82_41_PATH}. Detailed TSA rules may not be applied correctly.")
+except Exception as e:
+    logger.error(f"An unexpected error occurred loading {SSR_82_41_PATH}: {e}")
+# --- End Load SSR 82-41 Data --- #
 
 # --- Helper Functions for Grid Rule Application --- #
 
@@ -295,13 +311,14 @@ def _is_exertion_within_rfc(target_exertion: Optional[str], rfc_strength: str) -
        
     return target_level <= rfc_level
 
-def _evaluate_transferability(source_skills: Dict[str, Any], target_analysis: Dict[str, Any], rfc_strength: str) -> Dict[str, Any]:
-    """Evaluates skill transferability from source to target based on POMS DI 25015.017 principles.
+def _evaluate_transferability(source_skills: Dict[str, Any], target_analysis: Dict[str, Any], rfc_strength: str, age_category: str) -> Dict[str, Any]:
+    """Evaluates skill transferability from source to target based on POMS DI 25015.017 principles AND SSR 82-41 rules.
 
     Args:
         source_skills: Dictionary from _extract_potential_skills for the PRW.
         target_analysis: Dictionary from get_job_analysis for the potential target job.
         rfc_strength: Claimant's RFC strength level.
+        age_category: Claimant's age category (needed for SSR 82-41 rules).
 
     Returns:
         Dictionary with 'transferable' (bool), 'reason' (str), and detailed 'checks_passed' (dict).
@@ -508,7 +525,7 @@ async def perform_tsa_analysis(db_handler: DatabaseHandler,
                 continue
 
             # Evaluate transferability to this specific target
-            evaluation_result = _evaluate_transferability(source_skills, target_analysis, rfc_strength)
+            evaluation_result = _evaluate_transferability(source_skills, target_analysis, rfc_strength, age_category)
             target_job_evaluation_results.append({
                 "target_dot": target_code,
                 "target_title": target_analysis.get('job_title', UNKNOWN_STRING),

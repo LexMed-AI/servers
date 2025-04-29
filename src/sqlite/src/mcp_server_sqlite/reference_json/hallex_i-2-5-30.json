@@ -1,0 +1,41 @@
+{
+  "title": "HA 01250.030 Medical or Vocational Expert Opinion — General",
+  "renumbered_from": "HALLEX section I-2-5-30",
+  "sections": [
+    {
+      "id": "A",
+      "title": "Obtaining an Expert Opinion",
+      "content": [
+        { "type": "paragraph", "text": "Before scheduling a hearing, the administrative law judge (ALJ), or the hearing office (HO) staff under the ALJ's direction, must review all of the evidence to determine if additional evidence is needed to inquire fully into the matters at issue. An ALJ will follow the applicable instructions in Hearings, Appeals and Litigation Law (HALLEX) manual HA 01250.034 for medical experts (ME) and HA 01250.050 for vocational experts (VE) to determine whether they need to obtain an expert opinion." },
+        { "type": "paragraph", "text": "If, after review, the ALJ determines they need an ME or VE opinion, the ALJ will obtain the opinion through testimony at a hearing or through written interrogatories. The ALJ must make every effort to obtain all essential documentary evidence early enough to allow the ME or VE sufficient time to consider the evidence before they respond to questions at a hearing or answer written interrogatories." }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Testimony at the Hearing",
+      "content": [
+        { "type": "paragraph", "text": "Generally, it is preferred that an ALJ obtain an ME or VE opinion at the hearing, regardless of the expert's manner of appearance (i.e., in person, by audio, by agency video, or by online video). Obtaining testimony at a hearing, rather than through interrogatories, is preferred because it allows the ALJ, claimant, and representative, if any, the opportunity to ask the ME or VE any questions material to the issues, including questions that arise for the first time during the hearing." },
+        { "type": "paragraph", "text": "Office of Hearings Operations (OHO) management, through designated staff, will determine the manner of the ME's or VE's appearance at the hearing and will generally direct the expert to appear by audio, agency video, or online video under the circumstances described in HALLEX HA 01230.010 B.3." },
+        { "type": "note", "text": "See HALLEX HA 01230.010 B.2. for information on how OHO management, through designated staff, will determine a claimant's manner of appearance." },
+        { "type": "paragraph", "text": "The claimant may state objections to the expert based on perceived bias or lack of expertise. The ALJ will respond to any objections, either in writing or on the record at the hearing." }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Interrogatories",
+      "content": [
+        { "type": "paragraph", "text": "An ALJ may use interrogatories if they decide that personal appearance and testimony by the expert are not essential and that interrogatories will provide a full inquiry into the matters at issue. However, the ALJ or HO staff must follow proffer procedures, as set forth in HALLEX HA 01250.029 or HA 01270.030. Proffer is necessary to allow the claimant and appointed representative, if any, the opportunity to review responses, submit comments or rebuttal evidence, object to questions, or to propose additional questions." },
+        { "type": "note", "text": "For administrative efficiency purposes, an ALJ will usually proffer interrogatories to the claimant and appointed representative after receiving the expert's responses to the ALJ's initial interrogatories." },
+        { "type": "paragraph", "text": "In some circumstances, the ALJ may be required to offer the claimant the opportunity to request a supplemental hearing. See HALLEX HA 01270.001." }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Waiver of Right to a Hearing",
+      "content": [
+        { "type": "paragraph", "text": "As set forth in HALLEX HA 01210.082, a claimant may waive the right to appear at an oral hearing and have the case decided on the evidence of record." },
+        { "type": "paragraph", "text": "However, even when the ALJ decides that the claimant's personal appearance and testimony are not essential, the ALJ may still schedule a hearing or supplemental hearing to obtain testimony from a VE or ME. When doing so, the ALJ must provide notice to the claimant of any scheduled proceeding using the usual procedures in HALLEX HA 01230.015. For general information about supplemental hearings, see also HALLEX HA 01260.080." }
+      ]
+    }
+  ]
+}

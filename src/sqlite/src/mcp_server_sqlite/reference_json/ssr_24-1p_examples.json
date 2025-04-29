@@ -1,171 +1,171 @@
 [
     {
       "input": "Claimant described their past job as 'warehouse worker' involving lifting boxes up to 75 lbs frequently. The VE testified the job was 'Warehouse Worker II', DOT 922.687-058, which is classified as Medium exertion (max 50 lbs).",
-      "output": "Tags: [VE PRW Classification Error, PRW Policy, SSR 00-4p]"
+      "tags": ["VE PRW Classification Error", "PRW Policy", "SSR 00-4p"]
     },
     {
       "input": "The claimant stated they worked as a 'data entry clerk' for 4 months, primarily typing information from forms into a computer system. The VE assigned SVP 4 (6 months to 1 year learning time) based on the DOT title 'Data Entry Clerk', 203.582-054.",
-      "output": "Tags: [VE PRW Classification Error, PRW Policy, SSR 00-4p]"
+      "tags": ["VE PRW Classification Error", "PRW Policy", "SSR 00-4p"]
     },
     {
       "input": "Claimant described their job as 'front desk clerk/security guard', involving checking guests in (sedentary) and patrolling the building hourly (light). The VE classified the job only as 'Hotel Clerk', 238.367-038 (Sedentary), ignoring the security duties.",
-      "output": "Tags: [VE Composite Job Error, Composite Job Policy, PRW Policy]"
+      "tags": ["VE Composite Job Error", "Composite Job Policy", "PRW Policy"]
     },
     {
       "input": "The VE identified the claimant's job from 6 years ago as Past Relevant Work, even though the claimant's date last insured was 1 year ago.",
-      "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
     },
     {
       "input": "The claimant testified they tried working as a cashier for three weeks but had to quit due to pain. The VE included this job in the PRW analysis.",
-      "output": "Tags: [VE PRW Duration Error, PRW Policy]"
+      "tags": ["VE PRW Duration Error", "PRW Policy"]
     },
     {
       "input": "Claimant's work history listed 'Assembler'. The VE testified the claimant performed work as 'Assembler, Small Parts I', 706.684-022 (Light, SVP 2), without asking about the specific items assembled or tools used.",
-      "output": "Tags: [VE PRW Classification Error, Reliance on Job Title Alone, PRW Policy, SSR 00-4p]"
+      "tags": ["VE PRW Classification Error", "Reliance on Job Title Alone", "PRW Policy", "SSR 00-4p"]
     },
     {
       "input": "The claimant described their 'janitor' job as only involving light cleaning tasks like dusting and emptying small trash cans due to a prior accommodation. The VE classified the job based on the DOT 'Janitor', 382.664-010 (Medium exertion), stating that's how it's 'generally performed'.",
-      "output": "Tags: [VE PRW Analysis Error, As Performed vs Generally Performed, PRW Policy, SSR 00-4p]"
+      "tags": ["VE PRW Analysis Error", "As Performed vs Generally Performed", "PRW Policy", "SSR 00-4p"]
     },
     {
       "input": "The ALJ asked the claimant 'What was your job title?' and 'How long did you work there?' but failed to ask about specific duties, lifting requirements, or skills needed for the past work.",
-      "output": "Tags: [ALJ PRW Development Error, PRW Policy]"
+      "tags": ["ALJ PRW Development Error", "PRW Policy"]
     },
     {
       "input": "Claimant testified they could only lift 10 lbs occasionally as a 'stock clerk', but the VE testified the job was 'Stock Clerk', 299.367-014 (Medium). The ALJ accepted the VE's testimony without addressing the claimant's conflicting statement.",
-      "output": "Tags: [ALJ PRW Analysis Error, Ignoring Claimant Testimony, PRW Policy]"
+      "tags": ["ALJ PRW Analysis Error", "Ignoring Claimant Testimony", "PRW Policy"]
     },
     {
       "input": "The claimant described duties consistent with both a 'receptionist' and a 'bookkeeper'. The ALJ did not ask the VE if this constituted a composite job and proceeded with the analysis as if it were only 'receptionist'.",
-      "output": "Tags: [ALJ Composite Job Error, Composite Job Policy, PRW Policy]"
+      "tags": ["ALJ Composite Job Error", "Composite Job Policy", "PRW Policy"]
     },
     {
       "input": "The claimant reported working part-time as a 'babysitter' for a neighbor, earning $200 per month. The ALJ allowed the VE to consider this as PRW.",
-      "output": "Tags: [ALJ PRW SGA Error, PRW Policy]"
+      "tags": ["ALJ PRW SGA Error", "PRW Policy"]
     },
     {
       "input": "Claimant worked as a 'machine operator' for 5 weeks before being terminated for inability to meet production quotas due to their impairment. The ALJ treated this as PRW without considering if it was an Unsuccessful Work Attempt.",
-      "output": "Tags: [ALJ PRW UWA Error, PRW Policy]"
+      "tags": ["ALJ PRW UWA Error", "PRW Policy"]
     },
     {
       "input": "VE testified the claimant's 'fast food worker' job (DOT 311.472-010) was Light exertion, contradicting the claimant's testimony of constant standing and carrying trays up to 25 lbs.",
-      "output": "Tags: [VE PRW Classification Error, PRW Policy, SSR 00-4p]"
+      "tags": ["VE PRW Classification Error", "PRW Policy", "SSR 00-4p"]
     },
     {
       "input": "Claimant worked as a 'Teacher Aide I' (DOT 099.327-010, SVP 4). The VE testified the job had an SVP of 2 based only on the claimant's description of 'watching kids on the playground'.",
-      "output": "Tags: [VE PRW Classification Error, PRW Policy, SSR 00-4p]"
+      "tags": ["VE PRW Classification Error", "PRW Policy", "SSR 00-4p"]
     },
     {
       "input": "The VE identified a job performed 7 years prior to the alleged onset date as PRW.",
-      "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
     },
     {
       "input": "Claimant worked for 25 calendar days as a 'Telemarketer'. The VE included this brief period as PRW.",
-      "output": "Tags: [VE PRW Duration Error, PRW Policy]"
+      "tags": ["VE PRW Duration Error", "PRW Policy"]
     },
     {
       "input": "The VE classified the claimant's job as 'Secretary' (DOT 201.362-030, SVP 5) based solely on the title listed on the work history report, without confirming duties like transcription or complex scheduling.",
-      "output": "Tags: [VE PRW Classification Error, Reliance on Job Title Alone, PRW Policy, SSR 00-4p]"
+      "tags": ["VE PRW Classification Error", "Reliance on Job Title Alone", "PRW Policy", "SSR 00-4p"]
     },
     {
       "input": "Claimant stated their 'Security Guard' job (DOT 372.667-034, Light) involved mostly sitting at a desk monitoring cameras, with only occasional walking. The VE insisted on classifying it as Light exertion based on the DOT's general description.",
-      "output": "Tags: [VE PRW Analysis Error, As Performed vs Generally Performed, PRW Policy, SSR 00-4p]"
+      "tags": ["VE PRW Analysis Error", "As Performed vs Generally Performed", "PRW Policy", "SSR 00-4p"]
     },
     {
       "input": "The ALJ asked about job titles and dates but failed to inquire about the weight lifted, frequency of lifting, standing/walking requirements, or specific skills used in any of the claimant's past jobs.",
-      "output": "Tags: [ALJ PRW Development Error, PRW Policy]"
+      "tags": ["ALJ PRW Development Error", "PRW Policy"]
     },
     {
       "input": "Claimant described their 'home health aide' job as involving significant driving and lifting patients (Medium/Heavy). The VE classified it as 'Home Attendant' (DOT 354.377-014, Light). The ALJ accepted the VE's classification without questioning the discrepancy.",
-      "output": "Tags: [ALJ PRW Analysis Error, Ignoring Claimant Testimony, PRW Policy]"
+      "tags": ["ALJ PRW Analysis Error", "Ignoring Claimant Testimony", "PRW Policy"]
     },
     {
       "input": "Claimant described work involving taking customer orders, preparing food, and cleaning the dining area. The ALJ allowed the VE to classify this only as 'Fast Food Worker' without exploring if it was a composite of counter attendant and kitchen helper.",
-      "output": "Tags: [ALJ Composite Job Error, Composite Job Policy, PRW Policy]"
+      "tags": ["ALJ Composite Job Error", "Composite Job Policy", "PRW Policy"]
     },
     {
       "input": "Claimant worked sporadically as a 'handyman' for cash, never earning over $500 in a month. The ALJ permitted the VE to analyze this as PRW.",
-      "output": "Tags: [ALJ PRW SGA Error, PRW Policy]"
+      "tags": ["ALJ PRW SGA Error", "PRW Policy"]
     },
     {
       "input": "The claimant's Date Last Insured (DLI) was December 31, 2023. The VE considered a job the claimant held from 2005 to 2007 as PRW, stating it fell within the 15-year period ending today (in 2024), ignoring the DLI.",
-      "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "Adjudication date is March 2024. Claimant's DLI is June 2018. The VE only considered jobs held between March 2019 and March 2024 as PRW, incorrectly applying a 5-year lookback from the adjudication date.",
-          "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "The ALJ instructed the VE to only consider work performed 'in the last five years' when identifying PRW, despite the claimant having significant work history within the 15 years prior to their DLI.",
-          "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy]"
+      "tags": ["ALJ PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "Claimant's DLI was 2019. The VE testified that a job held in 2003 was PRW because it was 'within 15 years of the application date' (filed in 2022), failing to use the DLI as the endpoint for the 15-year lookback.",
-          "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "The VE stated, 'Policy now only looks back 5 years for relevant work,' and proceeded to disregard jobs the claimant performed 7 and 10 years ago, which were within the 15-year period before the DLI.",
-          "output": "Tags: [VE PRW Timeframe Error, Misinterpretation of Policy, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "Misinterpretation of Policy", "PRW Policy"]
         },
         {
           "input": "The ALJ, in their decision, stated the relevant period for PRW was the 5 years preceding the alleged onset date, contradicting the standard 15-year rule based on DLI or adjudication date.",
-          "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy]"
+      "tags": ["ALJ PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "Claimant's DLI was 10 years ago. The VE considered a job held 12 years ago as PRW, correctly identifying it was within the 15-year period, but failed to consider if skills from that job would still be relevant given the time elapsed.",
-          "output": "Tags: [VE PRW Analysis Error, Potential Skill Obsolescence, PRW Policy]"
+      "tags": ["VE PRW Analysis Error", "Potential Skill Obsolescence", "PRW Policy"]
         },
         {
           "input": "The VE excluded a job performed 8 years ago, stating 'work older than 5 years is generally not considered relevant anymore,' despite it falling within the 15-year period prior to the adjudication date.",
-          "output": "Tags: [VE PRW Timeframe Error, Misinterpretation of Policy, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "Misinterpretation of Policy", "PRW Policy"]
         },
         {
           "input": "The ALJ asked the VE, 'Focusing on the last 5 years, did the claimant perform any past relevant work?' This improperly narrowed the scope from the required 15-year period.",
-          "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy]"
+      "tags": ["ALJ PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "Claimant's DLI was January 2020. The VE included a job ending in December 2004 as PRW, miscalculating the 15-year lookback period (which should have started in January 2005).",
-          "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "The VE testified that due to the claimant's age (over 55), only work within the last 5 years could be considered PRW. This confuses transferability rules with the definition of the relevant period.",
-          "output": "Tags: [VE PRW Timeframe Error, Confusion with Age/Grid Rules, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "Confusion with Age/Grid Rules", "PRW Policy"]
         },
         {
           "input": "The ALJ's decision cited the VE's testimony regarding PRW but defined the relevant period as 'the five years prior to the claimant stopping work,' an incorrect standard.",
-          "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy]"
+      "tags": ["ALJ PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "Claimant worked consistently from 2000 to 2016. DLI was 2021. The VE only discussed jobs from 2011-2016, stating the earlier work was 'too old', effectively applying a 10-year rule instead of 15.",
-          "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "The VE considered work from 16 years ago, arguing it was 'functionally similar' to work done 14 years ago, improperly extending the 15-year lookback period.",
-          "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "The ALJ accepted the VE's analysis which explicitly excluded all work performed more than 5 years before the hearing date, without acknowledging the 15-year rule.",
-          "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy]"
+      "tags": ["ALJ PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "Claimant's DLI was 2022. The VE identified a job from 2006 as PRW. While technically within 15 years (just), the VE failed to address potential skill erosion over the 16-year gap since the job ended.",
-          "output": "Tags: [VE PRW Analysis Error, Potential Skill Obsolescence, PRW Policy]"
+      "tags": ["VE PRW Analysis Error", "Potential Skill Obsolescence", "PRW Policy"]
         },
         {
           "input": "The VE used the alleged onset date (2018) as the end point for the 15-year lookback, instead of the DLI (2023) or adjudication date (2024), improperly excluding work from 2004-2007.",
-          "output": "Tags: [VE PRW Timeframe Error, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "PRW Policy"]
         },
         {
           "input": "The ALJ's hypothetical question about PRW asked the VE to assume the claimant could perform work done 'within the last 5 years', ignoring potentially relevant work performed earlier within the 15-year period.",
-          "output": "Tags: [ALJ PRW Timeframe Error, Hypothetical Formulation Error, PRW Policy]"
+      "tags": ["ALJ PRW Timeframe Error", "Hypothetical Formulation Error", "PRW Policy"]
         },
         {
           "input": "VE testified: 'While the rule is 15 years, practically speaking, we focus on the last 5-7 years for relevance.' This justification improperly deviates from the established 15-year regulatory standard.",
-          "output": "Tags: [VE PRW Timeframe Error, Misinterpretation of Policy, PRW Policy]"
+      "tags": ["VE PRW Timeframe Error", "Misinterpretation of Policy", "PRW Policy"]
         },
         {
           "input": "The ALJ found that work performed 14 years prior to the DLI was PRW but gave it 'less weight' explicitly because it was 'not performed within the last 5 years,' applying an incorrect temporal relevance standard.",
-          "output": "Tags: [ALJ PRW Timeframe Error, PRW Policy]"
+      "tags": ["ALJ PRW Timeframe Error", "PRW Policy"]
         }
       ]
       

@@ -210,7 +210,7 @@ class DatabaseHandler:
          term = dot_code.strip()
 
          # 1. Check if the search term is a valid DOT code format
-         validation_result = analysis_utils.validate_dot_code(term)
+         validation_result = analysis_utils.validate_dot_code_format(term)
          is_valid_dot_format = validation_result.get('is_valid_format', False)
 
          try:
@@ -264,7 +264,7 @@ class DatabaseHandler:
         if not term: return []
 
         # 1. Check if the search term is a valid DOT code format
-        validation_result = analysis_utils.validate_dot_code(term)
+        validation_result = analysis_utils.validate_dot_code_format(term)
         is_valid_dot_format = validation_result.get('is_valid_format', False)
 
         if is_valid_dot_format:
@@ -487,7 +487,7 @@ class DatabaseHandler:
             return []
 
         # Filter out any potentially invalid/empty codes before creating placeholders
-        valid_formatted_codes = [code for code in dot_codes if analysis_utils.validate_dot_code(code).get('is_valid_format')]
+        valid_formatted_codes = [code for code in dot_codes if analysis_utils.validate_dot_code_format(code).get('is_valid_format')]
 
         if not valid_formatted_codes:
              logger.warning("batch_get_jobs_by_codes: No valid formatted DOT codes provided in the list.")

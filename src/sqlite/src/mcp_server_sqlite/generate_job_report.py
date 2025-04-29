@@ -1,8 +1,10 @@
 import sys
 from typing import Dict, Any, Optional, Tuple
 from pathlib import Path
+# Import the original formatting function name from ve_logic
 from .ve_logic import generate_formatted_job_report
 from .db_handler import DatabaseHandler
+import re # Import re for clean_dot_code if needed
 
 def convert_dot_code(code: str) -> str:
     """
@@ -54,8 +56,11 @@ def clean_dot_code(dot_code: str) -> Tuple[Optional[int], Optional[str]]:
             subgroup = int(parts[1])
             suffix = int(parts[2])
             
-            # Convert to Ncode (9-digit integer)
-            ncode = int(f"1{group:03d}{subgroup:03d}{suffix:03d}")
+            # Convert to Ncode (9-digit integer + leading 1, assuming this convention)
+            # Need to confirm NCode structure (often 1 + 9 digits)
+            # If NCode is just 9 digits, remove the leading '1'
+            ncode_str = f"{group:03d}{subgroup:03d}{suffix:03d}"
+            ncode = int(ncode_str) # Assuming NCode is just 9 digits based on DB Handler
             
             # Format Code as TEXT (###.###-###)
             code_text = f"{group:03d}.{subgroup:03d}-{suffix:03d}"
@@ -64,7 +69,7 @@ def clean_dot_code(dot_code: str) -> Tuple[Optional[int], Optional[str]]:
             
         elif dot_code.isdigit() and len(dot_code) == 9:
             # Format is #########
-            ncode = int(f"1{dot_code}")  # Add leading 1 for Ncode
+            ncode = int(dot_code) 
             
             # Extract parts
             group = int(dot_code[:3])
@@ -99,28 +104,30 @@ def get_job_data(db: DatabaseHandler, search_term: str) -> Optional[Dict[str, An
         # First try to find by exact code match if it looks like a DOT code
         ncode, code_text = clean_dot_code(search_term)
         if ncode is not None:
-            # Try Code match first (since that's what we see in the data)
-            results = db._execute_query("SELECT * FROM DOT WHERE Code = ? LIMIT 1;", [code_text])
+            # Try Code match first (CAST to TEXT) as it might be more reliable than NCode integer match
+            # Depending on how NCode is stored/generated
+            results = db._execute_query("SELECT * FROM DOT WHERE CAST(Code AS TEXT) = ? LIMIT 1;", [code_text])
             if not results:
                 # Try Ncode match as fallback
                 results = db._execute_query("SELECT * FROM DOT WHERE Ncode = ? LIMIT 1;", [ncode])
             
             if results:
-                # Map the database fields to the expected keys
+                # Map the database fields to the expected keys for generate_formatted_job_report
                 job_data = results[0]
-                job_data['dotCode'] = job_data['Code']  # Already in ###.###-### format
-                job_data['jobTitle'] = job_data['Title']
-                job_data['definition'] = job_data.get('Definitions', 'N/A')
+                # Ensure keys expected by generate_formatted_job_report are present
+                job_data['dotCode'] = job_data.get('Code') # Expects 'dotCode'
+                job_data['jobTitle'] = job_data.get('Title') # Expects 'jobTitle'
+                job_data['definition'] = job_data.get('Definitions', 'N/A') # Expects 'definition'
                 return job_data
         
-        # If no results or not a DOT code, try finding by job title
+        # If no results or not a DOT code, try finding by job title using find_job_data
         results = db.find_job_data(search_term)
         if results:
             # Map the database fields to the expected keys
             job_data = results[0]
-            job_data['dotCode'] = job_data['Code']  # Already in ###.###-### format
-            job_data['jobTitle'] = job_data['Title']
-            job_data['definition'] = job_data.get('Definitions', 'N/A')
+            job_data['dotCode'] = job_data.get('dotCodeFormatted') # find_job_data aliases to this
+            job_data['jobTitle'] = job_data.get('jobTitle') # find_job_data aliases to this
+            job_data['definition'] = job_data.get('Definitions', 'N/A') # Need Definitions field
             return job_data
         
         print(f"No job data found for search term: {search_term}")
@@ -134,19 +141,35 @@ def main():
     Main function that processes command line arguments and generates a job report.
     """
     if len(sys.argv) != 2:
-        print("Usage: python generate_job_report.py <search_term>")
+        print("Usage: python -m src.mcp_server_sqlite <search_term>") # Keep updated usage
         print("  search_term can be:")
         print("  - A DOT code (e.g., 001.061-010 or 001061010)")
         print("  - A job title (e.g., 'Architect')")
         sys.exit(1)
 
     search_term = sys.argv[1]
-    db = DatabaseHandler("DOT.db")
     
+    db_file_path = Path(__file__).parent / "DOT.db"
+    
+    try:
+        db = DatabaseHandler(db_file_path)
+        # Use the local get_job_data function
     job_data = get_job_data(db, search_term)
+        
     if job_data:
+            # Pass the potentially re-mapped job_data to the formatting function
         report = generate_formatted_job_report(job_data)
         print(report)
+        else:
+            # get_job_data already prints the 'not found' message
+            pass 
+
+    except FileNotFoundError:
+        print(f"Error: Database file not found at {db_file_path}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main() 

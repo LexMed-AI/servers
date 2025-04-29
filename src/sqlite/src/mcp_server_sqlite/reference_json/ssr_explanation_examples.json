@@ -1,0 +1,106 @@
+[
+  {
+    "input": "Conflict: Job requires Frequent stooping, Hypo allows Occasional. VE Explanation: 'Based on my experience visiting similar worksites, this specific task can often be done with less stooping than the DOT indicates.' ALJ did not inquire further.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Potentially Insufficient Explanation", "Needs Corroboration", "SSR 24-3p", "Potential Basis Provided"]
+  },
+  {
+    "input": "Conflict: Job requires GED-R 3, Hypo allows GED-R 2. VE Explanation: 'None provided.' ALJ asked: 'Ms. VE, does that job require GED Level 3 reasoning?' VE: 'Yes, according to the DOT.' ALJ: 'Is there any reason the hypothetical person limited to Level 2 could perform it?' VE: 'No.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Explanation Elicited", "Conflict Confirmed", "SSR 24-3p", "ALJ Inquiry Adequate"]
+  },
+  {
+    "input": "Conflict: Job requires Light exertion, Hypo allows Sedentary. VE Explanation: 'The DOT is outdated for this job. Modern versions use lighter materials and automation, making it performable within Sedentary limits based on my recent industry survey.' VE provided survey details.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Reasonable Explanation Provided", "SSR 24-3p", "Provided Evidence"]
+  },
+  {
+    "input": "Conflict: Job requires Frequent Fingering, Hypo allows Occasional. VE Explanation: 'I am aware of the DOT requirement, but my experience shows that specific role often involves less fingering.' ALJ asked: 'What is the basis for your experience?' VE: 'General observation over 20 years.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Vague Basis", "Potentially Insufficient Explanation", "SSR 24-3p", "Basis Stated (Weak)"]
+  },
+  {
+    "input": "Conflict: Job requires Constant exposure to fumes, Hypo requires avoiding concentrated exposure. VE Explanation: 'Yes, there's a conflict.' ALJ: 'Okay.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Conflict Acknowledged", "No Resolution Explanation", "ALJ Error", "SSR 24-3p", "Insufficient Explanation"]
+  },
+  {
+    "input": "Conflict: Job is SVP 4, claimant's PRW was SVP 2 (unskilled). VE Testifying about transferability. VE Explanation: 'Although the target job is SVP 4, the core tasks are very similar to the PRW tasks, just using slightly different tools the claimant could learn quickly.'",
+    "tags": ["TSA Error", "Transfer to Higher SVP", "Improper Explanation", "SSR 82-41"]
+  },
+  {
+    "input": "Conflict: Job requires Light exertion, Hypo is Sedentary. VE Explanation: 'I used the ORS database which defines Light differently. Based on the specific tasks outlined in ORS and my knowledge of how this job is performed locally, the actual lifting does not exceed 10 lbs frequently, consistent with Sedentary.'",
+    "tags": ["SSR 24-3p Conflict Explanation", "Definition Difference Addressed", "Potential Basis Provided", "ORS Data Cited"]
+  },
+  {
+    "input": "Conflict: Job requires Frequent stooping, Hypo allows Occasional. VE Explanation: 'The DOT says Frequent, but that's outdated.' ALJ did not ask for further basis.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Insufficient Explanation", "No Basis Provided", "ALJ Error", "SSR 24-3p", "Insufficient Explanation"]
+  },
+  {
+    "input": "Conflict: Job requires GED-M Level 3, Hypo limits to Level 1-2 (basic math). VE Explanation: 'While the DOT lists Level 3 math, the actual math used in this specific role, based on my job analyses, involves only basic arithmetic.' VE provides details of analyses.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Reasonable Explanation Provided", "SSR 24-3p", "Provided Evidence", "GED Math"]
+  },
+  {
+    "input": "Conflict: Hypo limits standing/walking to 2 hours; Job is Light (requires up to 6 hours). VE Explanation: 'The individual could perform this job using a sit/stand stool, which is commonly available in this industry.' ALJ did not verify common availability.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Reasonable Explanation Provided (Conditional)", "Requires Verification", "Sit/Stand Accommodation", "SSR 24-3p", "Basis Stated (Experience)"]
+  },
+  {
+    "input": "Conflict: Job requires Occasional Climbing Ladders, Hypo prohibits. VE Explanation: 'That specific task is marginal and often assigned to other workers.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Reasonable Explanation Provided", "Marginal Duty Rationale", "SSR 24-3p"]
+  },
+  {
+    "input": "Conflict: Hypo avoids dust; Job has Occasional dust exposure. VE Explanation: 'The level of dust is minimal and below OSHA thresholds; it would not affect someone with a moderate sensitivity.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Potentially Reasonable Explanation", "SSR 24-3p", "Quantification Attempt"]
+  },
+  {
+    "input": "Conflict: Job is SVP 3; Hypo limits to SVP 1-2. VE Explanation: 'The SVP reflects potential tasks, but the core entry-level duties are unskilled.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Potentially Reasonable Explanation", "SSR 24-3p", "Task Breakdown Rationale"]
+  },
+  {
+    "input": "Conflict: Hypo limits interaction with public; Job is Cashier. VE Explanation: 'There are cashier jobs with minimal public interaction, like in a stock room.' ALJ did not ask for clarification or job numbers for this specific subset.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Potentially Reasonable Explanation", "Requires Clarification", "Job Subset Rationale", "SSR 24-3p"]
+  },
+  {
+    "input": "Conflict: Job requires Light exertion; Hypo is Sedentary. VE Explanation: 'Based on my expertise.' ALJ: 'Could you elaborate?' VE: 'My years of experience indicate this job is often performed at a sedentary level.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Insufficient Explanation", "Boilerplate", "Vague Basis", "SSR 24-3p", "Insufficient Explanation"]
+  },
+  {
+    "input": "Conflict: Job requires GED-R 4; Hypo limits to GED-R 2. VE Explanation: 'There's a conflict that cannot be resolved.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Conflict Confirmed", "No Resolution Explanation", "SSR 24-3p"]
+  },
+  {
+    "input": "Conflict: Job requires Frequent Fingering; Hypo allows Occasional. VE cites ORS data showing Frequent Fingering but states: 'ORS defines Frequent differently than SSA. My analysis of the ORS task data suggests the actual time spent fingering aligns with SSA's definition of Occasional.'",
+    "tags": ["SSR 24-3p Conflict Explanation", "Definition Difference Addressed", "Potential Basis Provided", "ORS Data Cited", "Task Analysis Rationale"]
+  },
+  {
+    "input": "Conflict: Job involves Constant noise; Hypo avoids loud noise. VE Explanation: 'Workers typically use hearing protection, mitigating the exposure.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Potentially Reasonable Explanation", "PPE Rationale", "SSR 24-3p"]
+  },
+  {
+    "input": "Conflict: Job requires Medium exertion; Hypo allows Light. VE Explanation: 'The DOT is likely wrong here; I believe it's Light.' No further basis provided.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Insufficient Explanation", "Unsupported Assertion", "SSR 24-3p", "Insufficient Explanation"]
+  },
+  {
+    "input": "Conflict: Job requires SVP 5; PRW was SVP 3. VE discussing transferability: 'The skills directly transfer with minimal adjustment, despite the SVP difference, because the core technology is identical.' VE details the technology.",
+    "tags": ["TSA Explanation", "SVP Conflict Addressed", "Potential Basis Provided", "SSR 82-41"]
+  },
+  {
+    "input": "Conflict: Job requires Occasional Heights exposure; Hypo avoids. VE Explanation: 'That particular aspect is only done once a year for maintenance and can be avoided.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Reasonable Explanation Provided", "Infrequent Task Rationale", "SSR 24-3p"]
+  },
+  {
+    "input": "Conflict: Job requires Frequent Reaching; Hypo limits to Occasional. VE Explanation: 'My knowledge of this job indicates occasional reaching is sufficient.' No source cited.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Insufficient Explanation", "Unsupported Assertion", "SSR 24-3p", "Insufficient Explanation"]
+  },
+  {
+    "input": "Conflict: Job requires GED-L 3; Hypo limits to GED-L 1-2. VE Explanation: 'The required reading involves technical manuals, but simplified guides are usually available for workers needing them.'",
+    "tags": ["SSR 00-4p Conflict Explanation", "Potentially Reasonable Explanation", "Accommodation Rationale", "SSR 24-3p"]
+  },
+  {
+    "input": "Conflict: Job requires Light exertion; Hypo Sedentary. VE cites DOT and acknowledges conflict. ALJ asks for basis of deviation. VE: 'I rely on SkillTRAN Job Browser Pro data which classifies this job as Sedentary based on recent analysis.'",
+    "tags": ["SSR 24-3p Conflict Explanation", "Source Cited (SkillTRAN)", "Potential Basis Provided", "Requires EM-21065 Awareness"]
+  },
+  {
+    "input": "Conflict: Job requires Frequent Stooping; Hypo Occasional. VE Explanation: 'Per SSR 24-3p, I must explain the basis. My basis is my professional experience analyzing hundreds of similar positions where stooping frequency varies.'",
+    "tags": ["SSR 24-3p Conflict Explanation", "Basis Stated (Vague Experience)", "Potentially Insufficient"]
+  },
+  {
+    "input": "Conflict: Hypo limits overhead reaching to occasional; DOT is silent for cited jobs (cleaner, hand packager, marker). VE Explanation: Based on '34 years experience, labor market research, and over 1000 job analyses.' VE did not state specific knowledge of overhead reaching in the *particular jobs cited*.",
+    "tags": ["SSR 00-4p Conflict Explanation", "Insufficient Explanation", "Vague Basis (General Experience)", "Lacks Specific Job Knowledge", "DOT Silence"]
+  }
+] 

@@ -1,0 +1,202 @@
+[
+  {
+    "input": "Hypo: Lift/carry 10 lbs occasionally, <10 lbs frequently (Sedentary). VE cited Job A (DOT 111.222-333). Tool `generate_job_report` shows Job A requires Light exertion (Lift 20 lbs occ / 10 lbs freq).",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Sedentary vs Light", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Stand/walk 4 hours total in 8-hour day. VE cited Job B (DOT 222.333-444). Tool `generate_job_report` shows Job B requires standing/walking 'most of the workday' (Approx 6+ hours).",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Stand/Walk", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: No climbing ladders, ropes, scaffolds. VE cited Job C (DOT 333.444-555). Tool `generate_job_report` shows Job C requires Occasional climbing of ladders (ClimbingNum=2).",
+    "tags": ["RFC Conflict", "Postural Limitation", "Climbing Ladders", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Frequent balancing, stooping, kneeling, crouching, crawling. VE cited Job D (DOT 444.555-666). Tool `generate_job_report` shows Job D requires Constant stooping (StoopingNum=4).",
+    "tags": ["RFC Conflict", "Postural Limitation", "Stooping Frequency", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to Occasional handling and fingering bilaterally. VE cited Job E (DOT 555.666-777). Tool `generate_job_report` shows Job E requires Frequent fingering (FingeringNum=3).",
+    "tags": ["RFC Conflict", "Manipulative Limitation", "Fingering Frequency", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid concentrated exposure to fumes, dusts, gases. VE cited Job F (DOT 666.777-888). Tool `generate_job_report` shows Job F involves Constant exposure to fumes (EnvFactorFumes=4).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Fumes Exposure", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to understanding/remembering/carrying out simple instructions (GED Reasoning Level 1 or 2). VE cited Job G (DOT 777.888-999). Tool `generate_job_report` shows Job G requires GED Reasoning Level 3.",
+    "tags": ["RFC Conflict", "Mental Limitation", "GED Reasoning", "Simple Instructions", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to frequent overhead reaching bilaterally. VE cited Job H (DOT 888.999-000). Tool `generate_job_report` shows Job H requires Constant overhead reaching.",
+    "tags": ["RFC Conflict", "Manipulative Limitation", "Overhead Reaching", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid unprotected heights. VE cited Job I (DOT 123.123-123). Tool `generate_job_report` shows Job I involves Occasional exposure to heights (EnvFactorHeights=2).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Heights Exposure", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited interaction with public. VE cited Job J (DOT 321.321-321), identified as 'Customer Service Representative'. Tool `generate_job_report` confirms high level of public contact implied.",
+    "tags": ["RFC Conflict", "Mental Limitation", "Social Interaction", "Public Contact", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Sit/stand option needed, must alternate every 30 mins. VE cited Job K (DOT 112.211-311), requires continuous sitting for 2+ hours.",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Sit/Stand Option", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Lift/carry 20 lbs occ, 10 lbs freq (Light). VE cited Job L (DOT 211.311-411), requires Medium exertion (Lift 50 lbs occ / 25 lbs freq).",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Light vs Medium", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: No exposure to extreme cold. VE cited Job M (DOT 311.411-511), requires Frequent exposure to extreme cold (EnvFactorCold=3).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Extreme Cold", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Frequent kneeling allowed. VE cited Job N (DOT 411.511-611), requires Constant kneeling (KneelingNum=4).",
+    "tags": ["RFC Conflict", "Postural Limitation", "Kneeling Frequency", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to occasional pushing/pulling with arms/legs. VE cited Job O (DOT 511.611-711), requires Frequent pushing/pulling.",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Push/Pull", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid moderate exposure to workplace hazards (machinery). VE cited Job P (DOT 611.711-811), requires Frequent exposure to moving mechanical parts (EnvFactorHazards=3).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Hazards Machinery", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to tasks learnable in 30 days (SVP 1-2). VE cited Job Q (DOT 711.811-911), requires SVP 3 (1-3 months learning).",
+    "tags": ["RFC Conflict", "Skill Level", "SVP", "Unskilled vs Semiskilled", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Never crawl. VE cited Job R (DOT 811.911-011), requires Occasional crawling (CrawlingNum=2).",
+    "tags": ["RFC Conflict", "Postural Limitation", "Crawling", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Requires use of cane for ambulation. VE cited Job S (DOT 911.011-111), which requires constant walking on uneven surfaces.",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Assistive Device", "Walking Surface", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to understanding/applying basic math (GED Math Level 1 or 2). VE cited Job T (DOT 122.223-322), requires GED Math Level 3 (Algebra, Geometry).",
+    "tags": ["RFC Conflict", "Mental Limitation", "GED Math", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid loud noise environments. VE cited Job U (DOT 223.322-422), requires Constant exposure to loud noise (EnvFactorNoise=4).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Noise Exposure", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to Frequent handling (gross manipulation). VE cited Job V (DOT 322.422-522), requires Constant handling (HandlingNum=4).",
+    "tags": ["RFC Conflict", "Manipulative Limitation", "Handling Frequency", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to Occasional climbing of ramps/stairs. VE cited Job W (DOT 422.522-622), requires Frequent climbing of ramps/stairs (ClimbingNum=3).",
+    "tags": ["RFC Conflict", "Postural Limitation", "Climbing Ramps/Stairs", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Cannot work at unprotected heights. VE cited Job X (DOT 522.622-722), involves working on scaffolds occasionally (EnvFactorHeights=2).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Heights Exposure", "Scaffolds", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to tasks with routine changes, low stress. VE cited Job Y (DOT 622.722-822), described as 'fast-paced production line work'.",
+    "tags": ["RFC Conflict", "Mental Limitation", "Adaptation", "Pace", "Stress", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to lifting 5 lbs frequently. VE cited Job Z (DOT 722.822-922), requires lifting 10 lbs frequently (Light).",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Lifting Frequency", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid vibration. VE cited Job AA (DOT 822.922-022), requires Frequent exposure to whole body vibration (EnvFactorVibration=3).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Vibration Exposure", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to GED Language Level 1 or 2 (Simple communication). VE cited Job BB (DOT 922.022-122), requires GED Language Level 3 (Read/write reports).",
+    "tags": ["RFC Conflict", "Mental Limitation", "GED Language", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to Occasional balancing. VE cited Job CC (DOT 133.233-333), requires Frequent balancing (BalancingNum=3).",
+    "tags": ["RFC Conflict", "Postural Limitation", "Balancing Frequency", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: No reaching overhead with left arm. VE cited Job DD (DOT 233.333-433), requires Frequent bilateral overhead reaching.",
+    "tags": ["RFC Conflict", "Manipulative Limitation", "Overhead Reaching", "Unilateral", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid wetness/humidity. VE cited Job EE (DOT 333.433-533), requires Constant exposure to wet/humid conditions (EnvFactorWetness=4).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Wetness/Humidity", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to Simple, repetitive tasks. VE cited Job FF (DOT 433.533-633), requires SVP 4 (semi-skilled, implying more complexity).",
+    "tags": ["RFC Conflict", "Mental Limitation", "Task Complexity", "SVP", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Lift/carry 25 lbs occ, 10 lbs freq (Light+). VE cited Job GG (DOT 533.633-733), requires Medium exertion (Lift 50 lbs occ / 25 lbs freq).",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Light vs Medium", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to Occasional kneeling. VE cited Job HH (DOT 633.733-833), requires Frequent kneeling (KneelingNum=3).",
+    "tags": ["RFC Conflict", "Postural Limitation", "Kneeling Frequency", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid concentrated exposure to extreme heat. VE cited Job II (DOT 733.833-933), requires Frequent exposure to extreme heat (EnvFactorHeat=3).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Extreme Heat", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to no interaction with coworkers. VE cited Job JJ (DOT 833.933-033), described as 'team assembly work'.",
+    "tags": ["RFC Conflict", "Mental Limitation", "Social Interaction", "Coworkers", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to Occasional fingering with dominant (right) hand, Never with left. VE cited Job KK (DOT 933.033-133), requires Frequent bilateral fingering.",
+    "tags": ["RFC Conflict", "Manipulative Limitation", "Fingering Frequency", "Unilateral", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Sedentary RFC. VE cited Job LL (DOT 144.244-344), tool report shows exertion level 'S (Sedentary)', but also requires Occasional stooping (StoopingNum=2) and Hypo limits stooping to Never.",
+    "tags": ["RFC Conflict", "Postural Limitation", "Stooping", "Sedentary Job Conflict", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Requires ability to speak clearly. VE cited Job MM (DOT 244.344-444), described as 'Mute Assembler'. (This is hypothetical, unlikely real job)",
+    "tags": ["RFC Conflict", "Communicative Limitation", "Speaking Requirement"]
+  },
+  {
+    "input": "Hypo: Limited fine manipulation (fingering). VE cited Job NN (DOT 344.444-544), requires SVP 1 (implies very simple tasks not usually needing fine manipulation). Tool report confirms Job NN requires Occasional Fingering (FingeringNum=2).",
+    "tags": ["Potential RFC Conflict", "Manipulative Limitation", "Fingering", "Low SVP", "Requires Clarification", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid dust exposure. VE cited Job OO (DOT 444.544-644), tool report shows Occasional exposure to dust (EnvFactorDust=2). Hypo implies complete avoidance.",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Dust Exposure", "Avoid vs Occasional", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to lifting 15 lbs occasionally. VE cited Job PP (DOT 544.644-744), requiring Light exertion (max 20 lbs occ).",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Lifting Weight", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Requires visual acuity for near work but avoids flashing lights. VE cited Job QQ (DOT 644.744-844), involving inspection under strobe lighting.",
+    "tags": ["RFC Conflict", "Visual Limitation", "Environmental Limitation", "Flashing Lights", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to Occasional crouching. VE cited Job RR (DOT 744.844-944), requires Frequent crouching (CrouchingNum=3).",
+    "tags": ["RFC Conflict", "Postural Limitation", "Crouching Frequency", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Can maintain concentration for 2-hour segments. VE cited Job SS (DOT 844.944-044), requires constant vigilance/attention for safety-critical tasks.",
+    "tags": ["RFC Conflict", "Mental Limitation", "Concentration/Persistence", "Sustained Attention", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Cannot tolerate more than superficial interaction with supervisors. VE cited Job TT (DOT 944.044-144), involving direct, frequent performance feedback and correction from supervisor.",
+    "tags": ["RFC Conflict", "Mental Limitation", "Social Interaction", "Supervisors", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Light RFC, but cannot use foot controls. VE cited Job UU (DOT 155.255-355), requires Frequent use of foot controls.",
+    "tags": ["RFC Conflict", "Exertional Limitation", "Manipulative Limitation", "Foot Controls", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Must avoid all exposure to known respiratory irritants. VE cited Job VV (DOT 255.355-455), involves working with chemical solvents Occasionaly (EnvFactorHazards=2).",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Respiratory Irritants", "Avoid vs Occasional", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Limited to reaching waist-level frequently, occasionally below waist, never overhead. VE cited Job WW (DOT 355.455-555), requires Frequent overhead reaching.",
+    "tags": ["RFC Conflict", "Manipulative Limitation", "Reaching Direction", "Overhead Reaching", "SSR 24-3p"]
+  },
+  {
+    "input": "Hypo: Avoid concentrated exposure to temperature extremes, dust, fumes, humidity, chemicals, pulmonary irritants; avoid hazards like unprotected heights or dangerous moving machinery; no driving. VE cited Dishwasher (DOT 318.687-010) and Store Laborer (DOT 922.687-058). DOT shows Dishwasher requires Frequent exposure to extreme heat and wet/humidity; Store Laborer requires Occasional climbing.",
+    "tags": ["RFC Conflict", "Environmental Limitation", "Extreme Heat", "Wetness/Humidity", "Postural Limitation", "Climbing", "Multiple Conflicts", "SSR 24-3p"]
+  }
+] 

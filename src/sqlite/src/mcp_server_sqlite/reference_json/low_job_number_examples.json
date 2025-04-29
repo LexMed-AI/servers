@@ -1,0 +1,30 @@
+[
+  {
+    "input": "VE cited Job A (DOT 111.111-111) with 7,000 jobs nationally. No RFC conflicts.",
+    "tags": ["Low Job Numbers (<10k)", "Potential Significance Issue"]
+  },
+  {
+    "input": "VE cited Job B (DOT 222.222-222) with 12,000 jobs nationally and Job C (DOT 333.333-333) with 5,000 jobs nationally. No RFC conflicts identified for either.",
+    "tags": ["Low Job Numbers (<10k)", "Multiple Citations", "Combined Significance Likely Sufficient"]
+  },
+  {
+    "input": "VE cited Job D (DOT 444.444-444) with 3,000 jobs nationally. This was the only job cited without an RFC conflict.",
+    "tags": ["Low Job Numbers (<10k)", "Sole Basis for Decision", "Significant Numbers Questionable"]
+  },
+  {
+    "input": "VE cited Job E (DOT 555.555-555) with 9,500 jobs nationally.",
+    "tags": ["Low Job Numbers (<10k)", "Potential Significance Issue"]
+  },
+  {
+    "input": "VE cited Job F (DOT 666.666-666) with 'a few thousand' jobs nationally, but did not provide a specific number or source.",
+    "tags": ["Low Job Numbers (Implied)", "Vague Estimate", "Insufficient Basis", "Requires Clarification"]
+  },
+  {
+    "input": "VE cited Job G (DOT 777.777-777) with 15,000 jobs, Job H (DOT 888.888-888) with 4,000 jobs, and Job I (DOT 999.999-999) with 6,000 jobs.",
+    "tags": ["Low Job Numbers (<10k)", "Multiple Citations"]
+  },
+  {
+    "input": "VE testified to 2,000 jobs for Occupation K. ALJ asked for source. VE cited [Specific Source, Date].",
+    "tags": ["Low Job Numbers (<10k)", "Source Provided", "Significant Numbers Questionable"]
+  }
+] 

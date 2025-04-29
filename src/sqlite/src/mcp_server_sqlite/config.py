@@ -564,81 +564,9 @@ goe_interest_area_map = {
     '12': "Physical Performing"
 }
 
-# --- DOT to SOC Crosswalk (NEW) ---
-# This section supports SSR 24-3p compliance by providing DOT to SOC mappings
-# Note: This is a starter mapping for key DOT codes - should be expanded with more entries
-dot_to_soc_crosswalk = {
-    # Format: 'DOT Code': {'soc_code': 'SOC Code', 'soc_title': 'SOC Title', 'approx_percentage': Percentage of SOC}
-    '237.367-014': {  # Call-Out Operator
-        'soc_code': '43-4051.00',
-        'soc_title': 'Customer Service Representatives',
-        'approx_percentage': 5,
-        'crosswalk_notes': 'Modern versions focus more on computer systems than telephone only'
-    },
-    # Add additional DOT to SOC mappings here
-}
-
-# --- Job Obsolescence Risk Assessment (NEW) ---
-# This section supports implementation of EM-24027 REV and similar guidance
-job_obsolescence_indicators = {
-    # Format: 'DOT Code': {'risk_level': 'Level', 'factors': [List of factors], 'em_references': [List of EMs]}
-    '237.367-014': {  # Call-Out Operator
-        'risk_level': 'High',
-        'factors': [
-            'Technology has significantly changed how this work is performed',
-            'Job duties now typically incorporate computer systems rather than telephone only',
-            'Last DOT update in 1991 predates modern digital systems',
-            'Function largely automated or integrated into broader customer service roles'
-        ],
-        'em_references': ['EM-24027 REV', 'EM-21065 REV'],
-        'modern_equivalents': ['Customer Service Representative', 'Call Center Representative']
-    },
-    # Add additional DOT codes with obsolescence indicators here
-}
-
 # --- SSR Application Date Cutoff (NEW) ---
 # Defines the cutoff date for SSR 00-4p vs SSR 24-3p application
 ssr_application_date = {
     'ssr_00_4p_end_date': '2025-01-05',  # Last day SSR 00-4p applies
     'ssr_24_3p_start_date': '2025-01-06'  # First day SSR 24-3p applies
-}
-
-# --- SSR Requirements Comparison (NEW) ---
-# Defines key differences between SSR 00-4p and SSR 24-3p for automated analysis
-ssr_requirements = {
-    'ssr_00_4p': {
-        'dot_conflicts': 'Required identification and resolution of conflicts with DOT',
-        'alj_inquiry': 'ALJ must ask VE if testimony conflicts with DOT',
-        'conflict_resolution': 'Explicit resolution of DOT conflicts required in decision',
-        'acceptable_explanations': [
-            'Changes in how jobs performed since DOT last revised',
-            'VE\'s specific knowledge of job requirements',
-            'VE\'s observation of jobs in specific settings',
-            'Information from other reliable publications',
-            'Job requirements vary by region',
-            'DOT lists maximum requirements but not all positions require maximum'
-        ],
-        'documentation': 'Must explain in decision how conflicts resolved with specific conflicting information'
-    },
-    'ssr_24_3p': {
-        'source_identification': 'VE must identify sources of occupational data used',
-        'methodology_explanation': 'VE must explain general approach to estimating job numbers',
-        'crosswalk_explanation': 'Must explain when using data sources with definitions different from SSA regulations',
-        'acceptable_sources': [
-            'Dictionary of Occupational Titles (DOT)',
-            'Standard Occupational Classification (SOC)',
-            'Occupational Employment and Wage Statistics (OEWS)',
-            'Occupational Requirements Survey (ORS)',
-            'O*NET',
-            'Bureau of Labor Statistics data',
-            'Job Placement Handbooks',
-            'County Business Patterns',
-            'Census Reports',
-            'Occupational Outlook Handbook',
-            'State-specific vocational resources',
-            'Professional publications recognized in field',
-            'Labor market surveys'
-        ],
-        'documentation': 'Decision must reflect consideration of vocational evidence and sources'
-    }
 }

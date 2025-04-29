@@ -7,7 +7,7 @@ from typing import List, Dict, Any, Optional
 logger = logging.getLogger(__name__)
 
 # Define the path to the JSON file relative to this script
-JSON_FILE_PATH = Path(__file__).parent / "reference" / "obsolete_out_dated.json"
+JSON_FILE_PATH = Path(__file__).parent / "reference_json" / "obsolete_out_dated.json"
 
 # Load the obsolescence data once when the module is imported
 OBSOLETE_JOBS_DATA: Optional[List[Dict[str, Any]]] = None

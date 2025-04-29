@@ -7,7 +7,9 @@ requires-python = ">=3.10"
 dependencies = [
     "mcp>=1.0.0",
     "pandas>=2.0.0",
-    "openpyxl>=3.1.0"
+    "openpyxl>=3.1.0",
+    "thefuzz",
+    "python-Levenshtein"
 ]
 
 [build-system]

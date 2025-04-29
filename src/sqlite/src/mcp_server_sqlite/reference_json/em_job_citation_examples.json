@@ -1,0 +1,30 @@
+[
+  {
+    "input": "VE cited Document Preparer, Microfilming (DOT 249.587-018) from EM-24027 REV list. VE Explanation: 'This job is still performed using digital scanners and computers, making the physical demands Sedentary. My sources indicate about 20,000 such jobs exist.' VE did not provide specific sources for job numbers or details on current tasks beyond 'scanning'.",
+    "tags": ["EM-24027 REV Citation", "Insufficient Justification", "Requires Heightened Evidence", "Vague Job Number Basis"]
+  },
+  {
+    "input": "VE cited Addresser (DOT 209.587-010) from EM-24027 REV list. VE Explanation: 'People still address envelopes, it's a simple task.' ALJ did not inquire further.",
+    "tags": ["EM-24027 REV Citation", "Insufficient Justification", "No Evidence Provided", "ALJ Error"]
+  },
+  {
+    "input": "VE cited Surveillance-System Monitor (DOT 379.367-010) from EM-24027 REV list. VE Explanation: 'This corresponds to modern security monitoring roles. As currently performed, using multiple monitors and computer interfaces, it fits the Sedentary RFC. Based on data from [Specific Labor Market Survey Firm, Year], there are approx. 50,000 jobs nationally fitting this description.'",
+    "tags": ["EM-24027 REV Citation", "Potentially Sufficient Justification", "Evidence Provided", "Current Performance Described"]
+  },
+  {
+    "input": "VE cited Patternmaker, Wood (DOT 661.281-022) from EM-24026 Isolated list at Step 5.",
+    "tags": ["EM-24026 Citation", "Isolated Job", "Improper Step 5 Citation"]
+  },
+  {
+    "input": "VE cited Telegrapher (DOT 236.562-010) from EM-24026 Isolated list. VE stated: 'While isolated, it could theoretically be performed.'",
+    "tags": ["EM-24026 Citation", "Isolated Job", "Improper Step 5 Citation"]
+  },
+  {
+    "input": "VE cited Nut Sorter (DOT 521-687-086) from EM-24027 REV list. VE Explanation: 'My research indicates this specific sorting task is now mostly automated, but some manual sorting exists in smaller facilities. I estimate fewer than 5,000 jobs remain. The tasks are consistent with the Light RFC.'",
+    "tags": ["EM-24027 REV Citation", "Evidence Provided (Low Numbers)", "Current Performance Addressed", "Low Job Numbers"]
+  },
+  {
+    "input": "VE cited Silver Wrapper (DOT 318.687-018) from EM-24027 REV list, stating 'It's still done in some high-end restaurants' without further evidence.",
+    "tags": ["EM-24027 REV Citation", "Insufficient Justification", "Anecdotal Basis", "No Evidence Provided"]
+  }
+] 

@@ -24,35 +24,8 @@ logger = logging.getLogger(__name__) # Added logger
 
 # --- Data Loading ---
 
-# Load obsolete/outdated job data at module startup
-_OBSOLETE_OUTDATED_DATA: Dict[str, Dict[str, Any]] = {}
-
-def _load_obsolete_outdated_data():
-    """Loads the obsolete/outdated job data from the JSON file."""
-    global _OBSOLETE_OUTDATED_DATA
-    json_file_path = Path(__file__).parent / 'reference' / 'obsolete_out_dated.json'
-    if not json_file_path.is_file():
-        logger.error(f"Obsolete/outdated data file not found at {json_file_path}")
-        _OBSOLETE_OUTDATED_DATA = {} # Ensure it's an empty dict if file missing
-        return
-
-    try:
-        with open(json_file_path, 'r', encoding='utf-8') as f: # Specify encoding
-            data_list = json.load(f)
-            # Convert list of dicts to a dict keyed by DOT code for faster lookup
-            _OBSOLETE_OUTDATED_DATA = {
-                item['DOT Code']: item for item in data_list if 'DOT Code' in item
-            }
-        logger.info(f"Successfully loaded {len(_OBSOLETE_OUTDATED_DATA)} obsolete/outdated job entries.")
-    except json.JSONDecodeError as e:
-        logger.error(f"Error decoding JSON from {json_file_path}: {e}", exc_info=True)
-        _OBSOLETE_OUTDATED_DATA = {}
-    except Exception as e: # Catch other potential errors during file reading
-        logger.error(f"Error loading obsolete/outdated data from {json_file_path}: {e}", exc_info=True)
-        _OBSOLETE_OUTDATED_DATA = {}
-
-# Call the loading function when the module is imported
-_load_obsolete_outdated_data()
+# NOTE: Obsolescence data loading and checking is now handled by the dedicated
+# job_obsolescence.py module and is removed from here to avoid redundancy.
 
 # Load TSA analysis data
 def load_tsa_analysis() -> Dict[str, Any]:
@@ -63,7 +36,7 @@ def load_tsa_analysis() -> Dict[str, Any]:
         Dictionary containing TSA analysis steps and requirements.
     """
     try:
-        tsa_file_path = os.path.join(os.path.dirname(__file__), 'reference', 'tsa_anylsis.json')
+        tsa_file_path = os.path.join(os.path.dirname(__file__), 'reference_json', 'tsa_analysis.json')
         with open(tsa_file_path, 'r') as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError) as e:
@@ -153,64 +126,6 @@ def get_frequency_details(freq_num: Optional[int]) -> Optional[Dict[str, Any]]:
         return None
     # Use .get for safety, though keys should exist if validation passes
     return config.freq_map_detailed.get(freq_num)
-
-def check_job_obsolescence(dot_code: Optional[str]) -> Dict[str, Any]:
-    """
-    Check if a job is obsolete or outdated based on loaded SSA EM data.
-
-    Args:
-        dot_code: DOT code string to analyze, or None.
-
-    Returns:
-        Dictionary with obsolescence analysis results based on EM-24026/EM-24027.
-    """
-    if not dot_code:
-        return {
-            'dot_code': None,
-            'status': 'Not Applicable',
-            'message': 'No DOT code provided for analysis.',
-            'is_potentially_obsolete': False, # Explicitly false
-            'source_em': None,
-            'comment': None
-        }
-
-    # Look up the DOT code in the loaded data
-    obsolescence_info = _OBSOLETE_OUTDATED_DATA.get(dot_code)
-
-    if obsolescence_info:
-        source_em = obsolescence_info.get("EM", "Unknown EM")
-        comment = obsolescence_info.get("Comment", "No specific comment provided.")
-        status = "Unknown Status"
-        is_obsolete = True # Assume obsolete/outdated if found
-
-        if source_em == "EM-24026":
-            status = "Obsolete (Do Not Cite per EM-24026)"
-        elif source_em == "EM-24027":
-            status = "Outdated (Requires VE/VS Confirmation per EM-24027)"
-        else:
-            # Handle unexpected EM values if necessary
-             logger.warning(f"DOT code {dot_code} found with unexpected EM value: {source_em}")
-             status = f"Flagged (Source: {source_em})"
-
-
-        return {
-            'dot_code': dot_code,
-            'status': status,
-            'message': f"Job is listed under {source_em}.",
-            'is_potentially_obsolete': is_obsolete,
-            'source_em': source_em,
-            'comment': comment
-        }
-    else:
-        # Not found in the obsolete/outdated list
-        return {
-            'dot_code': dot_code,
-            'status': 'Not Listed as Obsolete/Outdated',
-            'message': 'This DOT code was not found in the SSA EM-24026 or EM-24027 lists. Standard obsolescence considerations may still apply (DOT last updated 1991).',
-            'is_potentially_obsolete': False,
-            'source_em': None,
-            'comment': None
-        }
 
 def get_dot_to_soc_mapping(dot_code: Optional[str]) -> Optional[Dict[str, Any]]:
     """

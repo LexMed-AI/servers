@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Optional, Union
 from .db_handler import DatabaseHandler # Import the handler class
 from . import ve_logic, tsa_logic # Import the modules with core logic/formatting
 # Assumes prompt templates are moved to a separate file
-from . import prompt_templates
+# from . import prompt_templates # No longer importing prompts
 from .excel_handler import BLSExcelHandler # Import the Excel handler
 from .job_obsolescence import check_job_obsolescence # Import the new function
 
@@ -141,7 +141,9 @@ async def main(db_path: Path):
 
     # --- Initialize BLS Excel Handler ---
     # Use absolute path for robustness when launched externally
-    excel_file_path = Path('/Users/COLEMAN/Documents/GitHub/servers/src/sqlite/src/mcp_server_sqlite/reference/bls_all_data_M_2024.xlsx')
+    # excel_file_path = Path('/Users/COLEMAN/Documents/GitHub/servers/src/sqlite/src/mcp_server_sqlite/reference_json/bls_all_data_M_2024.xlsx') # Old absolute path
+    # Construct path relative to this server.py file
+    excel_file_path = Path(__file__).parent / "DOTSOCBLS_Excel" / "bls_all_data_M_2024.xlsx"
     try:
         bls_handler = BLSExcelHandler.get_instance(excel_file_path) # Use get_instance for singleton
         logger.info("BLSExcelHandler initialized successfully.")
@@ -161,95 +163,14 @@ async def main(db_path: Path):
     # --- Resource Handlers ---
     # (Removed - No dynamic resources exposed in this version)
 
-    # --- Prompt Handlers ---
-    @server.list_prompts()
-    async def handle_list_prompts() -> list[types.Prompt]:
-        """Lists the available prompts."""
-        logger.debug("Handling list_prompts request")
-        # Return definitions matching the actual prompts available
-        return [
-            types.Prompt(
-                name="ve-audit-demo",
-                description="Demo: Interactively analyze DOT job data using VE tools.",
-                arguments=[
-                    types.PromptArgument(
-                        name="job_title",
-                        description="DOT code or job title to analyze in the demo.",
-                        required=True,
-                    )
-                ],
-            ),
-            types.Prompt(
-                name="ve-transcript-audit",
-                description="Instructs AI to act as VE Auditor and analyze a hearing transcript.",
-                arguments=[
-                    types.PromptArgument( name="hearing_date", description="Date of the hearing (YYYY-MM-DD).", required=True ),
-                    types.PromptArgument( name="transcript", description="Full text of the hearing transcript.", required=True ),
-                    types.PromptArgument( name="claimant_name", description="Claimant identifier (optional).", required=False, default="Claimant" ),
-                ],
-            )
-        ]
+    # --- Prompt Handlers --- (Removed as prompts are not used)
+    # @server.list_prompts()
+    # async def handle_list_prompts() -> list[types.Prompt]:
+    #     ...
 
-    @server.get_prompt()
-    async def handle_get_prompt(name: str, arguments: dict[str, str] | None) -> types.GetPromptResult:
-        """Gets the content for a specific prompt using templates."""
-        logger.debug(f"Handling get_prompt request for '{name}' with args: {arguments}")
-        args = arguments or {}
-
-        if name == "ve-audit-demo":
-            if "job_title" not in args:
-                logger.error("Missing required argument for ve-audit-demo: job_title")
-                raise ValueError("Missing required argument: job_title")
-            job_title = args["job_title"]
-            # Load template from the dedicated module
-            try:
-                prompt_text = prompt_templates.PROMPT_TEMPLATE.format(job_title=job_title)
-            except AttributeError:
-                 logger.error("prompt_templates.PROMPT_TEMPLATE not found or inaccessible.")
-                 raise ImportError("Could not load prompt template.")
-            except KeyError:
-                logger.error("Error formatting PROMPT_TEMPLATE - 'job_title' key missing?")
-                raise ValueError("Error formatting demo prompt template.")
-
-
-            logger.debug(f"Generated prompt 've-audit-demo' for job title: {job_title}")
-            return types.GetPromptResult(
-                description=f"VE audit demo for {job_title}",
-                messages=[types.PromptMessage(role="user", content=types.TextContent(type="text", text=prompt_text.strip()))],
-            )
-
-        elif name == "ve-transcript-audit":
-            required_args = ["hearing_date", "transcript"]
-            missing = [arg for arg in required_args if arg not in args]
-            if missing:
-                logger.error(f"Missing required arguments for ve-transcript-audit: {missing}")
-                raise ValueError(f"Missing required arguments: {missing}")
-
-            # Load template from the dedicated module
-            try:
-                prompt_text = prompt_templates.VE_AUDITOR_PROMPT.format(
-                    hearing_date=args["hearing_date"],
-                    # Let the LLM determine applicable SSR based on date within the prompt's instructions
-                    applicable_ssr="To be determined based on hearing date",
-                    claimant_name=args.get("claimant_name", "Claimant"),
-                    transcript=args["transcript"]
-                )
-            except AttributeError:
-                 logger.error("prompt_templates.VE_AUDITOR_PROMPT not found or inaccessible.")
-                 raise ImportError("Could not load prompt template.")
-            except KeyError as e:
-                logger.error(f"Error formatting VE_AUDITOR_PROMPT - missing key? {e}")
-                raise ValueError("Error formatting transcript audit prompt template.")
-
-            logger.debug(f"Generated prompt 've-transcript-audit' for claimant: {args.get('claimant_name', 'Claimant')}")
-            return types.GetPromptResult(
-                description=f"VE transcript audit for {args.get('claimant_name', 'Claimant')}",
-                messages=[types.PromptMessage(role="user", content=types.TextContent(type="text", text=prompt_text.strip()))],
-            )
-
-        else:
-            logger.error(f"Unknown prompt requested: {name}")
-            raise ValueError(f"Unknown prompt: {name}")
+    # @server.get_prompt()
+    # async def handle_get_prompt(name: str, arguments: dict[str, str] | None) -> types.GetPromptResult:
+    #     ...
 
     # --- Tool Handlers ---
     @server.list_tools()

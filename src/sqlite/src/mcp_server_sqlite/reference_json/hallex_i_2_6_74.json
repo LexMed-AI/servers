@@ -1,118 +1,131 @@
 {
-    "id": "HALLEX I-2-6-74",
+  "id": "HA 01260.074",
     "title": "Testimony of a Vocational Expert",
+  "renumbered_from": "HALLEX I-2-6-74",
     "last_update": "2025-01-06",
     "transmittal": "I-2-266",
     "effective_date_context": "Aligned with SSR 24-3p effective date.",
     "related_sections": [
-      "HALLEX I-2-1-31", "HALLEX I-2-1-32", "HALLEX I-2-5-30",
-      "HALLEX I-2-5-48", "HALLEX I-2-5-50", "HALLEX I-2-5-56",
-      "HALLEX I-2-5-57", "HALLEX I-2-5-58 B", "HALLEX I-2-5-61"
+    "HALLEX HA 01210.031", "HALLEX HA 01210.032",
+    "HALLEX HA 01250.048", "HALLEX HA 01250.050", "HALLEX HA 01250.056",
+    "HALLEX HA 01250.057", "HALLEX HA 01250.061"
     ],
     "related_ssrs": [
       "SSR 24-3p", "SSR 17-4p"
     ],
     "related_cfr": [
-      "20 CFR 404.1566(d)", "20 CFR 404.1566(e)",
-      "20 CFR 416.966(d)", "20 CFR 416.966(e)",
-      "20 CFR 404.1567(b)", "20 CFR 416.967(b)",
-      "20 CFR 404.1568", "20 CFR 416.968"
+    "20 CFR 404.1566", "20 CFR 404.1567(b)", "20 CFR 404.1568",
+    "20 CFR 416.966", "20 CFR 416.967(b)", "20 CFR 416.968"
     ],
     "related_poms": [
       "POMS DI 25001.001"
     ],
+  "related_ems": [
+      "EM-24027 REV"
+  ],
     "content": {
       "A_prehearing_actions": {
+      "title": "Prehearing Actions",
         "alj_responsibilities": [
-          "Have no substantive contact with the VE regarding the merits of the case except at the hearing or in writing, ensuring any such writing is exhibited.",
+        "Have no substantive contact with the VE regarding the merits of the case except at the hearing or in writing, and must ensure that any such writing is exhibited.",
           "Request that the VE examine any pertinent evidence received between the time the VE completed the case study and the time of the hearing."
         ],
+      "instructions_ref": "For instructions on obtaining testimony from a VE either at a hearing or in written responses to interrogatories, see Hearings, Appeals and Litigation Law (HALLEX) manual, sections HA 01250.048 through HA 01250.061.",
         "ho_staff_responsibilities": [
           "Send copies of any correspondence between the ALJ and the VE to the claimant and make the correspondence an exhibit.",
           "If the VE is appearing via telephone, confirm the VE's telephone number before the hearing."
         ],
-        "note_notice_of_hearing": "HO staff must notify the claimant of the VE's appearance (and the manner of appearance) in the 'REMARKS' section of the notice of hearing."
+      "note_notice_of_hearing": "When a VE is scheduled to testify at a hearing, HO staff must notify the claimant of the VE's appearance in the \"REMARKS\" section of the notice of hearing. The notice of hearing must also specify the manner in which the VE will appear."
       },
       "B_conduct_of_hearing": {
-        "alj_opening_statement": "Advise the claimant of the reason for the VE's presence and explain the procedures.",
-        "ve_attendance": "VE may attend the entire hearing but is not required. If pertinent testimony (e.g., work history, education) is missed, the ALJ must summarize it for the VE on the record.",
+      "title": "Conduct of the Hearing",
+      "alj_opening_statement": "At the hearing, the ALJ must advise the claimant of the reason for the VE's presence and explain the procedures all participants will follow.",
+      "ve_attendance": "The VE may, but is not required to, attend the entire hearing. If the VE was not present to hear pertinent testimony, such as testimony regarding the claimant's work history or educational background, the ALJ will summarize the testimony for the VE on the record.",
         "ve_testimony_protocol": {
           "on_record": "All VE testimony must be on the record.",
           "preliminary_steps_after_oath": [
-            "Ask VE to confirm impartiality, expertise, and professional qualifications.",
-            "Verify VE has examined all vocational evidence of record.",
-            "Ask claimant and representative if they have objections to the VE testifying.",
-            "Rule on any objections (during hearing, separate exhibit, or in decision)."
+          "Ask the VE to confirm their impartiality, expertise, and professional qualifications.",
+          "Verify that the VE has examined all the vocational evidence of record.",
+          "Ask the claimant and the representative whether they have any objection(s) to the VE testifying.",
+          "Rule on any objection(s). The ALJ may address the objection(s) during the hearing, in narrative form as a separate exhibit, or in the body of the decision."
           ]
         },
-        "note_ve_qualifications_refs": "See HALLEX I-2-1-31 for VE qualification info and HALLEX I-2-1-32 for referral instructions if qualifications are questioned."
+      "note_ve_qualifications_refs": "For information about how the Social Security Administration qualifies a VE, see HALLEX HA 01210.031. For information about making a referral for further review of the VE's qualifications, if an ALJ finds that it may be appropriate, see the instructions in HALLEX HA 01210.032."
       },
       "C_expectations_regarding_ve_evidence": {
+      "title": "Expectations Regarding VE Evidence",
         "methods": ["Testimony at hearing", "Written responses to interrogatories"],
-        "data_sources": "VEs may use any reliable source commonly used by vocational professionals relevant under SSA rules, plus their professional knowledge, training, and experience (Ref: SSR 24-3p).",
-        "ve_responsibility": "Provide vocational evidence tailored to the specific case facts based on expertise and available data.",
+      "data_sources_statement": "When providing evidence, VEs may consider any reliable source of occupational information that is commonly used by vocational professionals and is relevant under agency rules, along with their professional knowledge, training, and experience (SSR 24-3p).",
+      "ve_responsibility": "VEs are responsible for providing vocational evidence that is tailored to the specific facts of the case based on their professional knowledge, training, and experience, and the vocational data available to them.",
         "specific_expectations_list": [
           {
             "id": "C.1",
-            "topic": "Identify Data Source(s)",
-            "details": "VE must identify the data source(s) relied upon in providing evidence."
+          "topic": "Identify the Data Source(s)",
+          "details": "VEs will use their experience and expertise to determine the most appropriate source(s) of data to support the evidence they offer. The VE must identify the data source(s) they rely on in providing evidence."
           },
           {
             "id": "C.2",
-            "topic": "Explain Job Number Approach",
-            "details": "If citing occupations at step five and offering job number estimates, VE must explain their general approach. SSA does not dictate a specific method; numbers are general estimates.",
-            "example": "Citing DOT jobs but using SOC-based OEWS numbers requires explaining the general approach for deriving DOT occupation numbers from the broader SOC group data. No crosswalk explanation needed if using sources with the same taxonomy (e.g., ORS and OEWS)."
+          "topic": "Explain the General Approach to Estimating Job Numbers",
+          "details": "When citing occupations at step five of the sequential evaluation process, VEs may offer estimates of the numbers of jobs in these occupations in the national economy. The VE must explain their general approach to estimating job numbers. The Social Security Administration does not dictate any specific approach to estimating job numbers and treats any numbers provided only as general estimates.",
+          "example": "A VE may cite occupations listed in the Dictionary of Occupational Titles (DOT) but derive estimates of job numbers from an occupational source that uses the Standard Occupational Classification (SOC) system, such as the U.S. Bureau of Law Statistics' Occupational Employment and Wage Statistics (OEWS). Because the DOT uses a different classification taxonomy, the VE must explain their general approach to how they derived information about the DOT occupation(s) from the SOC-based data source. If the VE relies on sources that use the same classification taxonomies, such as the Occupational Requirements Survey (ORS) and OEWS, then an explanation on classification taxonomies is not necessary."
           },
           {
             "id": "C.3",
-            "topic": "Use SSA Definitions & Explain Differences",
-            "details": "VE must use SSA's controlling definitions for exertion, education, and skill level (Ref: SSR 24-3p). If a data source defines these differently, VE must acknowledge the difference and explain whether/how it was accounted for. No explanation needed for differences in *other* types of definitions.",
-            "example_1_skill_svp": "Unskilled work = SVP 1-2 (<= 30 days learning time per POMS DI 25001.001). If VE uses a source defining unskilled differently (e.g., 4 months), VE must explain how estimates accounted for jobs exceeding the 30-day threshold.",
-            "example_2_exertion_ors": "Light work = Max 20 lbs lift / 10 lbs freq carry (20 CFR 404.1567(b)). ORS definition differs (e.g., carrying 11-25 lbs occasionally). If VE uses ORS for light work hypo, VE must explain the definition difference and how jobs requiring lifting >20 lbs occasionally were accounted for. VE should state basis (experience, observation, surveys, etc.)."
+          "topic": "Use Definitions from Agency Policy, and Account for Differences in Exertion, Education, and Skill Level",
+          "details": "Exertion, education, and skill level are defined in agency regulations and policy, and these definitions are controlling for adjudicators. SSR 24-3p. If the VE uses a data source that defines the exertion, education, or skill level differently than agency regulations or policy, the VE, as the qualified professional, must acknowledge the general difference and explain whether or how this difference has been accounted for in the evidence the VE provided. For areas other than exertion, education, and skill level, the VE is not required to identify or account for differences between agency definitions and the definitions used by the data source.",
+          "example_1_skill_svp": "The regulatory definitions of skill levels are controlling. Supporting these regulatory definitions, the agency uses the specific vocational preparation (SVP) level to determine how long it would take a claimant to achieve average performance in a job (POMS DI 25001.001.77 and SSR 24-3p). For instance, as defined in 20 CFR 404.1568 and 416.968, unskilled work is work that needs little or no judgment to do simple duties that can be learned on the job in a short period of time. Unskilled work corresponds to an SVP of 1 or 2, meaning that an individual can typically learn the job in 30 days or less (POMS DI 25001.001). If a VE classifies an occupation as unskilled but uses a data source that defines unskilled work as work that takes four months to learn, the VE must explain how their estimates accounted for any jobs that would require more than 30 days to learn, as those jobs are not consistent with our regulatory definition of unskilled work.",
+          "example_2_exertion_ors": "Agency regulations and policy state that exertion is defined by sitting, standing, walking, lifting, carrying, pushing, and pulling abilities. For instance, agency regulations indicate that light work involves lifting no more than 20 pounds at a time with frequent lifting or carrying of objects weighing up to 10 pounds (see 20 CFR 404.1567(b) and 416.967(b)). ORS's definition of light work contemplates carrying 1 to 10 pounds frequently and carrying 11 to 25 pounds occasionally or seldom. An ALJ may ask the VE to provide testimony regarding the work available for a hypothetical individual with a lifting capacity consistent with \"light work\" as defined in 20 CFR 404.1567 and 416.967. If the VE's response relies on ORS data, the VE must explain that ORS defines lifting requirements for light work differently from our regulations. The VE must also explain how they accounted for any jobs that would require lifting 21-25 pounds occasionally, as those additional lifting requirements are not consistent with our regulatory definition of light work. Additionally, VEs should provide the basis for their testimony, such as their experience, their observation of the occupations, surveys they conducted, studies they reviewed, etc."
           },
           {
             "id": "C.4",
-            "topic": "Identify Modern Performance Deviations",
-            "details": "Data sources are generally presumed current (20 CFR 404.1566). However, for occupations listed in EM-24027 REV (potentially outdated processes/materials), if cited, VE MUST explain how the occupation is *currently performed* consistent with RFC, AND provide evidence allowing ALJ to determine significant job numbers exist for the occupation *as currently performed*.",
-            "example_document_preparer": "If VE cites Document Preparer (from EM list) relying on DOT, VE must explain current performance based on expertise and provide evidence supporting significant job numbers for that current performance."
+          "topic": "Identify When Occupations Are Performed Differently, with More Modern Materials and Processes than Described in the Data Source",
+          "details": "Generally, data sources SSA accepts as reliable sources of vocational information are presumed to be current and accurate (20 CFR 404.1566, 416.966, and SSR 24-3p). Emergency Message (EM)-24027 REV, however, specifically identifies occupations within the DOT that may refer to job materials or processes that have been replaced by more modern materials or processes. If one of these occupations is cited, the VE must explain how, as the occupation is currently performed, its requirements are consistent with the RFC limitations. The VE must also provide evidence that allows the ALJ to determine whether the occupation exists in the national economy in numbers that alone, or in combination with work in other cited occupations, are significant.",
+          "example": "Document preparer is an occupation listed in the DOT that may be performed with more modern materials and processes than those identified in this data source per EM-24027 REV. If, in response to a hypothetical question, the VE relies on the DOT as their source of data to cite the document preparer position as a representative occupation, the VE must explain how that occupation is currently performed based on their professional knowledge, training, and experience, and provide evidence that allows the ALJ to determine whether the jobs within that occupation exist in significant numbers in the national economy."
           },
           {
             "id": "C.5",
-            "topic": "Explain Classification Differences",
-            "details": "If citing multiple sources with different classification systems (e.g., SOC aggregating many DOT codes), VE may need to explain how differences were accounted for."
+          "topic": "Explain How They Accounted for Different Classifications",
+          "details": "VEs may cite to sources of occupational data that do not precisely correspond to each other. In some instances, it may be necessary for the VE to explain how they accounted for the different classifications. For example, some SOC codes may correspond to a large number of DOT occupation codes."
           }
         ]
       },
       "D_alj_responsibilities": {
-        "eliciting_evidence": "May use hypothetical questions to elicit VE evidence regarding PRW (actual/general) or other work adjustment.",
+      "title": "ALJ Responsibilities",
+      "eliciting_evidence_intro": "The ALJ may use hypothetical questions to elicit vocational evidence, including testimony and written responses to interrogatories, from the VE about whether a person with the physical and mental limitations imposed by the claimant's medical impairment(s) can meet the demands of the claimant's past work, either as the claimant actually performed it or as it is generally performed in the national economy, or adjust to any other work that exists in the national economy.",
         "reliance_on_ve_evidence": {
-          "general_rule": "May generally rely on VE testimony/statements complying with SSR 24-3p (VEs presumed adequate due to expertise).",
-          "inquiry_level": "Detailed inquiry usually not required unless contrary evidence exists."
+        "general_rule": "When the VE testimony complies with SSR 24-3p, the ALJ may generally rely on the VE's testimony or statement, including the data source(s) used to support the VE testimony.",
+        "presumption": "VE evidence is presumed to be adequate because VEs are impartial and qualified professionals whom the agency consults because of their expertise.",
+        "inquiry_level": "A more detailed inquiry is not usually required. If contrary evidence is presented, the ALJ will determine whether additional development is necessary to make a supported finding."
         },
-        "handling_inadequate_ve_evidence": {
-          "alj_duty": "If VE doesn't provide adequate info/explanation per SSR 24-3p, ALJ must develop the record further.",
-          "methods": ["Ask clarifying questions at hearing", "Issue interrogatories (HALLEX I-2-5-57)", "Hold supplemental hearing (HALLEX I-2-5-56)"],
+      "subsection_D1": {
+        "title": "SSR 24-3p Compliance",
+        "alj_duty": "The ALJ must determine whether the VE's evidence is adequate to decide the claim and must do so efficiently. In the rare instances where the VE does not provide adequate information and explanation as outlined above (SSR 24-3p), the ALJ will develop the record to make a supported finding at step four or five of the sequential evaluation process.",
+        "development_methods": "To elicit clear and complete information, the ALJ may ask the VE clarifying questions at the hearing, issue interrogatories (HALLEX HA 01250.057), or hold a supplemental hearing (HALLEX HA 01250.056).",
           "specific_questions_to_ask": [
-            "What source(s) did you rely on?",
-            "Explain your general approach to estimating job numbers.",
-            "Did your source define exertion/education/skill differently? If so, how did you account for it?",
-            "How did you account for different classifications if using multiple/different source types?"
+          "Ask the VE what source(s) the VE relied upon when providing vocational evidence.",
+          "Ask the VE to explain their general approach to estimating job numbers. Agency policy does not mandate any specific approach to estimating job numbers, and the numbers provided are only general estimates to assist the ALJ in determining whether a significant number of jobs exist.",
+          "Ask the VE whether they used a data source that defines exertion, education, or skill level differently than the regulations do. If so, the ALJ will ask the VE to explain whether or how this difference is accounted for in the evidence the VE provided.",
+          "Ask the VE to explain how they accounted for the different classifications in sources of occupational data which do not precisely correspond to each other."
           ],
-          "note_on_sources": "ALJ relies on VE expertise regarding source appropriateness; VEs may use any reliable source relevant under SSA rules + professional knowledge (SSR 24-3p)."
+        "note_on_sources": "When providing evidence, VEs may consider any reliable source of occupational information that is commonly used by vocational professionals and is relevant under agency rules, along with their professional knowledge, training, and experience (SSR 24-3p). VEs are in the best position to determine the most appropriate source(s) of data to support their opinions as to vocational information. The ALJ will rely on the VE's experience and expertise regarding the data source(s) used."
         },
+      "subsection_D2": {
+          "title": "Questioning the VE",
         "other_questioning_duties": [
-          "Follow up if SSR 24-3p info inconsistent/missing.",
-          "If EM-24027 REV job cited, ask how currently performed.",
-          "Direct VE not to answer medical/RFC/ultimate issue questions.",
-          "Prohibit VE examination of claimant during hearing.",
-          "Provide opportunity for claimant/rep to question VE.",
-          "Rule on objections (on record, exhibit, or in decision)."
+            "Follow up with specific questions if the VE has not provided information consistent with SSR 24-3p and the ALJ does not have sufficient evidence to make a supported finding at step four or step five of the sequential evaluation process.",
+            "If the VE cites an occupation listed in EM-24027 REV, the ALJ will ask the VE to explain how that occupation is currently performed, based on their professional knowledge, training, and experience.",
+            "Direct the VE not to respond to questions on medical matters or draw conclusions outside of the VE's expertise on vocational issues. For example, the VE may not provide testimony regarding the claimant's residual functional capacity or the resolution of ultimate issues of fact or law.",
+            "Prohibit the VE from conducting any type of vocational examination of the claimant during the hearing.",
+            "Provide the claimant and the representative with the opportunity to question the VE.",
+            "Rule on any objections to the VE testimony on the record during the hearing, in narrative form as a separate exhibit, or in the body of the decision."
         ]
+      }
       },
       "E_expectations_regarding_representatives_claimants": {
-        "right_to_question": "Claimant/representative have the right to question VE on pertinent matters within VE expertise.",
-        "alj_control": "ALJ determines when right is exercised and appropriateness of questions/answers.",
-        "representative_duty": "Expected to raise relevant questions/challenges during the hearing to aid record development (Ref: SSR 17-4p, SSR 24-3p)."
+      "title": "Expectations Regarding Representatives and Claimants",
+      "right_to_question": "The claimant and the representative have the right to question the VE fully on any pertinent matter within the VE's area of expertise.",
+      "alj_control": "However, the ALJ will determine when they may exercise this right and whether questions asked, or answers given, are appropriate.",
+      "representative_duty": "Consistent with their obligation to further the efficient, fair, and orderly conduct of the administrative decision-making process (SSR 17-4p and SSR 24-3p), we expect the claimant's representative to raise any relevant questions or challenges regarding the VE's testimony at the time of the hearing, in order to help ensure thorough development of the record."
       }
     }
   }
