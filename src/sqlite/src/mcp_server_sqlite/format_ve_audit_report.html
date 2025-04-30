@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VE Audit Report: Brandenburg Hearing</title>
+  <style>
+    /* Modern Typography */
+    :root {
+      --primary: #1a73e8;
+      --primary-light: #e8f0fe;
+      --success: #34a853;
+      --success-light: #e6f4ea;
+      --warning: #fbbc04;
+      --warning-light: #fef7e0;
+      --danger: #ea4335;
+      --danger-light: #fde9e8;
+      --gray-100: #f8f9fa;
+      --gray-200: #e9ecef;
+      --gray-300: #dee2e6;
+      --gray-400: #ced4da;
+      --gray-500: #adb5bd;
+      --gray-600: #6c757d;
+      --gray-700: #495057;
+      --gray-800: #343a40;
+      --gray-900: #212529;
+      --border-radius: 8px;
+      --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background-color: #f5f7fa;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: white;
+      box-shadow: var(--box-shadow);
+    }
+
+    .header {
+      position: relative;
+      padding: 1.5rem 0;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    .report-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--gray-900);
+    }
+
+    .case-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      background-color: var(--gray-100);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--border-radius);
+    }
+
+    .info-group {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .info-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .executive-summary {
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      background-color: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--border-radius);
+    }
+
+    .summary-heading {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: var(--gray-100);
+      border-radius: var(--border-radius);
+    }
+
+    .toc-item {
+      background-color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--gray-700);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .toc-item:hover {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .section-content {
+      padding: 0 0.5rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 1rem 1.5rem;
+      background-color: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      background-color: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    th {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+      text-align: left;
+      padding: 1rem;
+      border: 1px solid var(--gray-300);
+    }
+
+    td {
+      padding: 1rem;
+      border: 1px solid var(--gray-300);
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--gray-100);
+    }
+
+    /* Status indicators */
+    .status-compatible {
+      background-color: var(--success-light);
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .status-conflict {
+      background-color: var(--danger-light);
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .status-caution {
+      background-color: var(--warning-light);
+      color: var(--warning);
+      font-weight: 600;
+    }
+
+    /* Expandable sections */
+    .expandable {
+      margin-bottom: 1.5rem;
+    }
+
+    .expandable-header {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      padding: 1rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .expandable-header:hover {
+      background-color: #d4e6fc;
+    }
+
+    .expandable-header::after {
+      content: "+";
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    .expandable-header.active::after {
+      content: "−";
+    }
+
+    .expandable-content {
+      display: none;
+      padding: 1.5rem;
+      border: 1px solid var(--gray-300);
+      border-top: none;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      background-color: white;
+    }
+
+    .expandable-content.active {
+      display: block;
+    }
+
+    /* Alerts and Notices */
+    .alert {
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: var(--border-radius);
+    }
+
+    .alert-success {
+      background-color: var(--success-light);
+      border-left: 4px solid var(--success);
+    }
+
+    .alert-warning {
+      background-color: var(--warning-light);
+      border-left: 4px solid var(--warning);
+    }
+
+    .alert-danger {
+      background-color: var(--danger-light);
+      border-left: 4px solid var(--danger);
+    }
+
+    .alert-info {
+      background-color: var(--primary-light);
+      border-left: 4px solid var(--primary);
+    }
+
+    /* Critical findings */
+    .findings-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .finding-card {
+      flex: 1;
+      min-width: 300px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .finding-card.danger {
+      border-top: 4px solid var(--danger);
+    }
+
+    .finding-card.warning {
+      border-top: 4px solid var(--warning);
+    }
+
+    .finding-header {
+      padding: 1rem;
+      background-color: var(--danger);
+      color: white;
+      font-weight: 600;
+    }
+
+    .finding-body {
+      padding: 1.5rem;
+      background-color: var(--danger-light);
+    }
+
+    /* Columns for strengths/weaknesses */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    /* Lists */
+    ul, ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Quotes */
+    blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid var(--primary);
+      background-color: var(--gray-100);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-300);
+      text-align: center;
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+      }
+      
+      .container {
+        max-width: 100%;
+        box-shadow: none;
+      }
+      
+      .expandable-content {
+        display: block !important;
+      }
+      
+      .no-print {
+        display: none;
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .case-info {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .findings-container,
+      .columns {
+        flex-direction: column;
+      }
+    }
+
+    /* AI Disclaimer styling */
+    .ai-disclaimer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border: 2px dashed var(--warning);
+      border-radius: var(--border-radius);
+      background-color: var(--warning-light);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .disclaimer-icon {
+      font-size: 2rem;
+      color: var(--warning);
+      flex-shrink: 0;
+    }
+    
+    .disclaimer-content h3 {
+      color: var(--warning);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .disclaimer-content p {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .disclaimer-content ul {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+    
+    @media print {
+      .ai-disclaimer {
+        page-break-inside: avoid;
+        border: 1px solid #888;
+        background-color: #f8f8f8;
+      }
+    }
+
+    .argument-table {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      border-collapse: collapse;
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+    
+    .argument-table th {
+      background-color: var(--primary);
+      color: white;
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 1rem;
+    }
+    
+    .argument-table td {
+      background-color: white;
+      padding: 1.5rem;
+      vertical-align: top;
+    }
+    
+    .argument-table p {
+      margin-top: 0;
+      font-weight: 600;
+    }
+    
+    .argument-table ul {
+      margin-bottom: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .argument-table {
+        font-size: 0.9rem;
+      }
+      
+      .argument-table th {
+        padding: 0.75rem;
+      }
+      
+      .argument-table td {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="report-title">VE Audit Report: Brandenburg Hearing</h1>
+      <p class="report-date">Generated on: <span id="current-date">December 15, 2024</span></p>
+    </header>
+
+    <div class="case-info">
+      <div class="info-group">
+        <div class="info-item">
+          <span class="info-label">Claimant:</span> Tobias Brandenburg
+        </div>
+        <div class="info-item">
+          <span class="info-label">Hearing Date:</span> December 11, 2024
+        </div>
+        <div class="info-item">
+          <span class="info-label">Applicable SSR:</span> SSR 24-3p
+        </div>
+      </div>
+      <div class="info-group">
+        <div class="info-item">
+          <span class="info-label">ALJ:</span> Julianna Slur
+        </div>
+        <div class="info-item">
+          <span class="info-label">VE:</span> Jerry Hildren
+        </div>
+        <div class="info-item">
+          <span class="info-label">Attorney:</span> Paul Ortiz
+        </div>
+      </div>
+    </div>
+
+    <div class="executive-summary">
+      <h3 class="summary-heading">Executive Summary</h3>
+      <p>This audit identified significant conflicts between the VE testimony and DOT job requirements. The cashier and order clerk positions cited by the VE conflict with the RFC limitation for "infrequent interaction with the public." The VE failed to explain job number methodology and address these conflicts as required by SSR 24-3p. These deficiencies provide strong grounds for challenging an unfavorable decision.</p>
+    </div>
+
+    <div class="toc">
+      <a href="#initial-review" class="toc-item">Initial Review</a>
+      <a href="#prw-analysis" class="toc-item">PRW Analysis</a>
+      <a href="#hypotheticals" class="toc-item">Hypotheticals</a>
+      <a href="#compatibility" class="toc-item">Compatibility Analysis</a>
+      <a href="#consistency" class="toc-item">Consistency Assessment</a>
+      <a href="#obsolescence" class="toc-item">Obsolescence Analysis</a>
+      <a href="#clarification" class="toc-item">Clarification</a>
+      <a href="#assessment" class="toc-item">Overall Assessment</a>
+    </div>
+
+    <section id="initial-review" class="section">
+      <h2 class="section-title">1. Initial Review</h2>
+      <div class="section-content">
+        <p>No procedural issues or unusual aspects were noted in the hearing transcript. The hearing occurred via telephone.</p>
+      </div>
+    </section>
+
+    <section id="prw-analysis" class="section">
+      <h2 class="section-title">2. Past Relevant Work Analysis</h2>
+      <div class="section-content">
+        <div class="alert alert-success">
+          <p>The ALJ explicitly stated that there is no past relevant work: <em>"I've already indicated that there's no past relevant work"</em> (00:32:18). No PRW was identified or analyzed during the hearing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hypotheticals" class="section">
+      <h2 class="section-title">3. Hypotheticals and Identified Jobs</h2>
+      <div class="section-content">
+        <div class="expandable">
+          <div class="expandable-header">Hypothetical #1: Light Work with Limitations</div>
+          <div class="expandable-content">
+            <p><strong>Hypothetical Quote:</strong> "Please assume a hypothetical individual with the claimant's age and education with no past relevant work. Further assume this individual can perform light work as defined in the regulations, except can never climb ladders, rips, or scaffolds. Can occasionally climb ramps and stairs. Can occasionally balance as that is defined in the dictionary of occupational titles and select the characteristics of occupations. Can frequently stoop, kneel, crouch, and crawl. Can occasionally reach overhead, frequently reach in all other directions. Can frequently handle and finger. Can never work in hazardous environments, such as environments with exposure to possible bodily injury for moving mechanical parts of equipment, tools, or machinery or high exposed places. Can understand, remember, and carry out detailed but not complex instructions. Infrequently interact with the general public, coworkers, and supervisors, and can deal with frequent changes in a routine work setting." (00:32:18)</p>
+
+            <div class="card">
+              <div class="card-header">Key RFC Limitations</div>
+              <div class="card-body">
+                <ul>
+                  <li>Light exertional level</li>
+                  <li>Never climb ladders, ropes, scaffolds</li>
+                  <li>Occasionally reach overhead</li>
+                  <li>Detailed but not complex instructions</li>
+                  <li><strong style="color: var(--danger);">Infrequent interaction with public, coworkers, supervisors</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Occupation</th>
+                  <th>DOT Code</th>
+                  <th>SVP</th>
+                  <th>Jobs (National)</th>
+                  <th>Source Cited?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cashier</td>
+                  <td>211.462-010</td>
+                  <td>2</td>
+                  <td>140,000</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Cleaner</td>
+                  <td>323.687-014</td>
+                  <td>2</td>
+                  <td>330,000</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Laundry Folder</td>
+                  <td>369.687-018</td>
+                  <td>2</td>
+                  <td>165,000</td>
+                  <td>No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="expandable">
+          <div class="expandable-header">Hypothetical #2: Sedentary Work with Limitations</div>
+          <div class="expandable-content">
+            <p><strong>Hypothetical Quote:</strong> "Same as hypothetical number 1, except this individual could perform sedentary work as defined in the regulations. All other limitations in my hypothetical number 1 would still be exist. The only changes from light to sedentary." (00:36:54)</p>
+
+            <div class="card">
+              <div class="card-header">Key RFC Limitations</div>
+              <div class="card-body">
+                <ul>
+                  <li>Sedentary exertional level</li>
+                  <li>Never climb ladders, ropes, scaffolds</li>
+                  <li>Occasionally reach overhead</li>
+                  <li>Detailed but not complex instructions</li>
+                  <li><strong style="color: var(--danger);">Infrequent interaction with public, coworkers, supervisors</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Occupation</th>
+                  <th>DOT Code</th>
+                  <th>SVP</th>
+                  <th>Jobs (National)</th>
+                  <th>Source Cited?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Order Clerk</td>
+                  <td>209.567-014</td>
+                  <td>2</td>
+                  <td>140,000</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Optical Grid Assembler</td>
+                  <td>713.687-018</td>
+                  <td>2</td>
+                  <td>407,000</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Lens Inserter</td>
+                  <td>713.687-026</td>
+                  <td>2</td>
+                  <td>75,000</td>
+                  <td>No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compatibility" class="section">
+      <h2 class="section-title">4. Job-RFC Compatibility Analysis</h2>
+      <div class="section-content">
+        <h3>Critical Findings</h3>
+        <div class="findings-container">
+          <div class="finding-card danger">
+            <div class="finding-header">CRITICAL FINDING #1</div>
+            <div class="finding-body">
+              <p><strong>Cashier (211.462-010)</strong> requires substantial customer interaction:</p>
+              <ul>
+                <li>DOT definition: "Receives cash from customers..." "Makes change, cashes checks, and issues receipts or tickets to customers."</li>
+                <li>Conflicts with RFC limitation: "Infrequent interaction with the general public"</li>
+                <li>VE failed to address this conflict (00:35:47)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="finding-card danger">
+            <div class="finding-header">CRITICAL FINDING #2</div>
+            <div class="finding-body">
+              <p><strong>Order Clerk (209.567-014)</strong> requires substantial telephone interaction:</p>
+              <ul>
+                <li>DOT definition: "Takes food and beverage orders over telephone or intercom system... suggests menu items, and substitutions... answers questions regarding food or service."</li>
+                <li>Conflicts with RFC limitation: "Infrequent interaction with the general public"</li>
+                <li>VE failed to address this conflict</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="expandable">
+          <div class="expandable-header">Detailed Job-RFC Compatibility Analysis</div>
+          <div class="expandable-content">
+            <div style="overflow-x: auto;">
+              <table>
+                <thead>
+                  <tr>
+                    <th>RFC Limitation</th>
+                    <th>Cashier (211.462-010)</th>
+                    <th>Assessment</th>
+                    <th>Order Clerk (209.567-014)</th>
+                    <th>Assessment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Infrequent interaction with public</strong></td>
+                    <td>Requires constant customer interaction</td>
+                    <td class="status-conflict">CONFLICT</td>
+                    <td>Requires telephone interaction with customers</td>
+                    <td class="status-conflict">CONFLICT</td>
+                  </tr>
+                  <tr>
+                    <td>Light/Sedentary work</td>
+                    <td>Light (2)</td>
+                    <td class="status-compatible">Compatible</td>
+                    <td>Sedentary (1)</td>
+                    <td class="status-compatible">Compatible</td>
+                  </tr>
+                  <tr>
+                    <td>GED Reasoning Level</td>
+                    <td>Level 3</td>
+                    <td class="status-caution">Caution</td>
+                    <td>Level 3</td>
+                    <td class="status-caution">Caution</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consistency" class="section">
+      <h2 class="section-title">5. Consistency Assessment (SSR 24-3p)</h2>
+      <div class="section-content">
+        <div class="alert alert-warning">
+          <h4 style="color: var(--danger); margin-top: 0;">PROCEDURAL DEFICIENCY</h4>
+          <p>The ALJ failed to properly develop the record regarding apparent conflicts between VE testimony and DOT requirements:</p>
+          <ul>
+            <li>ALJ only asked general question: <em>"Is your testimony consistent with the Dictionary of Occupational Titles?"</em> (00:35:47)</li>
+            <li>VE provided no explanation for social interaction conflicts</li>
+            <li>VE provided no explanation for job number methodology</li>
+            <li>This fails to meet SSR 24-3p requirements for identifying and resolving conflicts</li>
+          </ul>
+        </div>
+
+        <h3>SSR 24-3p Compliance Checklist</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>SSR 24-3p Requirement</th>
+              <th>VE Compliance</th>
+              <th>ALJ Compliance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Identify data sources</td>
+              <td class="status-conflict">❌ Not provided</td>
+              <td class="status-conflict">❌ Not requested</td>
+            </tr>
+            <tr>
+              <td>Explain job number methodology</td>
+              <td class="status-conflict">❌ Not provided</td>
+              <td class="status-conflict">❌ Not requested</td>
+            </tr>
+            <tr>
+              <td>Explain differences between RFC and job requirements</td>
+              <td class="status-conflict">❌ Not provided</td>
+              <td class="status-conflict">❌ Not requested</td>
+            </tr>
+            <tr>
+              <td>Explain differences for modern job performance</td>
+              <td class="status-conflict">❌ Not provided</td>
+              <td class="status-conflict">❌ Not requested</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="obsolescence" class="section">
+      <h2 class="section-title">6. Evaluation of Potentially Obsolete Jobs</h2>
+      <div class="section-content">
+        <p>None of the cited jobs appear on the lists from EM-24026 (Isolated) or EM-24027 REV (Questioned/Outdated), meaning they don't require the heightened evidentiary standard for citation. However, the cashier position likely involves significantly different tasks today than described in the DOT (last updated 1991), particularly with the prevalence of electronic scanning, self-checkout, and other technologies. The VE did not address these potential differences in the context of the RFC limitations.</p>
+      </div>
+    </section>
+
+    <section id="clarification" class="section">
+      <h2 class="section-title">7. Clarification and Follow-Up</h2>
+      <div class="section-content">
+        <div class="card">
+          <div class="card-header">Recommended Cross-Examination Questions</div>
+          <div class="card-body">
+            <ol>
+              <li>
+                <strong>Regarding Cashier Position:</strong>
+                <blockquote>"Mr. Hildreth, would you agree that the cashier position typically requires regular interaction with the public, and if so, how is this consistent with the RFC limitation of 'infrequent interaction with the general public'?"</blockquote>
+              </li>
+              <li>
+                <strong>Regarding Order Clerk Position:</strong>
+                <blockquote>"Mr. Hildreth, the order clerk position involves taking food orders over telephone or intercom. How is this consistent with the limitation of 'infrequent interaction with the general public'?"</blockquote>
+              </li>
+              <li>
+                <strong>Regarding Job Number Methodology:</strong>
+                <blockquote>"Mr. Hildreth, could you please explain your methodology for determining the number of jobs available nationally for each position you've cited?"</blockquote>
+              </li>
+              <li>
+                <strong>Regarding GED Reasoning Level:</strong>
+                <blockquote>"Mr. Hildreth, both the cashier and order clerk positions have a GED reasoning level of 3. Could you explain how this aligns with the RFC limitation of 'detailed but not complex instructions'?"</blockquote>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="assessment" class="section">
+      <h2 class="section-title">8. Overall Assessment</h2>
+      <div class="section-content">
+        <div class="alert alert-success">
+          <h3 style="margin-top: 0;">STRATEGIC RECOMMENDATION</h3>
+          <p>The VE testimony in this case contains substantial deficiencies that provide multiple grounds for challenging an unfavorable decision.</p>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card-header" style="background-color: var(--success);">STRENGTHS OF VE TESTIMONY</div>
+              <div class="card-body" style="background-color: var(--success-light);">
+                <ul>
+                  <li>VE identified multiple jobs at both exertional levels</li>
+                  <li>All physical requirements of jobs appear compatible with RFC</li>
+                  <li>Job numbers all exceed 10,000 threshold</li>
+                  <li>None of the jobs are listed in EM-24026 or EM-24027</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              <div class="card-header" style="background-color: var(--danger);">WEAKNESSES OF VE TESTIMONY</div>
+              <div class="card-body" style="background-color: var(--danger-light);">
+                <ul>
+                  <li>Cashier and Order Clerk positions conflict with "infrequent interaction" limitation</li>
+                  <li>VE provided no explanation for these conflicts</li>
+                  <li>VE provided no methodology for job number estimates</li>
+                  <li>GED reasoning level 3 for cited jobs may conflict with claimant's limitations</li>
+                  <li>VE failed to address modern job performance vs. DOT descriptions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Key Appeal Arguments</h3>
+        
+        <table class="argument-table">
+          <thead>
+            <tr>
+              <th colspan="2">Primary Argument</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <p>The VE testimony fails to meet the requirements of SSR 24-3p because:</p>
+                <ul>
+                  <li>VE did not explain conflicts between "infrequent interaction" limitation and job requirements</li>
+                  <li>VE did not explain methodology for job number estimates</li>
+                  <li>ALJ failed to develop the record regarding these conflicts</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <table class="argument-table">
+          <thead>
+            <tr>
+              <th colspan="2">Regulatory Failures</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <p>The ALJ failed to:</p>
+                <ul>
+                  <li>Properly identify apparent conflicts between VE testimony and DOT</li>
+                  <li>Obtain explanations for those conflicts</li>
+                  <li>Explain how conflicts were resolved in the decision</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <table class="argument-table">
+          <thead>
+            <tr>
+              <th colspan="2">Substantial Evidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <p>The decision is not supported by substantial evidence because:</p>
+                <ul>
+                  <li>Remaining jobs (after excluding those with conflicts) are insufficient</li>
+                  <li>VE provided no basis for job numbers</li>
+                  <li>GED reasoning levels may exceed claimant's mental limitations</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-success" style="margin-top: 2rem;">
+          <h3 style="margin-top: 0; color: var(--success);">CONCLUSION</h3>
+          <p>The VE testimony in this case contains significant deficiencies that could form the basis for a successful appeal. Focus on the conflicts between the RFC "infrequent interaction" limitation and the public interaction requirements of the cashier and order clerk positions, as well as the VE's failure to comply with SSR 24-3p's explanation requirements.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ai-disclaimer">
+      <div class="disclaimer-icon">⚠️</div>
+      <div class="disclaimer-content">
+        <h3>AI-GENERATED CONTENT DISCLAIMER</h3>
+        <p>This report was automatically generated using artificial intelligence technology. While efforts have been made to ensure accuracy and reliability:</p>
+        <ul>
+          <li>All findings should be independently verified by a qualified attorney or vocational expert</li>
+          <li>The analysis is based on available data and may not account for all relevant factors</li>
+          <li>Legal interpretations within may require professional review</li>
+          <li>This document should be used as an analytical aid, not as definitive legal guidance</li>
+        </ul>
+        <p>© 2024 LexMed, LLC - For professional evaluation purposes only</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Generated by LexMed, LLC • All rights reserved • Not a substitute for professional legal advice</p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current date
+    document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    
+    // Expandable sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const expandables = document.querySelectorAll('.expandable-header');
+      
+      expandables.forEach(header => {
+        header.addEventListener('click', function() {
+          this.classList.toggle('active');
+          const content = this.nextElementSibling;
+          content.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

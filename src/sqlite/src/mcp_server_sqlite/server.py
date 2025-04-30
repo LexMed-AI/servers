@@ -1,6 +1,7 @@
 import logging
 from pathlib import Path
 import json # For structured JSON output from tools where appropriate
+import sqlite3
 
 # MCP SDK Imports
 from mcp.server.models import InitializationOptions
@@ -15,8 +16,8 @@ from typing import Any, Dict, List, Optional, Union
 # Local module imports for refactored logic
 from .db_handler import DatabaseHandler # Import the handler class
 from . import ve_logic, tsa_logic # Import the modules with core logic/formatting
-# Assumes prompt templates are moved to a separate file
-# from . import prompt_templates # No longer importing prompts
+# Import the specific prompt module needed
+from .prompt_library import ve_audit_MCP_rag # Changed import
 from .excel_handler import BLSExcelHandler # Import the Excel handler
 from .job_obsolescence import check_job_obsolescence # Import the new function
 
@@ -114,6 +115,29 @@ TOOL_DEFINITIONS = [
             "required": ["title"],
         },
     },
+    # File writing tool
+    {
+        "name": "write_file",
+        "description": "Write provided content to a specified file within the allowed project directory structure. Creates directories if needed.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "path": {
+                    "type": "string",
+                    "description": "Directory path relative to the project root where the file should be saved (e.g., 'audits/completed'). Slashes will be normalized."
+                },
+                "filename": {
+                    "type": "string",
+                    "description": "Name of the file to create (e.g., '2024-01-15_audit_smith.md')."
+                },
+                "content": {
+                    "type": "string",
+                    "description": "The text content to write into the file."
+                }
+            },
+            "required": ["path", "filename", "content"],
+        },
+    },
     # Removed tools are implicitly handled by not being in this list
 ]
 
@@ -163,14 +187,65 @@ async def main(db_path: Path):
     # --- Resource Handlers ---
     # (Removed - No dynamic resources exposed in this version)
 
-    # --- Prompt Handlers --- (Removed as prompts are not used)
-    # @server.list_prompts()
-    # async def handle_list_prompts() -> list[types.Prompt]:
-    #     ...
+    # --- Prompt Handlers --- (Restored for Claude Desktop compatibility)
+    @server.list_prompts()
+    async def handle_list_prompts() -> list[types.Prompt]:
+        """Lists the available prompts."""
+        logger.debug("Handling list_prompts request")
+        # Only list the single prompt we support
+        return [
+            types.Prompt(
+                name="ve-transcript-audit", # The only supported prompt
+                description="Instructs AI to act as VE Auditor and analyze a hearing transcript using the ve_audit_MCP_rag template.",
+                arguments=[
+                    types.PromptArgument( name="hearing_date", description="Date of the hearing (YYYY-MM-DD).", required=True ),
+                    types.PromptArgument( name="transcript", description="Full text of the hearing transcript.", required=True ),
+                    types.PromptArgument( name="claimant_name", description="Claimant identifier (optional).", required=False, default="Claimant" ),
+                ],
+            )
+        ]
 
-    # @server.get_prompt()
-    # async def handle_get_prompt(name: str, arguments: dict[str, str] | None) -> types.GetPromptResult:
-    #     ...
+    @server.get_prompt()
+    async def handle_get_prompt(name: str, arguments: dict[str, str] | None) -> types.GetPromptResult:
+        """Gets the content for the ve-transcript-audit prompt."""
+        logger.debug(f"Handling get_prompt request for '{name}' with args: {arguments}")
+        args = arguments or {}
+
+        # Only handle the one supported prompt
+        if name == "ve-transcript-audit":
+            required_args = ["hearing_date", "transcript"]
+            missing = [arg for arg in required_args if arg not in args]
+            if missing:
+                logger.error(f"Missing required arguments for ve-transcript-audit: {missing}")
+                raise ValueError(f"Missing required arguments: {missing}")
+
+            # Load template from the specific imported module
+            try:
+                prompt_text = ve_audit_MCP_rag.PROMPT_TEMPLATE.format(
+                    hearing_date=args["hearing_date"],
+                    # Assuming the template handles this logic internally or via LLM instruction
+                    applicable_ssr="To be determined based on hearing date",
+                    claimant_name=args.get("claimant_name", "Claimant"),
+                    transcript=args["transcript"]
+                )
+            except AttributeError:
+                 # This would mean PROMPT_TEMPLATE isn't defined in ve_audit_MCP_rag.py
+                 logger.error("ve_audit_MCP_rag.PROMPT_TEMPLATE not found or inaccessible.")
+                 raise ImportError("Could not load the specified prompt template.")
+            except KeyError as e:
+                logger.error(f"Error formatting ve_audit_MCP_rag.PROMPT_TEMPLATE - missing key? {e}")
+                raise ValueError("Error formatting transcript audit prompt template.")
+
+            logger.debug(f"Generated prompt 've-transcript-audit' for claimant: {args.get('claimant_name', 'Claimant')}")
+            return types.GetPromptResult(
+                description=f"VE transcript audit for {args.get('claimant_name', 'Claimant')}",
+                messages=[types.PromptMessage(role="user", content=types.TextContent(type="text", text=prompt_text.strip()))],
+            )
+
+        else:
+            # Reject requests for any other prompt name
+            logger.error(f"Unknown or unsupported prompt requested: {name}")
+            raise ValueError(f"Unknown or unsupported prompt: {name}")
 
     # --- Tool Handlers ---
     @server.list_tools()
@@ -227,11 +302,49 @@ async def main(db_path: Path):
     async def tool_generate_job_report(args, db, **kwargs):
         if "search_term" not in args: raise ValueError("Missing required argument: search_term")
         search_term = args['search_term'].strip()
-        job_data_list = db.find_job_data(search_term)
-        if not job_data_list:
+        
+        logger.debug(f"generate_job_report searching for: '{search_term}'")
+        
+        # First try to find by code - prioritize Ncode search for numerical codes
+        job_data = None
+        
+        # Try using clean_dot_code if it appears to be a DOT code
+        from .generate_job_report import clean_dot_code, get_job_data
+        
+        try:
+            # Use the more robust get_job_data function from generate_job_report.py
+            job_data = get_job_data(db, search_term)
+            
+            if job_data:
+                logger.debug(f"Found job data for '{search_term}' using get_job_data function")
+                try:
+                    report_text = ve_logic.generate_formatted_job_report(job_data)
+                    return [types.TextContent(type="text", text=report_text)]
+                except Exception as format_err:
+                    logger.error(f"Error formatting job report for '{search_term}': {format_err}", exc_info=True)
+                    return [types.TextContent(type="text", text=f"Found job data for '{search_term}' but encountered an error formatting the report: {str(format_err)}")]
+            
+            # If get_job_data fails, fall back to the original method
+            job_data_list = db.find_job_data(search_term)
+            if job_data_list:
+                logger.debug(f"Found job data for '{search_term}' using find_job_data function")
+                try:
+                    report_text = ve_logic.generate_formatted_job_report(job_data_list[0])
+                    return [types.TextContent(type="text", text=report_text)]
+                except Exception as format_err:
+                    logger.error(f"Error formatting job report for '{search_term}' using find_job_data results: {format_err}", exc_info=True)
+                    return [types.TextContent(type="text", text=f"Found job data for '{search_term}' but encountered an error formatting the report: {str(format_err)}")]
+                
+            # No results found through any method
+            logger.info(f"No job data found for search term: '{search_term}'")
             return [types.TextContent(type="text", text=f"No matching jobs found for search term: '{search_term}'.")]
-        report_text = ve_logic.generate_formatted_job_report(job_data_list[0])
-        return [types.TextContent(type="text", text=report_text)]
+        except Exception as e:
+            # Provide more detailed error message and include error type
+            error_type = type(e).__name__
+            error_msg = str(e)
+            
+            logger.error(f"Error in generate_job_report for '{search_term}': {error_type} - {error_msg}", exc_info=True)
+            return [types.TextContent(type="text", text=f"Error generating job report for '{search_term}': {error_type} - {error_msg}")]
 
     async def tool_analyze_bls_excel(args, bls_handler, **kwargs):
         if bls_handler is None:
@@ -303,6 +416,60 @@ async def main(db_path: Path):
                 "error": f"Failed to query BLS data by title: {str(e)}"
             }, indent=2))]
 
+    async def tool_write_file(args, **kwargs):
+        """Handles writing content to a file within the project."""
+        required_args = ["path", "filename", "content"]
+        missing = [arg for arg in required_args if arg not in args]
+        if missing:
+            raise ValueError(f"Missing required arguments for write_file: {missing}")
+
+        relative_path_str = args["path"]
+        filename = args["filename"]
+        content = args["content"]
+
+        # Basic sanitization/validation (can be enhanced)
+        if ".." in relative_path_str or ".." in filename:
+            logger.error("Attempted file write with invalid path traversal ('..').")
+            raise ValueError("Invalid path or filename containing '..'.")
+        if not filename:
+             raise ValueError("Filename cannot be empty.")
+
+        try:
+            # Assume workspace_root is the directory containing the 'src' folder
+            # For this project structure, it seems to be /Users/COLEMAN/Documents/GitHub/servers
+            # A more robust solution might get this from an environment variable or config
+            workspace_root = Path(__file__).parent.parent.parent # Go up three levels from server.py
+            
+            # Resolve the target path relative to the workspace root
+            target_dir = workspace_root / Path(relative_path_str)
+            target_file = target_dir / filename
+
+            # Security Check (Example): Ensure we are writing within the workspace
+            # This prevents writing to arbitrary locations like /etc/passwd
+            # You might want more specific allowed directories.
+            if not target_file.resolve().is_relative_to(workspace_root.resolve()):
+                 logger.error(f"Attempted to write file outside workspace: {target_file}")
+                 raise ValueError("Target path is outside the allowed workspace.")
+
+            # Create parent directories if they don't exist
+            target_dir.mkdir(parents=True, exist_ok=True)
+
+            # Write the file
+            target_file.write_text(content, encoding='utf-8')
+            logger.info(f"Successfully wrote file: {target_file}")
+            
+            return [types.TextContent(type="text", text=json.dumps({
+                "status": "Success",
+                "message": f"File written successfully to {target_file.relative_to(workspace_root)}"
+            }, indent=2))]
+        
+        except OSError as e:
+            logger.error(f"OS error writing file {target_file}: {e}", exc_info=True)
+            raise ValueError(f"Failed to write file due to OS error: {e.strerror}")
+        except Exception as e:
+            logger.error(f"Unexpected error writing file {target_file}: {e}", exc_info=True)
+            raise ValueError(f"An unexpected error occurred while writing the file: {str(e)}")
+
     TOOL_DISPATCH = {
         "list_tables": tool_list_tables,
         "describe_table": tool_describe_table,
@@ -313,6 +480,7 @@ async def main(db_path: Path):
         "analyze_bls_excel": tool_analyze_bls_excel,
         "query_bls_by_soc": tool_query_bls_by_soc,
         "query_bls_by_title": tool_query_bls_by_title,
+        "write_file": tool_write_file,
     }
 
     @server.call_tool()
@@ -342,9 +510,22 @@ async def main(db_path: Path):
         except FileNotFoundError as e:
             logger.critical(f"FileNotFoundError calling tool '{name}': {e}", exc_info=True)
             return [types.TextContent(type="text", text=f"Server Configuration Error: Required file not found. {str(e)}")]
+        except sqlite3.Error as e:
+            logger.error(f"Database error calling tool '{name}': {e}", exc_info=True)
+            return [types.TextContent(type="text", text=f"Database Error ({name}): {str(e)}")]
+        except AttributeError as e:
+            logger.error(f"AttributeError calling tool '{name}': {e}", exc_info=True)
+            return [types.TextContent(type="text", text=f"Server Logic Error ({name}): Missing attribute or method. {str(e)}")]
         except Exception as e:
-            logger.exception(f"Unexpected error calling tool '{name}")
-            return [types.TextContent(type="text", text=f"Unexpected server error processing tool '{name}'. Check server logs for details.")]
+            # Get detailed traceback information
+            import traceback
+            tb_str = traceback.format_exc()
+            logger.exception(f"Unexpected error calling tool '{name}':\n{tb_str}")
+            
+            # Provide a more informative error message
+            error_type = type(e).__name__
+            error_message = str(e) if str(e) else "No error message available"
+            return [types.TextContent(type="text", text=f"Error in {name}: {error_type} - {error_message}\n\nCheck server logs for detailed traceback.")]
 
 
     # --- Run the Server using Stdio ---

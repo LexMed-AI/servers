@@ -9,10 +9,16 @@ expert standards and SSA guidelines.
 import json
 import logging
 from pathlib import Path
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, TYPE_CHECKING
 
-# Local imports
-from .db_handler import DatabaseHandler
+# For type checking only to avoid circular imports
+if TYPE_CHECKING:
+    from .db_handler import DatabaseHandler
+else:
+    # Runtime import that doesn't create circular dependency
+    # Create an alias that can be used in function signatures
+    DatabaseHandler = Any  # This avoids the circular import at runtime while still allowing type hints
+
 from . import config
 # from . import analysis_utils # Not currently used, commented out
 from .ve_logic import get_job_analysis # Import necessary function from ve_logic

@@ -15,6 +15,9 @@ logger = logging.getLogger(__name__)
 # Define the expected location relative to this file
 _REPORT_QUERY_SQL_PATH = Path(__file__).parent / "report_query.sql"
 
+# Remove the circular import
+# from .db_handler import DatabaseHandler # Import the handler class
+
 class DatabaseHandler:
     """Manages connection and queries to the DOT SQLite database."""
 

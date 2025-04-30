@@ -1,115 +1,231 @@
 # SQLite MCP Server
 
 ## Overview
-A Model Context Protocol (MCP) server implementation for advanced job data analysis, vocational evaluation, and business intelligence using SQLite and BLS Excel data. This server enables running SQL queries, generating job reports, analyzing transferable skills, and integrating SSA Medical-Vocational Guidelines for VE/SSA use cases.
+A Model Context Protocol (MCP) server implementation for advanced job data analysis, vocational evaluation, and business intelligence using SQLite and BLS Excel data. This server enables running SQL queries, generating job reports, checking job obsolescence, analyzing transferable skills, and integrating SSA Medical-Vocational Guidelines for VE/SSA use cases.
 
 ## Features
 - **Direct SQL Querying:** Run safe, read-only SELECT queries on the DOT SQLite database.
-- **Job Report Generation:** Generate detailed, formatted reports for DOT jobs, including exertion, SVP, GED, and more.
-- **Job Obsolescence Checking:** Check if a DOT job is potentially obsolete using SSA/EM guidance and reference data.
-- **Transferable Skills Analysis (TSA):** Analyze transferable skills and apply SSA Medical-Vocational Guidelines (Grids) for claimants.
-- **BLS Excel Data Integration:** Query BLS OEWS data by SOC code or occupation title for wage and employment statistics.
+- **Job Report Generation:** Generate detailed, formatted reports for DOT jobs, including exertion, SVP, GED, physical/environmental demands, etc.
+- **Job Obsolescence Checking:** Check if a DOT job is potentially obsolete using SSA/EM guidance and reference data from `reference_json/obsolete_out_dated.json`.
+- **Transferable Skills Analysis (TSA):** Perform preliminary analysis of transferable skills and apply SSA Medical-Vocational Guidelines (Grids) for claimants (using data from `reference_json/medical_vocational_guidelines.json` and `reference_json/ssr_82-41.json`).
+- **BLS Excel Data Integration:** Query BLS OEWS data by SOC code or occupation title for wage and employment statistics (using data from `DOTSOCBLS_Excel/bls_all_data_M_2024.xlsx`).
 - **Schema Introspection:** List tables and describe table schemas in the DOT database.
 - **Robust Error Handling:** All tools and handlers provide structured error messages and logging.
 
 ## Components
 
-### Resources
-The server exposes a single dynamic resource:
-- `memo://insights`: A continuously updated business insights memo that aggregates discovered insights during analysis
-  - Auto-updates as new insights are discovered via the append-insight tool
-
 ### Prompts
-The server provides a demonstration prompt:
-- `mcp-demo`: Interactive prompt that guides users through database operations
-  - Required argument: `topic` - The business domain to analyze
-  - Generates appropriate database schemas and sample data
-  - Guides users through analysis and insight generation
-  - Integrates with the business insights memo
+The server provides one primary prompt intended for VE transcript analysis:
+- **`ve-transcript-audit`**
+  - **Description:** Instructs AI to act as VE Auditor and analyze a hearing transcript using the `ve_audit_MCP_rag.py` template.
+  - **Required Arguments:**
+    - `hearing_date` (string): Date of the hearing (YYYY-MM-DD).
+    - `transcript` (string): Full text of the hearing transcript.
+  - **Optional Argument:**
+    - `claimant_name` (string): Claimant identifier (defaults to "Claimant").
 
 ### Tools
-The server offers six core tools:
+The server offers the following tools:
 
-#### Query Tools
-- `read_query`
-   - Execute SELECT queries to read data from the database
-   - Input:
-     - `query` (string): The SELECT SQL query to execute
-   - Returns: Query results as array of objects
+#### Core VE Analysis Tools
+- **`generate_job_report`**
+  - **Description:** Generate a comprehensive formatted text report of job requirements (Exertion, SVP, GED, Physical Demands, Environment, etc.) for a specific DOT code or job title.
+  - **Input:**
+    - `search_term` (string): DOT code (format: XXX.XXX-XXX) or job title to search for.
+  - **Returns:** Formatted text report.
 
-- `write_query`
-   - Execute INSERT, UPDATE, or DELETE queries
-   - Input:
-     - `query` (string): The SQL modification query
-   - Returns: `{ affected_rows: number }`
+- **`check_job_obsolescence`**
+  - **Description:** Check if a specific DOT job is potentially obsolete based on available indicators and SSA guidance (e.g., EM-24027 REV).
+  - **Input:**
+    - `dot_code` (string): DOT code (format: XXX.XXX-XXX) to analyze.
+  - **Returns:** JSON string with analysis results.
 
-- `create_table`
-   - Create new tables in the database
-   - Input:
-     - `query` (string): CREATE TABLE SQL statement
-   - Returns: Confirmation of table creation
+- **`analyze_transferable_skills`**
+  - **Description:** Performs a preliminary Transferable Skills Analysis (TSA) based on PRW, RFC, age, and education per SSA guidelines. **Note:** Placeholder implementation requiring full SSA rules review for production use.
+  - **Input:**
+    - `source_dot` (string): DOT code (format: XXX.XXX-XXX) of the Past Relevant Work (PRW).
+    - `residual_capacity` (string): Claimant's RFC level (e.g., SEDENTARY, LIGHT).
+    - `age` (string): Claimant's age category (e.g., ADVANCED AGE).
+    - `education` (string): Claimant's education category (e.g., HIGH SCHOOL).
+    - `target_dots` (array, optional): Specific target DOT codes (format: XXX.XXX-XXX) suggested by VE.
+  - **Returns:** JSON string with preliminary TSA results.
 
-#### Schema Tools
-- `list_tables`
-   - Get a list of all tables in the database
-   - No input required
-   - Returns: Array of table names
+#### Database Utility Tools
+- **`read_query`**
+  - **Description:** Execute a read-only SELECT query directly on the DOT SQLite database.
+  - **Input:**
+    - `query` (string): The SELECT SQL query to execute.
+  - **Returns:** JSON string of query results.
 
-- `describe-table`
-   - View schema information for a specific table
-   - Input:
-     - `table_name` (string): Name of table to describe
-   - Returns: Array of column definitions with names and types
+- **`list_tables`**
+  - **Description:** List all tables available in the DOT SQLite database.
+  - **Input:** None.
+  - **Returns:** JSON string containing an array of table names.
 
-#### Analysis Tools
-- `append_insight`
-   - Add new business insights to the memo resource
-   - Input:
-     - `insight` (string): Business insight discovered from data analysis
-   - Returns: Confirmation of insight addition
-   - Triggers update of memo://insights resource
+- **`describe_table`**
+  - **Description:** Get the column schema for a specific table in the DOT database.
+  - **Input:**
+    - `table_name` (string): Name of the table (e.g., 'DOT').
+  - **Returns:** JSON string with column schema information.
 
-### Medical-Vocational Guidelines (Grids)
-- The server loads SSA Medical-Vocational Guidelines from a structured JSON file and applies them in TSA analysis (see `reference/medical_vocational_guidelines.json`).
+#### BLS Excel Tools
+- **`analyze_bls_excel`**
+  - **Description:** Check the status of the loaded BLS Excel data handler and show basic info (e.g., first few rows).
+  - **Input:** None.
+  - **Returns:** JSON string with handler status and data summary.
+
+- **`query_bls_by_soc`**
+  - **Description:** Query BLS occupation data by SOC (Standard Occupational Classification) code. Returns wage and employment data.
+  - **Input:**
+    - `soc_code` (string): SOC code to search for (e.g., '15-1252').
+  - **Returns:** JSON string with matching BLS data or message if not found.
+
+- **`query_bls_by_title`**
+  - **Description:** Search BLS occupation data by job title (partial match). Returns wage and employment data for matching occupations.
+  - **Input:**
+    - `title` (string): Occupation title to search for (e.g., 'Software').
+  - **Returns:** JSON string with matching BLS data results.
+
+## Medical-Vocational Guidelines (Grids)
+- The server loads SSA Medical-Vocational Guidelines from `src/sqlite/src/mcp_server_sqlite/reference_json/medical_vocational_guidelines.json` and applies them in TSA analysis.
 
 ## DOT SQLite Database
+- This repository includes a comprehensive **SQLite database** (`src/sqlite/src/mcp_server_sqlite/DOT.db`) containing Dictionary of Occupational Titles (DOT) jobs and requirements.
+- It's the primary data source for `generate_job_report`, `analyze_transferable_skills`, `check_job_obsolescence`, and `read_query`.
+- The server loads this database at startup (path provided via `--db-path`).
+- You can explore the schema with `list_tables` and `describe_table`.
+- You may replace or update the database file, ensuring the schema matches.
 
-This repository includes a comprehensive **SQLite database** containing all Dictionary of Occupational Titles (DOT) jobs and their associated job requirements. The database is used as the primary data source for:
+### Database Schema (`DOT` Table)
 
-- **Job report generation**
-- **Transferable Skills Analysis (TSA)**
-- **Job obsolescence checks**
-- **Direct SQL queries and schema introspection**
+```sql
+CREATE TABLE "DOT" (
+"Ncode" INTEGER PRIMARY KEY,
+"DocumentNumber" TEXT,
+"Code" REAL,
+"DLU" INTEGER,
+"WFData" INTEGER,
+"WFDataSig" TEXT,
+"WFPeople" INTEGER,
+"WFPeopleSig" TEXT,
+"WFThings" INTEGER,
+"WFThingsSig" TEXT,
+"GEDR" INTEGER,
+"GEDM" INTEGER,
+"GEDL" INTEGER,
+"SVPNum" INTEGER,
+"AptGenLearn" INTEGER,
+"AptVerbal" INTEGER,
+"AptNumerical" INTEGER,
+"AptSpacial" INTEGER,
+"AptFormPer" INTEGER,
+"AptClericalPer" INTEGER,
+"AptMotor" INTEGER,
+"AptFingerDext" INTEGER,
+"AptManualDext" INTEGER,
+"AptEyeHandCoord" INTEGER,
+"AptColorDisc" INTEGER,
+"WField1" TEXT,
+"WField2" TEXT,
+"WField3" TEXT,
+"MPSMS1" TEXT,
+"MPSMS2" TEXT,
+"MPSMS3" TEXT,
+"Temp1" TEXT,
+"Temp2" TEXT,
+"Temp3" TEXT,
+"Temp4" TEXT,
+"Temp5" TEXT,
+"GOE" REAL,
+"GOENum" INTEGER,
+"Strength" TEXT,
+"StrengthNum" INTEGER,
+"ClimbingNum" INTEGER,
+"BalancingNum" INTEGER,
+"StoopingNum" INTEGER,
+"KneelingNum" INTEGER,
+"CrouchingNum" INTEGER,
+"CrawlingNum" INTEGER,
+"ReachingNum" INTEGER,
+"HandlingNum" INTEGER,
+"FingeringNum" INTEGER,
+"FeelingNum" INTEGER,
+"TalkingNum" INTEGER,
+"HearingNum" INTEGER,
+"TastingNum" INTEGER,
+"NearAcuityNum" INTEGER,
+"FarAcuityNum" INTEGER,
+"DepthNum" INTEGER,
+"AccommodationNum" INTEGER,
+"ColorVisionNum" INTEGER,
+"FieldVisionNum" INTEGER,
+"WeatherNum" INTEGER,
+"ColdNum" INTEGER,
+"HeatNum" INTEGER,
+"WetNum" INTEGER,
+"NoiseNum" INTEGER,
+"VibrationNum" INTEGER,
+"AtmosphereNum" INTEGER,
+"MovingNum" INTEGER,
+"ElectricityNum" INTEGER,
+"HeightNum" INTEGER,
+"RadiationNum" INTEGER,
+"ExplosionNum" INTEGER,
+"ToxicNum" INTEGER,
+"OtherNum" INTEGER,
+"Title" TEXT,
+"AltTitles" TEXT,
+"CompleteTitle" TEXT,
+"Industry" TEXT,
+"Definitions" TEXT,
+"GOE1" TEXT,
+"GOE2" TEXT,
+"GOE3" TEXT,
+"WField1Short" TEXT,
+"WField2Short" TEXT,
+"WField3Short" TEXT,
+"MPSMS1Short" TEXT,
+"MPSMS2Short" TEXT,
+"MPSMS3Short" TEXT,
+"OccGroup" TEXT
+);
 
-### What's Included
-- **DOT Jobs Table:** Contains every DOT code, job title, and detailed requirements (exertion, SVP, GED, physical/environmental demands, etc.).
-- **Schema:** The database schema is designed for efficient querying and integration with MCP tools.
-- **Reference Data:** Used by the server's logic modules for VE/SSA analysis and reporting.
+CREATE INDEX idx_dot_title ON DOT (Title);
+CREATE INDEX idx_dot_completetitle ON DOT (CompleteTitle);
+CREATE INDEX idx_dot_code_text ON DOT (CAST(Code AS TEXT));
+```
 
-### Usage
-- The server loads the SQLite database at startup (path provided via `--db-path`).
-- All core tools and handlers interact with this database for job lookups, reporting, and analysis.
-- You can run safe, read-only SELECT queries using the `read_query` tool, or explore the schema with `list_tables` and `describe_table`.
+## Usage (Standalone / External Client)
 
-### Customization
-- You may replace or update the database file to use a different or updated DOT dataset, as long as the schema matches the expected structure.
+To run the server locally (e.g., for development or use with an external client like Claude Desktop):
 
-## Usage with Claude Desktop
+1.  Ensure you have Python 3.10+ installed.
+2.  Install dependencies (likely managed via `uv` or `pip`).
+3.  Navigate to the root of the `servers` repository in your terminal.
+4.  Run the server module, providing the path to the database:
+
+```bash
+python -m src.sqlite.src.mcp_server_sqlite --db-path src/sqlite/src/mcp_server_sqlite/DOT.db
+```
+
+The server will start and listen for MCP requests via stdio.
+
+## Usage with Claude Desktop (Example Configurations)
 
 ### uv
 
-```bash
+```json
 # Add the server to your claude_desktop_config.json
 "mcpServers": {
   "sqlite": {
     "command": "uv",
     "args": [
       "--directory",
-      "parent_of_servers_repo/servers/src/sqlite",
+      "parent_of_servers_repo/servers/src/sqlite", # Adjust path as needed
       "run",
-      "mcp-server-sqlite",
+      "mcp-server-sqlite", # Assumes package name or script alias
       "--db-path",
-      "~/test.db"
+      "src/sqlite/src/mcp_server_sqlite/DOT.db" # Relative path within project
     ]
   }
 }
@@ -127,46 +243,41 @@ This repository includes a comprehensive **SQLite database** containing all Dict
       "--rm",
       "-i",
       "-v",
-      "mcp-test:/mcp",
-      "mcp/sqlite",
+      "./src/sqlite:/app/src/sqlite", # Mount project sub-directory
+      "mcp/sqlite", # Assumes docker image name
       "--db-path",
-      "/mcp/test.db"
+      "/app/src/sqlite/src/mcp_server_sqlite/DOT.db" # Path inside container
     ]
   }
 }
 ```
 
-## Building
-
-Docker:
+## Building (Docker Example)
 
 ```bash
-docker build -t mcp/sqlite .
+docker build -t mcp/sqlite . # Run from src/sqlite directory, adjust Dockerfile context if needed
 ```
 
 ## BLS Excel Integration
-- The server loads BLS OEWS Excel data at startup (see `reference/bls_all_data_M_2024.xlsx`).
-- Query by SOC code or occupation title for wage and employment statistics.
-- If the Excel file is missing or fails to load, BLS tools will return a structured error message and log the issue.
+- The server attempts to load BLS OEWS Excel data from `src/sqlite/src/mcp_server_sqlite/DOTSOCBLS_Excel/bls_all_data_M_2024.xlsx` at startup.
+- If the file is missing or fails to load, BLS tools (`analyze_bls_excel`, `query_bls_by_soc`, `query_bls_by_title`) will return a structured error message, and a warning will be logged. Other tools will remain available.
 
 ## Error Handling and Logging
-- All tool calls and handlers use structured error handling and logging (see logs for details).
-- Errors are returned as JSON or formatted text, with user-friendly messages and references where possible.
-- Critical errors (e.g., missing database or Excel file) are logged and may disable some tools.
+- All tool calls and handlers use structured error handling and logging. Check server console output for detailed logs.
+- Errors are returned as JSON or formatted text via MCP.
+- Critical errors during initialization (e.g., missing database) will prevent the server from starting fully or disable relevant tools.
 
 ## Extensibility and Code Structure
 - Modular handler classes for database, Excel, TSA, and job obsolescence logic.
-- Configuration and prompt templates are separated for maintainability.
-- Easy to add new tools or extend existing logic (see `src/mcp_server_sqlite/`).
-- Singleton pattern for BLS Excel handler with reload/reset capability.
-- All code is type-annotated and uses modern Python best practices.
+- Configuration (`config.py`) and prompt templates (`prompt_library/`) are separated.
+- See `src/sqlite/src/mcp_server_sqlite/` for module details.
 
 ## Code Quality, Testing, and Contribution
 - All modules use docstrings, type hints, and logging.
-- Input validation and error handling are enforced throughout.
-- Unit tests are recommended for all handlers and logic modules.
-- Contributions are welcome! Please follow code style and add/expand tests for new features.
+- Input validation and error handling are enforced.
+- Unit tests are recommended.
+- Contributions are welcome!
 
 ## License
 
-This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
+This MCP server is licensed under the MIT License. See the LICENSE file for details.

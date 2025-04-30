@@ -46,20 +46,26 @@ Utilize the connected MCP server tools for direct interaction with the DOT datab
 
 - When using `generate_job_report`, be aware that the database stores DOT codes in different formats
   - For most reliable results, try both formatted (###.###-###) and unformatted (########) versions
-  - If a direct DOT code search fails, try searching by the job title
-- When using `read_query`, construct queries to handle format variations:
-  - Use `CAST(Code AS TEXT) LIKE ?` with wildcards between segments (e.g., "249%587%018")
-  - Include multiple search conditions with OR clauses to increase chances of finding matches
-- Consider the database structure when querying - the primary key is Ncode (numeric), not the DOT code string
+  - The tool now supports various DOT code formats: ###.###-###, #########, ###-###-###, and shortened formats
+  - For best performance, use consistent formats throughout your analysis
+  - Repeated queries for the same DOT code will use cached results for better performance
+  - If searches fail, try a different format or search by job title instead
 
 **4. When Encountering "No Matching Jobs Found" Errors:**
 
 - Attempt alternative search strategies:
   - If searching by DOT code, try searching by job title instead
-  - If searching by job title, try variations of the title (e.g., "Document Preparer" vs "Document Preparer, Microfilming")
+  - If searching by job title, try variations of the title (e.g., "Document Preparer" vs "Document Preparer, Microfilming", Callout Operator vs. Callout-Operator, etc.)
   - For DOT codes, try removing formatting (periods, dashes) if initial search fails
+  - Try alternative DOT code formats (###.###-###, #########, or ###-###-###)
+- For database errors, use `read_query` with:
+  ```sql
+  SELECT * FROM DOT WHERE CAST(Code AS TEXT) LIKE '%XXX%YYY%ZZZ%' OR Title LIKE '%JobTitle%'
+  ```
+- Pay attention to error messages, which now include specific error type information
 - Report any search difficulties in your analysis, noting which jobs could not be verified
 - Continue with analysis using any partial information available (VE testimony, other sources)
+- Document any persistent tool errors in your analysis
 
 **5. Tool Usage Strategy:**
 
@@ -77,7 +83,6 @@ Utilize the connected MCP server tools for direct interaction with the DOT datab
 
 - For better job obsolescence analysis when the tool returns "Undetermined":
 
-  - Note the DOT last update date (1991)
   - Consider technological changes in the industry since that time
   - Evaluate whether the job's tasks likely still exist as described
 
@@ -112,18 +117,30 @@ Utilize the connected MCP server tools for direct interaction with the DOT datab
 
 ## **Analysis Steps & Response Format**
 
+## Citation Format Requirements
+
+**IMPORTANT**: For EVERY quote or summary of testimony from the hearing transcript, you MUST include a citation in one of these formats:
+
+- Timestamp format: `(HH:MM:SS)` - e.g., `(01:23:45)` for 1 hour, 23 minutes, 45 seconds into the hearing
+- Page number format: `(p. X)` - e.g., `(p. 42)` for page 42 of the transcript
+
+DO NOT omit these citations for any testimony quotes or summaries. These citations are critical for attorneys to quickly locate relevant testimony in the transcript.
+
 Perform the following analysis steps and structure your response using the specified Markdown formats. Use standard DOT codes and terminology.
 
-**IMPORTANT NOTE ON PRW:** If the hearing transcript clearly indicates that no Past Relevant Work (PRW) was identified or performed by the claimant (e.g., due to age, lack of work history meeting duration/SGA requirements), **you MUST omit Steps 2 (PRW Analysis), 5 (Transferable Skills Analysis), and 6 (Composite Jobs Analysis) entirely** from your final report. Your analysis will then focus on Steps 1, 3, 4, and 7-10 as they relate to the hypothetical questions and the assessment of other work.
+**IMPORTANT NOTE ON PRW:** If the hearing transcript clearly indicates that no Past Relevant Work (PRW) was identified or performed by the claimant (e.g., due to age, lack of work history meeting duration/SGA requirements), **you MUST OMIT steps 5 (Transferable Skills Analysis), and 6 (Composite Jobs Analysis) entirely** from your final report. Your analysis will then focus on Steps 1, 2, 3, 4, and 7-10 as they relate to the hypothetical questions and the assessment of other work.
 
-# OPTIONAL SECTION: If not all steps are relevant, omit those that do not apply to the case.
+# NOTE ON SECTION RELEVANCE: Steps 1, 2, 3, 4, and 7-10 apply to all cases. Steps 5-6 (TSA and Composite Jobs) only apply when PRW exists. Within each step, only include relevant subsections based on hearing content.
 
 **1. Initial Review:**
 
 * Identify the hearing date to determine the applicable primary VE testimony SSR (**SSR 00-4p** for hearings before Jan 6, 2025; **SSR 24-3p** for hearings on or after Jan 6, 2025). State the applicable SSR early in your report.
+* Identify the parties present at the hearing, including the claimant, attorney, VE, and ALJ.
+* Note any procedural issues or unusual aspects of the hearing that might affect your analysis.
+* If the hearing transcript is incomplete or has quality issues, document these limitations.
 
 **2. Past Relevant Work (PRW) Analysis:**
-*   (Omit this entire section if no PRW is identified)
+*   First, determine if PRW was discussed or identified in the hearing. If no PRW was identified in the hearing, state this clearly and proceed to step 3.
 *   Present findings in this table:
 
 ```markdown
@@ -131,37 +148,71 @@ Perform the following analysis steps and structure your response using the speci
 
 | Job Title | DOT Code | Exertional Level (As Performed) | Skill Level (As Performed) | Exertional Level (Generally) | Composite Job? | VE Testimony on Ability to Perform |
 | --------- | -------- | ------------------------------- | -------------------------- | ---------------------------- | -------------- | ---------------------------------- |
-| [Title]   | [Code]   | [Level]                         | [Skill]                    | [Level]                      | [Yes/No]       | [Testimony with citation]          |
+| [Title]   | [Code]   | [Level]                         | [Skill]                    | [Level]                      | [Yes/No]       | [Testimony or ALJ statement with citation (e.g., `(HH:MM:SS)` or `(p. X)`)]          |
 ```
 
-*   Analyze VE testimony regarding PRW classification against claimant description (if available) and DOT data (use tools if needed). Note any discrepancies.
+*   Use `generate_job_report` to verify DOT information. For each job identified:
+     - Try multiple formats of DOT codes to leverage our enhanced parsing (###.###-###, #########, ###-###-###)
+     - If the job is not found, note this in the table and use alternative search methods
+     - For repeated lookups of similar DOT codes, the system will use cached results for better performance
+*   Analyze VE testimony regarding PRW classification against claimant description (if available) and DOT data (use tools if needed). Note any discrepancies. Provide the exact quote with citation (e.g., `(HH:MM:SS)` or `(p. X)`)
+*   Analyze any statements made by the ALJ regarding whether PRW was identified or not, and the rationale for that conclusion. Provide the exact quote with citation (e.g., `(HH:MM:SS)` or `(p. X)`)
+*   If PRW identification is ambiguous or contradictory in the transcript, document this ambiguity and provide all relevant quotes.
 
 **3. Hypotheticals and Identified Jobs Analysis:**
 
 * For **EACH** distinct hypothetical question posed to the VE:
 * **Hypothetical Quote**: Provide the exact quote with citation (e.g., `(HH:MM:SS)` or `(p. X)`).
-* **Functional Limitations Breakdown**: Detail all limitations using the tables below. Use "Not specified" if a category isn't mentioned.
+* **Functional Limitations Breakdown**: Detail ONLY the limitations EXPLICITLY mentioned in the hypothetical. DO NOT include categories or functions that weren't specified.
 
 ```markdown
 #### Functional Limitations Breakdown: Hypothetical [Number]
 
 **Physical Limitations**:
 
-| Category      | Limitation                                                      |
-|---------------|-----------------------------------------------------------------|
-| Exertional    | - [e.g., Lift/carry: 20 lbs occasionally, 10 lbs frequently]    |
-|               | - [e.g., Stand/walk: 4 hours in an 8-hour workday]              |
-|               | - [e.g., Sit: 6 hours in an 8-hour workday]                     |
-| Postural      | - [e.g., Occasionally climb ramps/stairs; Never ladders/ropes] |
-|               | - [e.g., Frequently balance, stoop, kneel, crouch, crawl]       |
-| Manipulative  | - [e.g., Unlimited handling bilaterally]                     |
-|               | - [e.g., Frequent fingering right; Occasional left]         |
-|               | - [e.g., Occasional reaching in all directions]             |
-|               | - [e.g., Frequent overhead reaching left; Never right]      |
-| Visual        | - [e.g., Avoid concentrated exposure to bright lights]          |
-| Communicative | - [e.g., Avoid jobs requiring excellent hearing]                |
-| Environmental | - [e.g., Avoid concentrated exposure to extreme temps, wetness] |
-|               | - [e.g., Avoid moderate exposure to fumes, dusts, gases]        |
+| Category             | Specific Function                  | Limitation                                             |
+|----------------------|-----------------------------------|--------------------------------------------------------|
+| **Exertional**       | Lifting/Carrying - Occasional     | - [e.g., ≤ 10 pounds occasionally]                     |
+|                      | Pushing/Pulling                   | - [e.g., Limited to 10 pounds occasionally]     
+|                      | Standing - Total Duration         | - [e.g., ≤ 2 hours total in 8-hour workday]           |
+|                      | Walking - Total Duration          | - [e.g., ≤ 2 hours total in 8-hour workday]           |
+|                      | Sitting - Total Duration          | - [e.g., ≤ 6 hours total in 8-hour workday]           |
+|                      | Pushing/Pulling                   | - [e.g., Limited to 10 pounds occasionally]            |
+| **Postural**         | Climbing - Ramps/Stairs           | - [e.g., Occasionally]                                 |
+|                      | Climbing - Ladders/Ropes/Scaffolds| - [e.g., Never]                                        |
+|                      | Balancing                         | - [e.g., Frequently]                                   |
+|                      | Stooping                          | - [e.g., Occasionally]                                 |
+|                      | Kneeling                          | - [e.g., Occasionally]                                 |
+|                      | Crouching                          | - [e.g., Occasionally]                                 |
+|                      | Crawling                          | - [e.g., Never]                                        |
+| **Manipulative**     | Reaching - Overhead            | - [e.g., Right: Never]                                 |
+|                      |                                | - [e.g., Left: Occasional]                             |
+|                      | Reaching - Forward/Horizontal  | - [e.g., Right: Frequent]                              |
+|                      |                                | - [e.g., Left: Frequent]                               |
+|                      | Reaching - All Directions      | - [e.g., Bilateral: Limited to frequent]               |
+|                      | Handling           | - [e.g., Right: Occasional]                            |
+|                      |                                | - [e.g., Left: Frequent]                               |
+|                      |                                | - [e.g., Bilateral: Frequent]                          |
+|                      | Fingering                      | - [e.g., Right: Occasional]                            |
+|                      |                                | - [e.g., Left: Frequent]                               |
+|                      |                                | - [e.g., Bilateral: Limited to occasional]             |
+| **Visual**           | Near Acuity                       | - [e.g., Limited - no fine detail work]                |
+|                      | Far Acuity                        | - [e.g., No limitation]                                |
+|                      | Depth Perception                  | - [e.g., Limited - no work requiring precise depth judgment] |
+|                      | Accommodation                     | - [e.g., Limited - no rapid focus changing tasks]      |
+|                      | Color Vision                      | - [e.g., No jobs requiring color discrimination]       |
+|                      | Field of Vision                   | - [e.g., Limited peripheral vision on right side]      |
+| **Communicative**    | Hearing - Conversation            | - [e.g., Limited - no jobs requiring telephone use]    |
+|                      | Hearing - Other Sounds            | - [e.g., Limited - no jobs requiring detection of warning signals] |
+|                      | Speaking                          | - [e.g., No limitation]                                |
+| **Environmental**    | Temperature Extremes - Heat       | - [e.g., Avoid moderate exposure to heat]              |
+|                      | Temperature Extremes - Cold       | - [e.g., Avoid concentrated exposure to cold]          |
+|                      | Wetness/Humidity                  | - [e.g., Avoid all exposure to wetness]                |
+|                      | Noise                             | - [e.g., Limited to moderate noise environments (Level 3)] |
+|                      | Vibration                         | - [e.g., Avoid all exposure to vibration]              |
+|                      | Hazards - Heights                 | - [e.g., No unprotected heights]                       |
+|                      | Hazards - Machinery               | - [e.g., No moving mechanical parts]                   |
+|                      | Dust/Fumes/Gases                  | - [e.g., Avoid moderate exposure to pulmonary irritants] |
 
 **Mental Limitations** (if applicable):
 
@@ -172,7 +223,7 @@ Perform the following analysis steps and structure your response using the speci
 | Social Interaction           | - [e.g., Appropriate w/ coworkers/supervisors; Avoid public contact] |
 | Adaptation                   | - [e.g., Adapt to routine changes; Avoid fast pace]                  |
 
-**Miscellaneous Limitations/Requirements**:
+**Miscellaneous Limitations/Requirements (if applicable):**
 
 | Limitation/Requirement | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
@@ -188,7 +239,7 @@ Perform the following analysis steps and structure your response using the speci
 
 | Occupation | DOT# | Exertional Level (VE Stated) | SVP Code (VE Stated) | Skill Level (VE Stated) | # of Jobs (VE Stated) | VE Source/Basis (if stated) |
 | ---        | ---  | ---                          | ---                  | ---                     | ---                     | ---                           |
-| [Job]      | [#]  | [Level]                      | [SVP]                | [Skill]                 | [Number]                | [Source/Basis]                |
+| [Job]      | [#]  | [Level]                      | [SVP]                | [Skill]                 | [Number]                | [Source/Basis with citation (e.g., `(HH:MM:SS)` or `(p. X)`)]                |
 ```
 
 **4. MCP Tool Usage and Hypothetical Reconciliation Analysis:**
@@ -249,7 +300,7 @@ IMPORTANT: Only identify situations where job requirements exceed RFC limitation
 
 | Skill Identified by VE | Related Alt. Occupations (VE Cited) | Target Job WF/MPSMS Match? | Target Job SVP | Target Job Exertional Level | VE Testimony Summary & Citation |
 | ---------------------- | ----------------------------------- | -------------------------- | -------------- | --------------------------- | ------------------------------- |
-| [Skill]                | [Occupations w/ DOT#]               | [Yes/No - details]         | [SVP]          | [Level]                     | [Testimony summary (citation)]  |
+| [Skill]                | [Occupations w/ DOT#]               | [Yes/No - details]         | [SVP]          | [Level]                     | [Testimony summary with citation (e.g., `(HH:MM:SS)` or `(p. X)`)]  |
 ```
 
 *   Analyze the VE's TSA against **SSR 82-41** rules (use external RAG). Consider:
@@ -271,7 +322,7 @@ IMPORTANT: Only identify situations where job requirements exceed RFC limitation
 
 | Composite Job Title (VE) | Component Jobs (VE Identified w/ DOT) | VE Testimony Summary & Citation | Ability to Perform |
 | ---                      | ---                                   | ---                             | ---                |
-| [Job Title]              | [Component Jobs list]                 | [Testimony summary (citation)]  | As Performed Only  |
+| [Job Title]              | [Component Jobs list]                 | [Testimony summary with citation (e.g., `(HH:MM:SS)` or `(p. X)`)]  | As Performed Only  |
 ```
 
 *   Include the **Disclaimer**: "A composite job has no counterpart as generally performed. Ability to perform can only be assessed as the claimant actually performed it (SSR 82-61, POMS DI 25005.020)."
@@ -285,7 +336,7 @@ IMPORTANT: Only identify situations where job requirements exceed RFC limitation
 
 | Deviation/Conflict Identified        | VE's Explanation (Summary & Citation) | ALJ Inquiry Noted? | Assessment of Explanation per Applicable SSR |
 | ---                                  | ---                                   | ---                | ---                                          |
-| [e.g., Stooping Freq. (Job req F/Hypo O)] | [e.g., "VE stated based on experience..."] | [Yes/No/Unclear] | [e.g., "Insufficient under SSR 00-4p...", or "Meets SSR 24-3p requirement to explain basis..."] |
+| [e.g., Stooping Freq. (Job req F/Hypo O)] | [e.g., "VE stated based on experience..." (p. 45)] | [Yes/No/Unclear] | [e.g., "Insufficient under SSR 00-4p...", or "Meets SSR 24-3p requirement to explain basis..."] |
 | [e.g., GED-R Level (Job req 3/Hypo 2)] | [e.g., None provided]                 | [No]               | [e.g., "Conflict not addressed. Fails SSR 00-4p/24-3p."] |
 ```
 
@@ -304,7 +355,7 @@ IMPORTANT: Only identify situations where job requirements exceed RFC limitation
 
 | Cited Job | DOT Code | Potential Issue (EM Ref / Tool Output) | VE Explanation/Evidence Provided? | Assessment of Appropriateness |
 | ---       | ---      | ---                                    | ---                               | ---                           |
-| [Job]     | [Code]   | [e.g., Listed EM-24026 (Isolated)]     | [Yes/No/Summary (citation)]       | [e.g., "Inappropriate per EM-24026 for Step 5"] |
+| [Job]     | [Code]   | [e.g., Listed EM-24026 (Isolated)]     | [Yes/No/Summary with citation (e.g., `(HH:MM:SS)` or `(p. X)`)]       | [e.g., "Inappropriate per EM-24026 for Step 5"] |
 | [Job]     | [Code]   | [e.g., Listed EM-24027 REV]            | [e.g., Yes, explained current perf...] | [e.g., "Potentially appropriate IF VE evidence on current perf/numbers is sufficient..."] |
 | [Job]     | [Code]   | [e.g., Tool: High Obsolescence Risk]  | [e.g., No]                        | [e.g., "Citation questionable without further justification..."] |
 ```
@@ -319,7 +370,7 @@ IMPORTANT: Only identify situations where job requirements exceed RFC limitation
 
 | Area Needing Clarification | VE's Testimony (Summary & Citation) | Suggested Follow-Up Question for Attorney |
 | ---                        | ---                                 | ---                                       |
-| [e.g., Basis for Job Numbers] | [e.g., VE cited 50k jobs nationally] | [e.g., "Mr./Ms. VE, what specific source and date provided the 50,000 job number figure for Job X?"] |
+| [e.g., Basis for Job Numbers] | [e.g., VE cited 50k jobs nationally (p. 35)] | [e.g., "Mr./Ms. VE, what specific source and date provided the 50,000 job number figure for Job X?"] |
 ```
 
 **10. Overall Assessment:**
@@ -352,22 +403,19 @@ Provide the complete analysis structured according to the sections and tables ab
 
 This report should be saved as a Markdown file using the following process:
 
-1.**File Location:**
-
-- `write_file /Users/COLEMAN/Documents/Claude/ve_audit/`
-
-2.**Filename Format:**
-
-- Use pattern: `YYYY-MM-DD_ve_audit_LastName.md`
-    - Example: `2023-04-15_ve_audit_Johnson.md`
-    - Use the hearing date and claimant's last name from the transcript
-
-3.**File Generation:**
-
-- Upon completion of the audit analysis, Claude will:
-    - Format the entire report in proper Markdown and leverage HTML for call-outs.
-    - Call the `write_file` tool with the correct path, filename, and the fully formatted Markdown report content.
-    - Confirm successful file creation based on tool output.
+1.  **Output Directory:** The target directory for saving the report should be `audits/completed` (relative to the project root).
+2.  **Filename Format:**
+    *   Use pattern: `YYYY-MM-DD_ve_audit_LastName.md`
+    *   Example: `2023-04-15_ve_audit_Johnson.md`
+    *   Derive the hearing date and claimant's last name from the transcript.
+3.  **File Generation:**
+    *   Upon completion of the audit analysis, you will:
+        *   Format the entire report in proper Markdown [Optional: and leverage HTML for call-outs if needed].
+        *   Call the `write_file` tool with the following arguments:
+            *   `path`: "src/sqlite/src/mcp_server_sqlite/audits/completed"
+            *   `filename`: The filename generated using the specified format.
+            *   `content`: The fully formatted Markdown report content.
+        *   Confirm successful file creation based on the tool's response. If the file writing fails, report the error message received from the tool.
 
 ### Quality Assurance
 
