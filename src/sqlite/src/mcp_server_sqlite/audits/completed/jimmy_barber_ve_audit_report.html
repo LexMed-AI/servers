@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VE Audit Report: John Smith Hearing</title>
+  <style>
+    /* Modern Typography - Copied from format_ve_audit_report.html */
+    :root {
+      --primary: #1a73e8; --primary-light: #e8f0fe;
+      --success: #34a853; --success-light: #e6f4ea;
+      --warning: #fbbc04; --warning-light: #fef7e0;
+      --danger: #ea4335; --danger-light: #fde9e8;
+      --gray-100: #f8f9fa; --gray-200: #e9ecef; --gray-300: #dee2e6;
+      --gray-400: #ced4da; --gray-500: #adb5bd; --gray-600: #6c757d;
+      --gray-700: #495057; --gray-800: #343a40; --gray-900: #212529;
+      --border-radius: 8px; --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--gray-800); background-color: var(--gray-200); padding: 0; margin: 0; }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 2rem; background-color: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); border-radius: var(--border-radius); }
+    .header {
+      position: relative;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      background-color: var(--gray-800);
+      color: white;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+    .header-text {
+      margin-top: 1rem;
+    }
+    .report-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: white; }
+    .report-logo { max-width: 150px; height: auto; flex-shrink: 0; filter: brightness(0) invert(1); }
+    .case-info { display: flex; flex-wrap: wrap; gap: 2rem; padding: 1.5rem; margin-bottom: 2rem; background-color: var(--gray-100); border: 1px solid var(--gray-300); border-radius: var(--border-radius); }
+    .info-group { flex: 1; min-width: 250px; }
+    .info-item { margin-bottom: 0.5rem; }
+    .info-label { font-weight: 600; color: var(--gray-700); }
+    .executive-summary { padding: 1.5rem; margin-bottom: 2rem; background-color: var(--primary-light); border-left: 4px solid var(--primary); border-radius: var(--border-radius); }
+    .summary-heading { font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+    .recommendation { padding: 1.5rem; margin: 1.5rem 0; background-color: var(--warning-light); border-left: 4px solid var(--warning); border-radius: var(--border-radius); }
+    .recommendation-heading { font-weight: 700; color: var(--warning); margin-bottom: 0.5rem; }
+    .toc { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; padding: 1rem; background-color: var(--gray-100); border-radius: var(--border-radius); }
+    .toc-item { background-color: white; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500; text-decoration: none; color: var(--gray-700); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); transition: all 0.2s ease; }
+    .toc-item:hover { background-color: var(--primary-light); color: var(--primary); transform: translateY(-2px); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); }
+    .section { margin-bottom: 3rem; }
+    .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); color: var(--primary); }
+    .section-content { padding: 0 0.5rem; }
+    .card { background-color: white; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 1.5rem; overflow: hidden; }
+    .card-header { padding: 1rem 1.5rem; background-color: var(--primary); color: white; font-weight: 600; }
+    .card-body { padding: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; background-color: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow); }
+    th { background-color: var(--primary-light); color: var(--primary); font-weight: 600; text-align: left; padding: 1rem; border: 1px solid var(--gray-300); }
+    td { padding: 1rem; border: 1px solid var(--gray-300); }
+    tr:nth-child(even) { background-color: var(--gray-100); }
+    .status-compatible { background-color: var(--success-light); color: var(--success); font-weight: 600; }
+    .status-conflict { background-color: var(--danger-light); color: var(--danger); font-weight: 600; }
+    .status-caution { background-color: var(--warning-light); color: var(--warning); font-weight: 600; }
+    .expandable { margin-bottom: 1.5rem; }
+    .expandable-header { background-color: var(--primary-light); color: var(--primary); padding: 1rem 1.5rem; border-radius: var(--border-radius); font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; }
+    .expandable-header:hover { background-color: #d4e6fc; }
+    .expandable-header::after { content: "+"; font-size: 1.5rem; font-weight: 300; }
+    .expandable-header.active::after { content: "−"; }
+    .expandable-content { display: none; padding: 1.5rem; border: 1px solid var(--gray-300); border-top: none; border-radius: 0 0 var(--border-radius) var(--border-radius); background-color: white; }
+    .expandable-content.active { display: block; }
+    .alert { padding: 1.5rem; margin: 1.5rem 0; border-radius: var(--border-radius); }
+    .alert-success { background-color: var(--success-light); border-left: 4px solid var(--success); }
+    .alert-warning { background-color: var(--warning-light); border-left: 4px solid var(--warning); }
+    .alert-danger { background-color: var(--danger-light); border-left: 4px solid var(--danger); }
+    .alert-info { background-color: var(--primary-light); border-left: 4px solid var(--primary); }
+    .findings-container { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0; }
+    .finding-card { flex: 1; min-width: 300px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow); }
+    .finding-card.danger { border-top: 4px solid var(--danger); }
+    .finding-card.warning { border-top: 4px solid var(--warning); }
+    .finding-header { padding: 1rem; background-color: var(--danger); color: white; font-weight: 600; }
+    .finding-body { padding: 1.5rem; background-color: var(--danger-light); }
+    .columns { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0; }
+    .column { flex: 1; min-width: 300px; }
+    ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
+    li { margin-bottom: 0.5rem; }
+    blockquote { margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 4px solid var(--primary); background-color: var(--gray-100); font-style: italic; }
+    .ai-disclaimer { margin-top: 3rem; padding: 1.5rem; border: 2px dashed var(--warning); border-radius: var(--border-radius); background-color: var(--warning-light); display: flex; align-items: flex-start; gap: 1rem; }
+    .disclaimer-icon { font-size: 2rem; color: var(--warning); flex-shrink: 0; }
+    .disclaimer-content h3 { color: var(--warning); margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .disclaimer-content p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .disclaimer-content ul { margin: 0.5rem 0; font-size: 0.9rem; }
+    .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-300); text-align: center; color: var(--gray-600); font-size: 0.9rem; }
+    @media print { body { background-color: white; color: black; } .container { max-width: 100%; box-shadow: none; } .expandable-content { display: block !important; } .no-print { display: none; } .ai-disclaimer { page-break-inside: avoid; border: 1px solid #888; background-color: #f8f8f8; } }
+    @media (max-width: 768px) { .container { padding: 1rem; } .case-info { flex-direction: column; gap: 1rem; } .findings-container, .columns { flex-direction: column; } }
+    .argument-table { width: 100%; margin-bottom: 1.5rem; border-collapse: collapse; box-shadow: var(--box-shadow); border-radius: var(--border-radius); overflow: hidden; }
+    .argument-table th { background-color: var(--primary); color: white; font-size: 1.1rem; text-align: center; padding: 1rem; }
+    .argument-table td { background-color: white; padding: 1.5rem; vertical-align: top; }
+    .argument-table p { margin-top: 0; font-weight: 600; }
+    .argument-table ul { margin-bottom: 0; }
+    @media (max-width: 768px) { .argument-table { font-size: 0.9rem; } .argument-table th { padding: 0.75rem; } .argument-table td { padding: 1rem; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="report-logo" style="margin-bottom: 1rem; display: inline-block;">
+        <img src="./assets/LexMed Inverted Color.png" alt="LexMed Logo" style="max-width: 200px; height: auto;">
+      </div>
+
+      <div class="header-text">
+        <h1 class="report-title">VOCATIONAL EXPERT TESTIMONY AUDIT</h1>
+        <p class="report-date">Generated on: <span id="current-date">January 8, 2025</span></p>
+      </div>
+    </header>
+
+    <div class="case-info">
+      <div class="info-group">
+        <div class="info-item"><span class="info-label">HEARING DATE:</span> January 8, 2025</div>
+        <div class="info-item"><span class="info-label">APPLICABLE SSR:</span> SSR 24-3p</div>
+        <div class="info-item"><span class="info-label">CLAIMANT:</span> John Smith</div>
+      </div>
+      <div class="info-group">
+        <div class="info-item"><span class="info-label">ALJ:</span> Judge Evelyn Reed</div>
+        <div class="info-item"><span class="info-label">VE:</span> David Chen</div>
+        <div class="info-item"><span class="info-label">Attorney:</span> Alice Garcia</div>
+      </div>
+    </div>
+
+    <section id="summary" class="section">
+      <h2 class="section-title">I. EXECUTIVE SUMMARY</h2>
+      <div class="section-content">
+        <p>This audit analyzes the vocational expert testimony provided in the January 8, 2025 hearing of John Smith. The VE's testimony contains several significant deficiencies that may provide grounds for challenge, including:</p>
+        <ol>
+          <li><strong>GED Reasoning Level Conflicts</strong>: Multiple identified jobs exceed the RFC mental limitations without required explanation</li>
+          <li><strong>Low Job Numbers</strong>: Four of six identified occupations have fewer than 10,000 jobs nationally</li>
+          <li><strong>Incomplete Transferable Skills Analysis</strong>: Fails to meet SSR 82-41 requirements</li>
+          <li><strong>Partial SSR 24-3p Compliance</strong>: Source identification present but deviation explanations absent</li>
+        </ol>
+        <div class="recommendation">
+          <h3 class="recommendation-heading">RECOMMENDATION</h3>
+          <p>Challenge the sufficiency of the VE's testimony based on unaddressed GED-R conflicts, questionable significance of job numbers, and incomplete transferable skills analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="participants" class="section">
+      <h2 class="section-title">II. HEARING PARTICIPANTS</h2>
+      <div class="section-content">
+        <ul>
+          <li><strong>Claimant</strong>: John Smith</li>
+          <li><strong>Attorney</strong>: Alice Garcia</li>
+          <li><strong>Vocational Expert</strong>: David Chen</li>
+          <li><strong>Administrative Law Judge</strong>: Judge Evelyn Reed</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="background" class="section">
+      <h2 class="section-title">III. CLAIMANT BACKGROUND</h2>
+      <div class="section-content">
+        <p>Mr. Smith is a veteran who sustained a knee injury in Afghanistan requiring 9 months of hospitalization. He has undergone multiple knee procedures and has been diagnosed with PTSD, anxiety, and depression for which he receives treatment at the VA hospital. The claimant ceased employment in February 2022 due to knee issues and psychiatric symptoms. He attempted a work return at Mattress Firm but was unsuccessful due to physical limitations and PTSD symptoms. He is currently rated 100% disabled by the VA.</p>
+      </div>
+    </section>
+
+    <section id="prw" class="section">
+      <h2 class="section-title">IV. PAST RELEVANT WORK (PRW) ANALYSIS</h2>
+      <div class="section-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>DOT Code</th>
+              <th>Exertional Level (Generally)</th>
+              <th>Skill Level</th>
+              <th>VE Testimony</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Production Superintendent</td>
+              <td>183.117-014</td>
+              <td>Light</td>
+              <td>Skilled (SVP 8)</td>
+              <td>Cannot perform with given limitations (00:45:08)</td>
+            </tr>
+            <tr>
+              <td>Store Manager</td>
+              <td>185.167-046</td>
+              <td>Light</td>
+              <td>Skilled (SVP 7)</td>
+              <td>Cannot perform with given limitations (00:45:08)</td>
+            </tr>
+            <tr>
+              <td>Sales Clerk (Mattress Firm)</td>
+              <td>290.477-014</td>
+              <td>Light</td>
+              <td>Semi-skilled (SVP 3)</td>
+              <td>Cannot perform with given limitations (00:45:08)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Note</strong>: The ALJ stated the claimant was not at the District Manager position long enough for it to qualify as PRW (00:43:36).</p>
+      </div>
+    </section>
+
+    <section id="hypotheticals" class="section">
+      <h2 class="section-title">V. RFC HYPOTHETICALS & IDENTIFIED JOBS</h2>
+      <div class="section-content">
+        <div class="expandable">
+          <div class="expandable-header">Hypothetical #1: Sedentary, Detailed/Simple Tasks, Occasional Interaction</div>
+          <div class="expandable-content">
+            <blockquote>"Sedentary... from waist to shoulder level, could lift 10 pounds frequently, 20 pounds occasionally... occasionally kneel, crouch, and negotiate stairs and ramps and stoop and balance... can understand, remember, and carry out detailed and simple tasks but not complex tasks... limited to no more than occasional interactions with the public and with coworkers... never be required to work at a forced pace..." (00:44:26)</blockquote>
+            <h4>VE's Identified Jobs:</h4>
+            <table>
+              <thead><tr><th>Occupation</th><th>DOT#</th><th>Exertional Level</th><th>SVP</th><th>Skill Level</th><th># of Jobs</th></tr></thead>
+              <tbody>
+                <tr><td>Order Clerk</td><td>249.362-026</td><td>Sedentary</td><td>4</td><td>Semi-skilled</td><td>60,000</td></tr>
+                <tr><td>Civil Service Clerk</td><td>205.362-010</td><td>Sedentary</td><td>3</td><td>Semi-skilled</td><td>3,000</td></tr>
+                <tr><td>Auction Clerk</td><td>294.567-010</td><td>Sedentary</td><td>3</td><td>Semi-skilled</td><td>6,100</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="expandable">
+          <div class="expandable-header">Hypothetical #2: Same as #1 + Cane Required</div>
+          <div class="expandable-content">
+            <p>Added requirement of cane for ambulation to Hypothetical 1. VE testified the same jobs would remain available.</p>
+          </div>
+        </div>
+
+        <div class="expandable">
+          <div class="expandable-header">Hypothetical #3: Simple Tasks Only</div>
+          <div class="expandable-content">
+             <blockquote>"If we were to change it to only simple task, everything else the same as hypo 1." (00:50:41)</blockquote>
+            <h4>VE's Identified Jobs:</h4>
+             <table>
+              <thead><tr><th>Occupation</th><th>DOT#</th><th>Exertional Level</th><th>SVP</th><th>Skill Level</th><th># of Jobs</th></tr></thead>
+              <tbody>
+                <tr><td>Final Assembler</td><td>713.687-018</td><td>Sedentary</td><td>2</td><td>Unskilled</td><td>4,300</td></tr>
+                <tr><td>Table Worker</td><td>739.687-182</td><td>Sedentary</td><td>2</td><td>Unskilled</td><td>3,200</td></tr>
+                <tr><td>Document Preparer</td><td>249.587-018</td><td>Sedentary</td><td>2</td><td>Unskilled</td><td>14,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="expandable">
+          <div class="expandable-header">Hypothetical #4: Additional Breaks Required</div>
+          <div class="expandable-content">
+            <blockquote>Added requirement of "2 unscheduled breaks a day in addition to usual breaks lasting 30 minutes each" (00:53:34) to Hypothetical 3.</blockquote>
+            <h4>VE's Response:</h4>
+            <p>"No jobs" (00:53:34)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="critical-analysis" class="section">
+      <h2 class="section-title">VI. CRITICAL ANALYSIS OF IDENTIFIED JOBS</h2>
+      <div class="section-content">
+        <div class="alert alert-danger">
+          <h4 style="color: var(--danger); margin-top: 0;">SIGNIFICANT ISSUE #1: GED Reasoning Level Conflicts</h4>
+          <p>Multiple identified jobs have GED-R levels that exceed the RFC mental limitations, and the VE failed to explain these discrepancies as required by SSR 24-3p.</p>
+        </div>
+
+        <h3>A. GED Reasoning Level Conflicts - Hypothetical 1</h3>
+        <table>
+          <thead><tr><th>Job</th><th>DOT GED-R Level</th><th>RFC Limitation</th><th>Conflict Assessment</th></tr></thead>
+          <tbody>
+            <tr><td>Order Clerk</td><td>4</td><td>Detailed & simple tasks only</td><td class="status-conflict">CONFLICT</td></tr>
+            <tr><td>Civil Service Clerk</td><td>4</td><td>Detailed & simple tasks only</td><td class="status-conflict">CONFLICT</td></tr>
+          </tbody>
+        </table>
+
+        <h3>B. GED Reasoning Level Conflicts - Hypothetical 3</h3>
+        <table>
+          <thead><tr><th>Job</th><th>DOT GED-R Level</th><th>RFC Limitation</th><th>Conflict Assessment</th></tr></thead>
+          <tbody>
+            <tr><td>Document Preparer</td><td>3</td><td>Simple tasks only</td><td class="status-conflict">CONFLICT</td></tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-danger" style="margin-top: 2rem;">
+          <h4 style="color: var(--danger); margin-top: 0;">SIGNIFICANT ISSUE #2: Low Job Numbers</h4>
+          <p>Four of the six identified occupations have fewer than 10,000 jobs nationally, raising questions about whether they exist in "significant numbers" as required by regulation.</p>
+        </div>
+
+        <h3>C. Low Job Number Analysis</h3>
+        <table>
+          <thead><tr><th>Occupation</th><th>National Jobs</th><th>Assessment</th></tr></thead>
+          <tbody>
+            <tr><td>Civil Service Clerk</td><td>3,000</td><td>Significantly below 10,000 threshold</td></tr>
+            <tr><td>Auction Clerk</td><td>6,100</td><td>Below 10,000 threshold</td></tr>
+            <tr><td>Final Assembler</td><td>4,300</td><td>Below 10,000 threshold</td></tr>
+            <tr><td>Table Worker</td><td>3,200</td><td>Below 10,000 threshold</td></tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-info" style="display: flex; align-items: flex-start; gap: 1rem; margin-top: 1.5rem;">
+          <span style="font-size: 1.5rem; line-height: 1.4; flex-shrink: 0;">💡</span>
+          <div>
+            <h4 style="margin-top: 0; margin-bottom: 0.5rem; color: var(--primary);">Note on "Significant Numbers"</h4>
+            <p style="margin-bottom: 0; font-size: 0.95rem;">While there is no strict numerical threshold defining "significant numbers," courts often scrutinize job numbers below 10,000. The VE did not address whether these low numbers constitute "significant numbers" nationally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tsa" class="section">
+      <h2 class="section-title">VII. TRANSFERABLE SKILLS ANALYSIS (TSA)</h2>
+      <div class="section-content">
+        <p>The VE identified the following transferable skills from claimant's PRW as Store Manager (00:45:55):</p>
+        <ul>
+          <li>Taking inventory</li>
+          <li>Reconciling cash with sales receipts</li>
+          <li>Keeping operating records</li>
+          <li>Handling transactions</li>
+          <li>Ordering merchandise</li>
+        </ul>
+
+        <div class="alert alert-danger" style="margin-top: 1.5rem;">
+          <h4 style="color: var(--danger); margin-top: 0;">CRITICAL ISSUE: Incomplete TSA</h4>
+          <p>The VE's transferable skills analysis fails to meet SSR 82-41 requirements, which specifies that transferability must be demonstrated through matching or related work fields and consideration of worker function complexity. Key deficiencies:</p>
+          <ul>
+            <li>No analysis of Work Field (WF) codes or Materials, Products, Subject Matter, Services (MPSMS) codes</li>
+            <li>No comparison of worker function levels (Data/People/Things)</li>
+            <li>No specific explanation of how identified skills transfer to target occupations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="ssr-compliance" class="section">
+      <h2 class="section-title">VIII. SSR 24-3p COMPLIANCE ASSESSMENT</h2>
+      <div class="section-content">
+        <table>
+          <thead>
+            <tr>
+              <th>SSR 24-3p Requirement</th>
+              <th>VE Compliance</th>
+              <th>Assessment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Identify data sources</td>
+              <td class="status-compatible">YES</td>
+              <td>"I'm using Job BrowserPro, and it's the most current version" (00:49:32)</td>
+            </tr>
+            <tr>
+              <td>Explain job number approach</td>
+              <td class="status-compatible">YES</td>
+              <td>"It uses both census data, which in my opinion stabilizes our numbers as well as employer, surveys" (00:49:58)</td>
+            </tr>
+            <tr>
+              <td>Explain differences in exertion, education, or skill level definitions</td>
+              <td class="status-conflict">NO</td>
+              <td>Failed to explain how jobs with GED-R levels 3-4 could be performed by someone limited to simple or detailed/simple tasks</td>
+            </tr>
+            <tr>
+              <td>Explain performance differences for EM-24027 REV jobs</td>
+              <td class="status-compatible">YES</td>
+              <td>Addressed Document Preparer: "Based upon my experience placing people as a document preparer... the description in the DOT would be consistent with my placement practices" (00:52:21)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="alert alert-warning" style="margin-top: 1.5rem;">
+          <h4 style="margin-top: 0;">SSR 24-3p PARTIAL COMPLIANCE:</h4>
+          <p>While the VE identified data sources and explained job number methodology, she failed to acknowledge and explain critical discrepancies between DOT GED-R levels and RFC mental limitations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="em-compliance" class="section">
+      <h2 class="section-title">IX. EM-24027 REV COMPLIANCE</h2>
+      <div class="section-content">
+        <p>The Document Preparer (DOT 249.587-018) appears on the EM-24027 REV list requiring heightened evidentiary standards. The VE proactively addressed this:</p>
+        <blockquote>
+          "I know there's been some concern about that and whether it's been updated. Based upon my experience placing people as a document preparer, which were in medical offices as well as attorney offices, the description in the DOT would be consistent with my placement practices." (00:52:21)
+        </blockquote>
+        <p>The ALJ followed up by asking if the difference was primarily technological while the processes remained the same, which the VE confirmed (00:52:32-00:53:03).</p>
+        <p>This explanation appears to satisfy EM-24027 REV requirements for heightened evidence regarding how the job is currently performed.</p>
+      </div>
+    </section>
+
+    <section id="follow-up" class="section">
+      <h2 class="section-title">X. RECOMMENDED FOLLOW-UP QUESTIONS</h2>
+      <div class="section-content">
+        <div class="card">
+          <div class="card-header">Cross-Examination Strategy</div>
+          <div class="card-body">
+            <ol>
+              <li>
+                <strong>GED-R Level Conflicts - Hypothetical 1</strong>:
+                <blockquote>"Ms. Humphreys, isn't it true that the Order Clerk and Civil Service Clerk positions have GED Reasoning Levels of 4 in the DOT, which require dealing with abstract variables and complex problems? How could someone limited to 'detailed and simple tasks but not complex tasks' perform these jobs?"</blockquote>
+              </li>
+              <li>
+                <strong>GED-R Level Conflict - Document Preparer</strong>:
+                <blockquote>"The Document Preparer position has a GED Reasoning Level of 3, which exceeds a 'simple tasks only' limitation. Can you explain how someone with this limitation could perform this job?"</blockquote>
+              </li>
+              <li>
+                <strong>Low Job Numbers</strong>:
+                <blockquote>"Four of the six occupations you've identified have fewer than 10,000 jobs nationally. Do you consider Civil Service Clerk (3,000), Auction Clerk (6,100), Final Assembler (4,300), and Table Worker (3,200) to constitute 'significant numbers' individually rather than collectively?"</blockquote>
+              </li>
+              <li>
+                <strong>Transferable Skills</strong>:
+                <blockquote>"Can you identify the specific Work Fields and Materials, Products, Subject Matter, and Services codes that show how the skills from Store Manager transfer to the identified occupations, as required by SSR 82-41?"</blockquote>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusion" class="section">
+      <h2 class="section-title">XI. CONCLUSION & RECOMMENDATIONS</h2>
+      <div class="section-content">
+        <div class="recommendation">
+          <h3 class="recommendation-heading">STRATEGIC RECOMMENDATIONS:</h3>
+          <ol>
+            <li>Challenge the sufficiency of the VE's testimony based on unaddressed GED-R conflicts with RFC limitations</li>
+            <li>Question whether the identified jobs with fewer than 10,000 positions nationally exist in "significant numbers"</li>
+            <li>Challenge the transferable skills analysis as failing to meet SSR 82-41 requirements</li>
+            <li>Argue that the VE's testimony fails to fully comply with SSR 24-3p requirements</li>
+          </ol>
+        </div>
+        <p>The VE's testimony in this case contains multiple deficiencies that provide strong grounds for challenge. Most significantly, the failure to address GED Reasoning Level conflicts with RFC mental limitations violates SSR 24-3p requirements. Additionally, the low job numbers for four of the six identified occupations raise serious questions about whether they exist in "significant numbers" as required by regulation.</p>
+        <p>These issues, combined with the inadequate transferable skills analysis, suggest the VE's testimony is insufficient to support a "not disabled" finding at Step 5 of the sequential evaluation process.</p>
+      </div>
+    </section>
+
+    <div class="ai-disclaimer">
+      <div class="disclaimer-icon">⚠️</div>
+      <div class="disclaimer-content">
+        <h3>AI-GENERATED CONTENT DISCLAIMER</h3>
+        <p>This report was automatically generated using artificial intelligence technology. While efforts have been made to ensure accuracy and reliability:</p>
+        <ul>
+          <li>All findings should be independently verified by a qualified attorney or vocational expert</li>
+          <li>The analysis is based on available data and may not account for all relevant factors</li>
+          <li>Legal interpretations within may require professional review</li>
+          <li>This document should be used as an analytical aid, not as definitive legal guidance</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Generated by LexMed, LLC • All rights reserved • Not a substitute for professional legal advice</p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current date
+    document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    // Expandable sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const expandables = document.querySelectorAll('.expandable-header');
+      expandables.forEach(header => {
+        header.addEventListener('click', function() {
+          this.classList.toggle('active');
+          const content = this.nextElementSibling;
+          content.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
